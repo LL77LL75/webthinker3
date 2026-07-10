@@ -9,4 +9,5 @@ function setup(){
     let area = 1/2 * x * y
     console.log("area:",area);
     text(area, x , y);
+    for( let i = 0; i < (10**10)**10;i+=2)
 }
