@@ -18,6 +18,6 @@ function setup(){
     if (sum >= 10){
         console.log("good")
     } else if (sum >= 5){
-        
+        console.log("bad")
     }
 }
