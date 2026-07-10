@@ -6,5 +6,5 @@ function setup(){
     let x = 1;
     const y = 2;
     let area = 1/2 * x * y
-    text(area)
+    text(area, x , y)
 }
