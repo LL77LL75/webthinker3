@@ -5,5 +5,6 @@ function setup(){
     console.log("hallo");
     let x = 1;
     const y = 2;
-    text()
+    let area = 
+    text(area)
 }
