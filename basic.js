@@ -3,5 +3,6 @@ function setup(){
     textSize(16);
     fill(0);
     console.log("hallo");
-    let 
+    let x = 1
+    
 }
