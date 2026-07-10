@@ -14,4 +14,5 @@ function setup(){
         console.log(i);
         sum += i;
     }
+    console.log()
 }
