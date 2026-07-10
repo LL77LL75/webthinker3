@@ -22,5 +22,6 @@ function setup(){
     }
     let list = []
     list.push("hi")
-    console.log()
+    console.log(list)
+    
 } 
