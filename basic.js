@@ -21,5 +21,6 @@ function setup(){
         console.log("bad")
     }
     let list = []
-    
+    list.push("hi")
+    console.log()
 } 
