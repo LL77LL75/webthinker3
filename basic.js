@@ -20,4 +20,6 @@ function setup(){
     } else if (sum >= 5){
         console.log("bad")
     }
+    let list = []
+    
 } 
