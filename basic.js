@@ -15,4 +15,7 @@ function setup(){
         sum += i;
     }
     console.log(sum)
+    if (sum >= 10){
+        
+    }
 }
