@@ -16,6 +16,8 @@ function setup(){
     }
     console.log(sum)
     if (sum >= 10){
+        console.log("good")
+    } else if (sum >= 5){
         
     }
 }
