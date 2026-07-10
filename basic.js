@@ -24,5 +24,5 @@ function setup(){
     list.push("hi")
     console.log(list)
     list.shift();
-    
+    list.splice(1,1,"kaya")
 } 
