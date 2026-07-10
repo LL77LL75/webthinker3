@@ -23,5 +23,6 @@ function setup(){
     let list = []
     list.push("hi")
     console.log(list)
+    list.shift();
     
 } 
