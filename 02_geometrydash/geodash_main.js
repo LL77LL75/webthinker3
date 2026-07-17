@@ -19,14 +19,14 @@ let bg; // background image
 
 
 function preload() {
-    box = loadImage("assets/cube.png")
-    bg = loadImage("assets/geobg.png")
+    box = loadImage("assets/cube.png");
+    bg = loadImage("assets/geobg.png");
 
 }
 
 function setup() {
-    new Canvas(700,600)
-    
+    new Canvas(700,600);
+    background(250)
   
 }
 
