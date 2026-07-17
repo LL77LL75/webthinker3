@@ -35,6 +35,7 @@ function setup() {
     player.bounciness = 1
     player.collider = "none"
     startCoordinate = [50,height- TILE_SIZE/2]
+    player.x = start
 }
 function draw() {
     clear();
