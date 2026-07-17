@@ -20,6 +20,7 @@ let bg; // background image
 
 function preload() {
     box = loadImage("assets/cube.png")
+    bg = loadImage
 
 }
 
