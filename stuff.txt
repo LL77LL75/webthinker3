@@ -8,5 +8,5 @@
     create and load tile map
 3. auto run and jump
     player is always moving right
-    player jumpso 
-4.
+    player jumps on click/spacebar
+4. obsta
