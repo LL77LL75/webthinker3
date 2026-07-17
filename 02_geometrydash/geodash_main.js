@@ -35,7 +35,6 @@ function setup() {
     player.bounciness = 1
     player.collider = "none"
 }
-
 function draw() {
     clear();
     Image(bg,0,0,800,500); // image,x,y,width,height
