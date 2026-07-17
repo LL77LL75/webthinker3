@@ -1,6 +1,6 @@
 //player box
 let player; // player sprite
-
+let box; //
 
 // game variables
 
