@@ -6,7 +6,7 @@ let box; // player sprite image
 let bg; // background image
 let spikes;
 let ground;
-
+let orb;
 
 // game variables
 const TILE_SIZE = 50;
