@@ -1,3 +1,5 @@
+const { startTransition } = require("react");
+
 //player box
 let player; // player sprite
 let box; // player sprite image
@@ -35,7 +37,8 @@ function setup() {
     player.bounciness = 1
     player.collider = "none"
     startCoordinate = [50,height- TILE_SIZE/2]
-    player.x = start
+    player.x = startCoordinate[0]
+    
 }
 function draw() {
     clear();
