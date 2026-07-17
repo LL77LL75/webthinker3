@@ -4,7 +4,7 @@ let box; // player sprite image
 let bg; // background image
 
 // game variables
-const p
+const 
 
 // world building groups
 
