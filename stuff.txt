@@ -9,4 +9,4 @@
 3. auto run and jump
     player is always moving right
     player jumps on click/spacebar
-4. obsta
+4. obstacles orbs and reset
