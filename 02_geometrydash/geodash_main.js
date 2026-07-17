@@ -36,7 +36,8 @@ function setup() {
 }
 
 function draw() {
-  Image(bg,0,0,800,500); // image,x,y,width,height
+    clearInterval();
+      Image(bg,0,0,800,500); // image,x,y,width,height
 }
 
 
