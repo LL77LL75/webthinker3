@@ -38,7 +38,7 @@ function setup() {
     player.collider = "none"
     startCoordinate = [50,height- TILE_SIZE/2]
     player.x = startCoordinate[0]
-    
+    player.y =startCoordinate[1]
 }
 function draw() {
     clear();
