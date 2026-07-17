@@ -5,4 +5,7 @@
     4.
     5.
 2. build level and tile maps
-    
+
+3. auto run and jump
+
+2=
