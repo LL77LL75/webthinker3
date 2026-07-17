@@ -24,6 +24,7 @@ function preload() {
 }
 
 function setup() {
+    new canvas
   
 }
 
