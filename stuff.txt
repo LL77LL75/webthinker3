@@ -11,4 +11,4 @@
     player jumps on click/spacebar
 4. obstacles orbs and reset
     add more walls spikes and orbs to map
-
+5. start
