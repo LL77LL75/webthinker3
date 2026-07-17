@@ -4,7 +4,8 @@ let box; // player sprite image
 let bg; // background image
 
 // game variables
-const TILE_SIZE = 
+const TILE_SIZE = 50;
+
 
 // world building groups
 
