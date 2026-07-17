@@ -7,6 +7,7 @@ let bg; // background image
 let spikes;
 let ground;
 let orb;
+let finishline;
 
 // game variables
 const TILE_SIZE = 50;
