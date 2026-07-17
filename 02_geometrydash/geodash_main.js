@@ -1,4 +1,4 @@
-const { startTransition } = require("react");
+// const { startTransition } = require("react");
 
 //player box
 let player; // player sprite
