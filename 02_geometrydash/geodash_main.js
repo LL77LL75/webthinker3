@@ -30,6 +30,7 @@ function setup() {
     background(250);
     world.gravity.y=32
     player = new Sprite(50,50,TILE_SIZE,TILE_SIZE)
+    player.img
   
 }
 
