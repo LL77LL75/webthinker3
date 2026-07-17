@@ -1,4 +1,5 @@
-1. create canvas
+1.game setup
+    1. create canvas
 2. create player
 3.
 4.
