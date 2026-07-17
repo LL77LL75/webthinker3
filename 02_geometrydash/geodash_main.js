@@ -31,7 +31,8 @@ function setup() {
     world.gravity.y=32;
     player = new Sprite(50,50,TILE_SIZE,TILE_SIZE);
     player.img = box;
-    
+    player.friction = 0
+    player
 }
 
 function draw() {
