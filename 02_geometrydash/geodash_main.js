@@ -32,12 +32,12 @@ function setup() {
     player = new Sprite(50,50,TILE_SIZE,TILE_SIZE);
     player.img = box;
     player.friction = 0
-    player
+    player.
 }
 
 function draw() {
-    clearInterval();
-      Image(bg,0,0,800,500); // image,x,y,width,height
+    clear();
+    Image(bg,0,0,800,500); // image,x,y,width,height
 }
 
 
