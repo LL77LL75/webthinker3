@@ -1,4 +1,5 @@
 //player box
+let player; // player sprite
 
 
 // game variables
