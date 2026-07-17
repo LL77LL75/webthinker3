@@ -20,13 +20,13 @@ let bg; // background image
 
 function preload() {
     box = loadImage("assets/cube.png")
-    bg = loadImage
+    bg = loadImage("assets/geobg.png")
 
 }
 
 function setup() {
-    new Canvas(
-    )
+    new Canvas(700,600)
+    
   
 }
 
