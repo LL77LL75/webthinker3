@@ -73,7 +73,8 @@ function setup() {
     new Tiles(tilemap1,0,0,TILE_SIZE,TILE_SIZE)
 }
 function draw() {
-    player.vel = 5
+    player.vel.x = 5
+    if 
     clear();
     image(bg,0,0,800,500); // image,x,y,width,height
 }
