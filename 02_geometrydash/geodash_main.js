@@ -47,7 +47,8 @@ function setup() {
     ground.tile = "g";
     ground.width = TILE_SIZE;
     ground.h = TILE_SIZE;
-    ground.colour = (0,0,0);
+    ground.colour = "black";
+    ground.stroke = "white"
     new Tiles(tilemap1,0,0,TILE_SIZE,TILE_SIZE)
 }
 function draw() {
