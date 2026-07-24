@@ -74,7 +74,7 @@ function setup() {
 }
 function draw() {
     clear();
-    
+    camera.x = player.x
     player.vel.x = 5;
     if (kb.presses("space") || mouse.presses("left")){
         player.vel.y = -10;
