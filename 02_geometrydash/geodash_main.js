@@ -43,7 +43,8 @@ function setup() {
     startCoordinate = [50,height- TILE_SIZE/2];
     player.x = startCoordinate[0];
     player.y =startCoordinate[1];
-    
+    ground = new ground();
+
 }
 function draw() {
     clear();
