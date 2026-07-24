@@ -73,9 +73,9 @@ function setup() {
     new Tiles(tilemap1,0,0,TILE_SIZE,TILE_SIZE)
 }
 function draw() {
+    clear()
     player.vel.x = 5
-    if 
-    clear();
+    if (KeyboardEvent.presses("space"))
     image(bg,0,0,800,500); // image,x,y,width,height
 }
 
