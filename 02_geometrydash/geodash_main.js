@@ -1,6 +1,8 @@
 // const { startTransition } = require("react");
 
 //player box
+let spikes;
+let orb;
 let tilemap1
 let player; // player sprite
 let box; // player sprite image
