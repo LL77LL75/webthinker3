@@ -47,7 +47,7 @@ function setup() {
     startCoordinate = [50,height- TILE_SIZE];
     player.x = startCoordinate[0];
     player.y =startCoordinate[1];
-    
+    //ground
     ground = new Group();
     ground.tile = "g";
     ground.width = TILE_SIZE;
