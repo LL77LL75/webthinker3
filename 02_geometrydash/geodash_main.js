@@ -54,7 +54,8 @@ function setup() {
     ground.colour = "black";
     ground.stroke = "white";
     ground.collider = "static";
-    spikes = new 
+    spikes = new Group();
+    
     new Tiles(tilemap1,0,0,TILE_SIZE,TILE_SIZE)
 }
 function draw() {
