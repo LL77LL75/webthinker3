@@ -27,7 +27,7 @@ const TILE_SIZE = 50;
 
 
 function preload() {
-    tilemap1 = loadStrings()
+    tilemap1 = loadStrings(assets/)
     box = loadImage("assets/cube.png");
     bg = loadImage("assets/geobg.png");
 
