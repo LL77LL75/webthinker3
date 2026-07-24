@@ -55,6 +55,7 @@ function setup() {
     ground.stroke = "white";
     ground.collider = "static";
     spikes = new Group();
+    spikes.tile = "s"
     spikes.img = loadImage("assets/spike.png")
     orbs = new Group()
     orb.d = 24
