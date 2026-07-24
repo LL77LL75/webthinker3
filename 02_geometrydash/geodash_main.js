@@ -56,15 +56,15 @@ function setup() {
     ground.collider = "static";
     //spikes
     spikes = new Group();
-    spikes.tile = "s"
+    spikes.tile = "s";
     //orbs
-    orbs = new Group()
-    orbs.tile = "o"
-    orbs.d = 24
+    orbs = new Group();
+    orbs.tile = "o";
+    orbs.d = 24;
     //finish
-    finishline = new Group()
-    finishline.tile = "f"
-    
+    finishline = new Group();
+    finishline.tile = "f";
+
     new Tiles(tilemap1,0,0,TILE_SIZE,TILE_SIZE)
 }
 function draw() {
