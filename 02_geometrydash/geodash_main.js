@@ -1,6 +1,8 @@
 // const { startTransition } = require("react");
 
 //player box
+let spikes;
+let orbs;
 let tilemap1
 let player; // player sprite
 let box; // player sprite image
@@ -57,7 +59,7 @@ function setup() {
     spikes.img = loadImage("assets/spike.png")
     orbs = new Group()
     orbs.tile = "o"
-    orb.d = 24
+    orbs.d = 24
     new Tiles(tilemap1,0,0,TILE_SIZE,TILE_SIZE)
 }
 function draw() {
