@@ -16,7 +16,7 @@ const TILE_SIZE = 50;
 
 // world building groups
 let spikes;
-let orbs
+let orbs;
 
 // image sprites
 
