@@ -6,6 +6,6 @@
 
 
 
-               gggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
-          ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
-     gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
+       ggg              ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
+              gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
+       ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
