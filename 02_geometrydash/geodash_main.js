@@ -30,7 +30,7 @@ function preload() {
     tilemap1 = loadStrings("stages/tiles1.txt");
     box = loadImage("assets/cube.png");
     bg = loadImage("assets/geobg.png");
-    spikes = loadImage("assets/spike.png")
+    spikes = loadImage("assets/spike.png");
 
 }
 
@@ -64,7 +64,7 @@ function setup() {
     //finish
     finishline = new Group();
     finishline.tile = "f";
-
+    
     new Tiles(tilemap1,0,0,TILE_SIZE,TILE_SIZE)
 }
 function draw() {
