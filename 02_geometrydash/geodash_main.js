@@ -43,7 +43,7 @@ function setup() {
     player.friction = 0;
     player.bounciness = 1;
     player.collider = "none";
-    startCoordinate = [50,height- TILE_SIZE/2];
+    startCoordinate = [50,height- TILE_SIZE];
     player.x = startCoordinate[0];
     player.y =startCoordinate[1];
     ground = new Group();
