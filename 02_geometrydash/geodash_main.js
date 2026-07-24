@@ -1,8 +1,6 @@
 // const { startTransition } = require("react");
 
 //player box
-let spikes;
-let orbs;
 let tilemap1
 let player; // player sprite
 let box; // player sprite image
@@ -17,7 +15,8 @@ const TILE_SIZE = 50;
 
 
 // world building groups
-
+let spikes;
+let orbs
 
 // image sprites
 
