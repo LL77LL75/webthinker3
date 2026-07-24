@@ -48,7 +48,7 @@ function setup() {
     //ground
     ground = new Group();
     ground.tile = "g";
-    ground.width = TILE_SIZE;
+    ground.w = TILE_SIZE;
     ground.h = TILE_SIZE;
     ground.colour = "black";
     ground.stroke = "white";
