@@ -66,7 +66,8 @@ function setup() {
     finishline.tile = "f";
     finishline.w = TILE_SIZE;
     finishline.h = height*2;
-    finishline.colour = ""
+    finishline.colour = "#f59042"
+
     new Tiles(tilemap1,0,0,TILE_SIZE,TILE_SIZE)
 }
 function draw() {
