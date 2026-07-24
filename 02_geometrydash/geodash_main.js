@@ -56,7 +56,7 @@ function setup() {
     ground.collider = "static";
     spikes = new Group();
     spikes.img = loadImage("assets/spike.png")
-    or
+    orbs = new Group
     new Tiles(tilemap1,0,0,TILE_SIZE,TILE_SIZE)
 }
 function draw() {
