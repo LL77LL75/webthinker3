@@ -50,7 +50,7 @@ function setup() {
     ground.tile = "g";
     ground.w = TILE_SIZE;
     ground.h = TILE_SIZE;
-    ground.colour = "black";
+    ground.color = "black";
     ground.stroke = "white";
     ground.collider = "static";
     //spikes
