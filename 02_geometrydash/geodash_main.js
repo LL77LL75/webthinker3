@@ -26,7 +26,8 @@ const TILE_SIZE = 50;
 // sound assets
 
 
-function preload() {\tilemap1
+function preload() {
+    tilemap1 = loadStrings()
     box = loadImage("assets/cube.png");
     bg = loadImage("assets/geobg.png");
 
