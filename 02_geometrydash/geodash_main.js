@@ -62,7 +62,7 @@ function setup() {
     orbs.tile = "o"
     orbs.d = 24
     //finish
-    
+    finishline = new Group()
     new Tiles(tilemap1,0,0,TILE_SIZE,TILE_SIZE)
 }
 function draw() {
