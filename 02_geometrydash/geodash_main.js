@@ -75,7 +75,7 @@ function setup() {
 function draw() {
     clear();
     player.vel.x = 5;
-    if (Keyboard.presses("space"));
+    if (kb.presses("space") || );
     image(bg,0,0,800,500); // image,x,y,width,height
 }
 
