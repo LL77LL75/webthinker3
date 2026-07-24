@@ -2,7 +2,7 @@
 
 //player box
 let spikes;
-let orb;
+let orbs;
 let tilemap1
 let player; // player sprite
 let box; // player sprite image
