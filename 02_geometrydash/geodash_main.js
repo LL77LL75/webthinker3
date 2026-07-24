@@ -30,6 +30,7 @@ function preload() {
     tilemap1 = loadStrings("stages/tiles1.txt");
     box = loadImage("assets/cube.png");
     bg = loadImage("assets/geobg.png");
+    spikes.img = loadImage("assets/spike.png") 
 
 }
 
@@ -56,7 +57,6 @@ function setup() {
     //spikes
     spikes = new Group();
     spikes.tile = "s"
-    spikes.img = loadImage("assets/spike.png")
     //orbs
     orbs = new Group()
     orbs.tile = "o"
