@@ -48,7 +48,8 @@ function setup() {
     ground.width = TILE_SIZE;
     ground.h = TILE_SIZE;
     ground.colour = "black";
-    ground.stroke = "white"
+    ground.stroke = "white";
+    ground.collider = ""
     new Tiles(tilemap1,0,0,TILE_SIZE,TILE_SIZE)
 }
 function draw() {
