@@ -47,7 +47,7 @@ function setup() {
     ground.tile = "g";
     ground.width = TILE_SIZE;
     ground.h = TILE_SIZE;
-    
+    ground.colour = (0,0,0);
 }
 function draw() {
     clear();
