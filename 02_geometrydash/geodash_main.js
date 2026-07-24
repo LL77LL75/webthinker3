@@ -27,7 +27,7 @@ const TILE_SIZE = 50;
 
 
 function preload() {
-    startCoordinate = [tile]
+    startCoordinate = [TILE_SIZE,height-TILE_SIZE]
     tilemap1 = loadStrings("stages/tiles1.txt");
     box = loadImage("assets/cube.png");
     bg = loadImage("assets/geobg.png");
