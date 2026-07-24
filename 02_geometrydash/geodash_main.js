@@ -68,7 +68,8 @@ function setup() {
     finishline.h = height*2;
     finishline.colour = "#f59042";
     finishline.stroke = "black";
-    finishline.collider
+    finishline.collider = "static";
+    
     new Tiles(tilemap1,0,0,TILE_SIZE,TILE_SIZE)
 }
 function draw() {
