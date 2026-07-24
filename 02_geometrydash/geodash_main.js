@@ -5,9 +5,7 @@ let tilemap1
 let player; // player sprite
 let box; // player sprite image
 let bg; // background image
-let spikes;
 let ground;
-let orb;
 let finishline;
 
 // game variables
