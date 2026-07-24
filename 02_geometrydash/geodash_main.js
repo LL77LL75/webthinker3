@@ -44,8 +44,10 @@ function setup() {
     player.x = startCoordinate[0];
     player.y =startCoordinate[1];
     ground = new ground();
-    ground.tile = "g"
-    ground.width = TILE_SIZE
+    ground.tile = "g";
+    ground.width = TILE_SIZE;
+    ground.h = TILE_SIZE;
+    
 }
 function draw() {
     clear();
