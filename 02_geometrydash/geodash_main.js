@@ -64,6 +64,7 @@ function setup() {
     //finish
     finishline = new Group();
     finishline.tile = "f";
+    finishline.w = TILE_SIZE;
     
     new Tiles(tilemap1,0,0,TILE_SIZE,TILE_SIZE)
 }
