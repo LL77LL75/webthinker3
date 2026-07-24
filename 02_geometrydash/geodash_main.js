@@ -1,6 +1,7 @@
 // const { startTransition } = require("react");
 
 //player box
+let tilemap1
 let player; // player sprite
 let box; // player sprite image
 let bg; // background image
@@ -25,7 +26,7 @@ const TILE_SIZE = 50;
 // sound assets
 
 
-function preload() {
+function preload() {\tilemap1
     box = loadImage("assets/cube.png");
     bg = loadImage("assets/geobg.png");
 
