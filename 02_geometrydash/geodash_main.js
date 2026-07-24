@@ -63,6 +63,8 @@ function setup() {
     orbs.d = 24
     //finish
     finishline = new Group()
+    finishline.tile = "f"
+    
     new Tiles(tilemap1,0,0,TILE_SIZE,TILE_SIZE)
 }
 function draw() {
