@@ -76,6 +76,7 @@ function draw() {
     clear();
     player.vel.x = 5;
     if (kb.presses("space") || mouse.presses("left"));
+        
     image(bg,0,0,800,500); // image,x,y,width,height
 }
 
