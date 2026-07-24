@@ -57,7 +57,7 @@ function setup() {
     spikes = new Group();
     spikes.img = loadImage("assets/spike.png")
     orbs = new Group()
-    
+    orb.d = 24
     new Tiles(tilemap1,0,0,TILE_SIZE,TILE_SIZE)
 }
 function draw() {
