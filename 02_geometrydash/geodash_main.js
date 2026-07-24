@@ -65,7 +65,8 @@ function setup() {
     finishline = new Group();
     finishline.tile = "f";
     finishline.w = TILE_SIZE;
-    
+    finishline.h = height*2;
+    finishline.colour = ""
     new Tiles(tilemap1,0,0,TILE_SIZE,TILE_SIZE)
 }
 function draw() {
