@@ -52,10 +52,10 @@ function setup() {
     ground.colour = "black";
     ground.stroke = "white";
     ground.collider = "static";
-    spikes = new Group();
+    let spikes = new Group();
     spikes.tile = "s"
     spikes.img = loadImage("assets/spike.png")
-    orbs = new Group()
+    let orbs = new Group()
     orbs.tile = "o"
     orb.d = 24
     new Tiles(tilemap1,0,0,TILE_SIZE,TILE_SIZE)
