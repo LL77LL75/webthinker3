@@ -75,7 +75,8 @@ function setup() {
     new Tiles(tilemap1,0,0,TILE_SIZE,TILE_SIZE)
 }
 function resetGame(){
-    box.rotation 
+    player.rotation = 0;
+    
 }
 function draw() {
     clear();
