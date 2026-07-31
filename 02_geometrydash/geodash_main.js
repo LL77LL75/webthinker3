@@ -78,8 +78,9 @@ function draw() {
     clear();
     camera.x = player.x
     player.vel.x = 5;
-    if ((kb.presses("space") || mouse.presses("left") && jumpChance)){
+    if ((kb.presses("space") || mouse.presses("left") && jumpChance > 0)){
         player.vel.y = -10;
+        box
     }
     if (box.collides(sharp)){
         resetGame()
