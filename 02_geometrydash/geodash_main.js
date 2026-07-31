@@ -84,7 +84,7 @@ function draw() {
         jumpChance -=1
     }
     if (player.collides(ground)){
-        resetGame()
+        
     }
     image(bg,0,0,800,500); // image,x,y,width,height
 }
