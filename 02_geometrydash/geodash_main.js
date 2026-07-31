@@ -9,7 +9,7 @@ let box; // player sprite image
 let bg; // background image
 let ground;
 let finishline;
-const Max_Jump
+const MAX_JUMP = 1
 
 // game variables
 const TILE_SIZE = 50;
