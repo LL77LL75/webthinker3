@@ -80,7 +80,7 @@ function draw() {
         player.vel.y = -10;
     }
     if (box.collides(sharp)){
-        
+        resetGame()
     }
     image(bg,0,0,800,500); // image,x,y,width,height
 }
