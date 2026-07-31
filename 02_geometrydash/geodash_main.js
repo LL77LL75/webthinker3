@@ -108,6 +108,7 @@ function draw() {
         if (player.colliding(orb)){
             orb.visible=false;
             orb.collider = "none";
+            jumpChance +=1
         }
     }
     image(bg,0,0,800,500); // image,x,y,width,height
