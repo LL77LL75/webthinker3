@@ -59,6 +59,7 @@ function setup() {
     //spikes
     spikes = new Group();
     spikes.tile = "s";
+    spikes.collider = ""
     //orbs
     orbs = new Group();
     orbs.tile = "o";
