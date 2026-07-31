@@ -105,6 +105,7 @@ function draw() {
         }
     }
     for (let orb of orbs){
+        orb.visible=false;
         
     }
     image(bg,0,0,800,500); // image,x,y,width,height
