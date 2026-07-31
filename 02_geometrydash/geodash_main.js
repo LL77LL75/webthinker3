@@ -9,7 +9,7 @@ let box; // player sprite image
 let bg; // background image
 let ground;
 let finishline;
-
+cost
 
 // game variables
 const TILE_SIZE = 50;
