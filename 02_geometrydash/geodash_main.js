@@ -78,7 +78,7 @@ function draw() {
     clear();
     camera.x = player.x
     player.vel.x = 5;
-    if ((kb.presses("space") || mouse.presses("left") && jumpChance > 0)){
+    if ((kb.presses("space") || mouse.presses("left")) && jumpChance > 0){
         player.vel.y = -10;
         player.rotateTo(player + 359,15);
         jumpChance -=1
