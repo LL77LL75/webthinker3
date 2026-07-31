@@ -74,6 +74,9 @@ function setup() {
     finishline.visible = false;
     new Tiles(tilemap1,0,0,TILE_SIZE,TILE_SIZE)
 }
+function resetGame(){
+    box.rotation 
+}
 function draw() {
     clear();
     camera.x = player.x
