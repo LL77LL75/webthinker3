@@ -10,7 +10,7 @@ let bg; // background image
 let ground;
 let finishline;
 const MAX_JUMP = 1
-let
+let jumpChance = MAX_JUMP
 
 // game variables
 const TILE_SIZE = 50;
