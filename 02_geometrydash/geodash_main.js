@@ -83,9 +83,9 @@ function draw() {
         // player.rotateTo(player + 359,15);
         jumpChance -=1
     }
-    // if (player.collides(sharp)){
-    //     resetGame()
-    // }
+    if (player.collides()){
+        resetGame()
+    }
     image(bg,0,0,800,500); // image,x,y,width,height
 }
 
