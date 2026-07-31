@@ -79,7 +79,9 @@ function draw() {
     if (kb.presses("space") || mouse.presses("left")){
         player.vel.y = -10;
     }
-    if (box.collides)
+    if (box.collides(sharp)){
+        
+    }
     image(bg,0,0,800,500); // image,x,y,width,height
 }
 
