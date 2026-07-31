@@ -76,8 +76,8 @@ function setup() {
 }
 function resetGame(){
     player.rotation = 0;
-    player.x = 0
-    player.y = 
+    player.x = startCoordinate[0]
+    player.y = startCoordinate[1]
 }
 function draw() {
     clear();
