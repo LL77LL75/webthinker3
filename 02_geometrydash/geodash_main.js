@@ -96,7 +96,8 @@ function draw() {
     }
     for (let tile of ground){
         if (player.colliding(tile)){
-            
+            let leftEdge = tile.x - tile.w /2;
+            let left
         }
     }
     if (player.collides(ground) && player.x < ground.x-TILE_SIZE/2 && (player.y > ground.y-TILE_SIZE/2 || player.y < ground.y + TILE_SIZE/2))
