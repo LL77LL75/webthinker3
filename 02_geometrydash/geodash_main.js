@@ -91,7 +91,10 @@ function draw() {
     if (player.collides(ground) && jumpChance < MAX_JUMP){
         jumpChance = MAX_JUMP
     }
-    if (player.collides(spikes))
+    if (player.collides(spikes)){
+        resetGame()
+    }
+    if (player.collides)
     image(bg,0,0,800,500); // image,x,y,width,height
 }
 
