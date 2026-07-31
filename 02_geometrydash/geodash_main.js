@@ -43,7 +43,7 @@ function setup() {
     player = new Sprite(50,50,TILE_SIZE,TILE_SIZE);
     player.collider = "dynamic";
     player.img = box;
-    player.friction = 0;
+    player.friction = -1;
     player.bounciness = 0;
     startCoordinate = [50,height- TILE_SIZE];
     player.x = startCoordinate[0];
