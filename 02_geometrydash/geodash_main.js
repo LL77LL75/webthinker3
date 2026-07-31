@@ -105,10 +105,10 @@ function draw() {
         }
     }
     for (let orb of orbs){
-        if (player.colliding(orb))
-        orb.visible=false;
-        orb.collider = "none";
-        
+        if (player.colliding(orb)){
+            orb.visible=false;
+            orb.collider = "none";
+        }
     }
     image(bg,0,0,800,500); // image,x,y,width,height
 }
