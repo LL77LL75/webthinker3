@@ -80,7 +80,7 @@ function draw() {
     player.vel.x = 5;
     if ((kb.presses("space") || mouse.presses("left") && jumpChance > 0)){
         player.vel.y = -10;
-        box
+        player.rotate
     }
     if (box.collides(sharp)){
         resetGame()
