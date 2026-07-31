@@ -94,7 +94,9 @@ function draw() {
     if (player.collides(spikes)){
         resetGame()
     }
-    for (let tile of ground)
+    for (let tile of ground){
+        if (player.colliding(tile))
+    }
     if (player.collides(ground) && player.x < ground.x-TILE_SIZE/2 && (player.y > ground.y-TILE_SIZE/2 || player.y < ground.y + TILE_SIZE/2))
     image(bg,0,0,800,500); // image,x,y,width,height
 }
