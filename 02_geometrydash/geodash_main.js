@@ -76,7 +76,8 @@ function setup() {
 }
 function resetGame(){
     player.rotation = 0;
-    player
+    player.x = 0
+    player.y = 
 }
 function draw() {
     clear();
