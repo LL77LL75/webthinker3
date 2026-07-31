@@ -104,7 +104,9 @@ function draw() {
             }
         }
     }
-    for (let orb of orbs)
+    for (let orb of orbs){
+        
+    }
     image(bg,0,0,800,500); // image,x,y,width,height
 }
 
