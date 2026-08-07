@@ -3,7 +3,8 @@
 //player box
 let startSprite;
 let endSprite;
-let Startg
+let startGameImg;
+let endGameImg;
 let startGame= false;
 let gameOver = false;
 let endTimer = 0;
