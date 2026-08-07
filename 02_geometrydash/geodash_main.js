@@ -84,7 +84,8 @@ function setup() {
     finishline.visible = false;
     new Tiles(tilemap1,0,0,TILE_SIZE,TILE_SIZE)
 
-    startSprite = new Sprite(width/2, height/2, 190)
+    startSprite = new Sprite(width/2, height/2, 190, 90);
+    
 }
 function resetGame(){
     player.rotation = 0;
