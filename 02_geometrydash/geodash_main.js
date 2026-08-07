@@ -3,7 +3,7 @@
 //player box
 let startGame= false;
 let gameOver = false;
-let endTimer
+let endTimer = 0;
 let spikes;
 let orbs;
 let tilemap1
