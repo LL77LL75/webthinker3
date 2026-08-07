@@ -95,7 +95,6 @@ function resetGame(){
 }
 function draw() {
     clear();
-    if (!gameOver)
     if (startGame){
         camera.x = player.x
         player.vel.x = 5;
