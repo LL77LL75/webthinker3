@@ -125,7 +125,9 @@ function draw() {
             jumpChance +=1
         }
     }
-    if (!startGame && (mouse.presses() || kb.presses("space")))
+    if (!startGame && (mouse.presses() || kb.presses("space"))){
+        
+    }
     image(bg,0,0,800,500); // image,x,y,width,height
 }
 
