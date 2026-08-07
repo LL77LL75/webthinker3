@@ -95,7 +95,7 @@ function resetGame(){
 }
 function draw() {
     clear();
-    if (startGame){
+    if (!gameOver){
         camera.x = player.x
         player.vel.x = 5;
         if ((kb.presses("space") || mouse.presses("left")) && jumpChance > 0){
