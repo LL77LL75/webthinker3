@@ -95,34 +95,36 @@ function resetGame(){
 }
 function draw() {
     clear();
-    camera.x = player.x
-    player.vel.x = 5;
-    if ((kb.presses("space") || mouse.presses("left")) && jumpChance > 0){
-        player.vel.y = -10;
-        // player.rotateTo(player + 359,15);
-        jumpChance -=1
-    }
-    if (player.collides(ground) && jumpChance < MAX_JUMP){
-        jumpChance = MAX_JUMP
-    }
-    if (player.collides(spikes)){
-        resetGame()
-    }
-    for (let tile of ground){
-        if (player.colliding(tile)){
-            let leftEdge = tile.x - tile.w /2;
-            let leftEdgeHeight = tile.y - tile.h/2;
-            if (player.x < leftEdge && player.y > leftEdgeHeight){
-                resetGame();
-                break;
+    if (startGame){
+        camera.x = player.x
+        player.vel.x = 5;
+        if ((kb.presses("space") || mouse.presses("left")) && jumpChance > 0){
+            player.vel.y = -10;
+            // player.rotateTo(player + 359,15);
+            jumpChance -=1
+        }
+        if (player.collides(ground) && jumpChance < MAX_JUMP){
+            jumpChance = MAX_JUMP
+        }
+        if (player.collides(spikes)){
+            resetGame()
+        }
+        for (let tile of ground){
+            if (player.colliding(tile)){
+                let leftEdge = tile.x - tile.w /2;
+                let leftEdgeHeight = tile.y - tile.h/2;
+                if (player.x < leftEdge && player.y > leftEdgeHeight){
+                    resetGame();
+                    break;
+                }
             }
         }
-    }
-    for (let orb of orbs){
-        if (player.colliding(orb)){
-            orb.visible=false;
-            orb.collider = "none";
-            jumpChance +=1
+        for (let orb of orbs){
+            if (player.colliding(orb)){
+                orb.visible=false;
+                orb.collider = "none";
+                jumpChance +=1
+            }
         }
     }
     if (!startGame && (mouse.presses() || kb.presses("space"))){
