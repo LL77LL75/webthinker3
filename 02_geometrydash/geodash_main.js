@@ -156,5 +156,12 @@ function draw() {
     if (player.collides(finishline)){
         triggerGameOver();
     }
+    if (gameOver){
+        if (frameCount - endTimer > 120){
+            if (endSprite){
+                
+            }
+        }
+    }
     image(bg,0,0,800,500); // image,x,y,width,height
 }
