@@ -85,7 +85,8 @@ function setup() {
     new Tiles(tilemap1,0,0,TILE_SIZE,TILE_SIZE)
 
     startSprite = new Sprite(width/2, height/2, 190, 90);
-    startSprite.img = start
+    startSprite.img = startGameImg;
+    
 }
 function resetGame(){
     player.rotation = 0;
