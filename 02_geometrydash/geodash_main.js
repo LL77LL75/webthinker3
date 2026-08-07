@@ -43,7 +43,7 @@ function preload() {
     box = loadImage("assets/cube.png");
     bg = loadImage("assets/geobg.png");
     spikes = loadImage("assets/spike.png");
-    tileMap2 = loadStrings('stages/tile2.txt')
+    tileMap2 = loadStrings('stages/tiles2.txt')
 
 }
 function loadLevel(){
