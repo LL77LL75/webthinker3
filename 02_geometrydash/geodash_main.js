@@ -98,7 +98,9 @@ function triggerGameOver(){
         player.vel.x = 0;
         jumpChance = 0;
         endTimer = frameCount;
-        if (endSprite)
+        if (endSprite){
+            
+        }
     }
 }
 function draw() {
