@@ -95,8 +95,9 @@ function resetGame(){
 }
 function triggerGameOver(){
     if (!gameOver){
-        player.vel.x = 0
-        jumpChance = 0
+        player.vel.x = 0;
+        jumpChance = 0;
+        
     }
 }
 function draw() {
