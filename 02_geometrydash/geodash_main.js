@@ -11,6 +11,7 @@ let endTimer = 0;
 let spikes;
 let orbs;
 let tilemap1
+let mapused;
 let player; // player sprite
 let box; // player sprite image
 let bg; // background image
