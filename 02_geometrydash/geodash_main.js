@@ -36,7 +36,7 @@ const TILE_SIZE = 50;
 
 function preload() {
     startGameImg = loadImage("assets/startgame.png")
-    
+    endGameImg = loadImage()
     startCoordinate = [TILE_SIZE,height-TILE_SIZE/2]
     tilemap1 = loadStrings("stages/tiles1.txt");
     box = loadImage("assets/cube.png");
