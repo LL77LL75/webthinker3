@@ -142,7 +142,7 @@ function drawBackground() {
   noTint(); //remove tint on all other objects
 }
 function draw() {
-    clear();
+    clear()
     if (startGame){
         camera.x = player.x
         player.vel.x = 5;
