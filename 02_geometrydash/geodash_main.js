@@ -42,6 +42,7 @@ function preload() {
     box = loadImage("assets/cube.png");
     bg = loadImage("assets/geobg.png");
     spikes = loadImage("assets/spike.png");
+    
 
 }
 
