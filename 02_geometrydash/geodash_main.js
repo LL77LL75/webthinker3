@@ -128,7 +128,11 @@ function draw() {
     if (!startGame && (mouse.presses() || kb.presses("space"))){
         startGame = true;
         startSprite.visible=false;
-        
+    }
+    else if (!startGame){
+        if (frameCount%60 < 30){
+            starts
+        }
     }
     image(bg,0,0,800,500); // image,x,y,width,height
 }
