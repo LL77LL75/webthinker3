@@ -1,6 +1,7 @@
 // const { startTransition } = require("react");
 
 //player box
+let startSprite
 let startGame= false;
 let gameOver = false;
 let endTimer = 0;
@@ -31,7 +32,7 @@ const TILE_SIZE = 50;
 
 
 function preload() {
-    startGameImg = loadImage("assets/startgame.pnt\")
+    startGameImg = loadImage("assets/startgame.png")
     startCoordinate = [TILE_SIZE,height-TILE_SIZE/2]
     tilemap1 = loadStrings("stages/tiles1.txt");
     box = loadImage("assets/cube.png");
