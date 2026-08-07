@@ -33,7 +33,7 @@ const TILE_SIZE = 50;
 
 
 // sound assets
-
+let mapUsed;
 
 function preload() {
     startGameImg = loadImage("assets/startgame.png")
