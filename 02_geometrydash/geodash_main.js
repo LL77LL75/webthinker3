@@ -94,7 +94,9 @@ function resetGame(){
     player.y = startCoordinate[1]
 }
 function triggerGameOver(){
-    
+    if (!gameOver){
+        
+    }
 }
 function draw() {
     clear();
