@@ -1,7 +1,8 @@
 // const { startTransition } = require("react");
 
 //player box
-let startSprite
+let startSprite;
+let ends
 let startGame= false;
 let gameOver = false;
 let endTimer = 0;
