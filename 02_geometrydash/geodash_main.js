@@ -101,6 +101,7 @@ function triggerGameOver(){
         if (endSprite){
             endSprite.remove();
         }
+        endSprite = new Sprite()
     }
 }
 function draw() {
