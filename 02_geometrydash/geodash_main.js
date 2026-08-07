@@ -100,7 +100,7 @@ function setup() {
     finishline.collider = "static";
     finishline.visible = false;
     new Tiles(tilemap1,0,0,TILE_SIZE,TILE_SIZE)
-    mapused = tilemap1;
+    mapUsed = tilemap1;
     startSprite = new Sprite(width/2, height/2, 190, 90);
     startSprite.img = startGameImg;
     startSprite.collider = "none";
