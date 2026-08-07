@@ -99,7 +99,7 @@ function triggerGameOver(){
         jumpChance = 0;
         endTimer = frameCount;
         if (endSprite){
-            
+            endSprite.remove();
         }
     }
 }
