@@ -48,6 +48,7 @@ function preload() {
 function loadLevel(){
     ground.removeAll();
     sharp.removeAll();
+    orbs.removeAll();
     
 }
 
