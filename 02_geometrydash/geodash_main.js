@@ -45,6 +45,9 @@ function preload() {
     tileMap2 = loadStrings('stages/tile2.txt')
 
 }
+function loadLevel(){
+    ground.removeA
+}
 
 function setup() {
     new Canvas(700,600);
