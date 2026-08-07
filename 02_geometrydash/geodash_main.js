@@ -123,6 +123,24 @@ function triggerGameOver(){
         endSprite.img = endGameImg;
     }
 }
+function drawBackground() {
+
+  let lastRow = mapUsed[mapUsed.length - 1]; //Get the final row of the current tile map.
+  let numCols = lastRow.length; //Count how many tiles are in the row.
+  let totalJourney = numCols * 50; //each tile is around 50px. this gives the total length
+
+  let progress = map(box.x, 0, totalJourney, -100, 0);
+
+  let c1 = color("#9933ff"); //colours for lerping
+  let c2 = color("#4169e1");
+
+  let amt = (sin(frameCount * 0.5) + 1) / 2; //Create a value that repeatedly changes between 0 and 1.
+  let blend = lerpColor(c1, c2, amt); //lerp between two colours
+
+  tint(blend); //turn on the tint
+  image(bg, progress, 0, 800, 600); //draw and move background 
+  noTint(); //remove tint on all other objects
+}
 function draw() {
     clear();
     if (startGame){
