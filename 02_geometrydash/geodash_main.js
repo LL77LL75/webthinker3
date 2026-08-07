@@ -162,7 +162,8 @@ function draw() {
                 endSprite.remove();
             }
             startgame = false;
-            
+            gameOver = false;
+            resetGame();
         }
     }
     image(bg,0,0,800,500); // image,x,y,width,height
