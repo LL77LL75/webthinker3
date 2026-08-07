@@ -1,7 +1,9 @@
 // const { startTransition } = require("react");
 
 //player box
-let start
+let startGame= false;
+let gameOver = false;
+let endTimer
 let spikes;
 let orbs;
 let tilemap1
