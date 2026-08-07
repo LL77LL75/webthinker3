@@ -164,8 +164,8 @@ function draw() {
             startgame = false;
             gameOver = false;
             resetGame();
-            level +=1
-            loadLevel()
+            level +=1;
+            loadLevel();
         }
     }
     image(bg,0,0,800,500); // image,x,y,width,height
