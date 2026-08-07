@@ -153,6 +153,8 @@ function draw() {
         }
     }
 
-    
+    if (player.collides(finishline)){
+        triggerGameOver;
+    }
     image(bg,0,0,800,500); // image,x,y,width,height
 }
