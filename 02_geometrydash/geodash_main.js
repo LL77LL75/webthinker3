@@ -49,7 +49,10 @@ function loadLevel(){
     ground.removeAll();
     sharp.removeAll();
     orbs.removeAll();
-    
+    finishline.removeAll();
+    if (lastlevel < level){
+        
+    }
 }
 
 function setup() {
