@@ -54,7 +54,7 @@ function loadLevel(){
         level = 1
     }
     if (level === 1){
-        
+        new Tiles
     }
 }
 
