@@ -51,6 +51,9 @@ function loadLevel(){
     orbs.removeAll();
     finishline.removeAll();
     if (lastlevel < level){
+        level = 1
+    }
+    if (level === 1){
         
     }
 }
