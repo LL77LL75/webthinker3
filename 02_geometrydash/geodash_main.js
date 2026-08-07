@@ -129,7 +129,7 @@ function drawBackground() {
   let numCols = lastRow.length; //Count how many tiles are in the row.
   let totalJourney = numCols * 50; //each tile is around 50px. this gives the total length
 
-  let progress = map(box.x, 0, totalJourney, -100, 0);
+  let progress = map(player.x, 0, totalJourney, -100, 0);
 
   let c1 = color("#9933ff"); //colours for lerping
   let c2 = color("#4169e1");
