@@ -46,7 +46,8 @@ function preload() {
 
 }
 function loadLevel(){
-    ground.removeA
+    ground.removeAll();
+    
 }
 
 function setup() {
