@@ -36,7 +36,7 @@ const TILE_SIZE = 50;
 
 function preload() {
     startGameImg = loadImage("assets/startgame.png")
-    endGameImg = loadImage()
+    endGameImg = loadImage("assets/clear.png")
     startCoordinate = [TILE_SIZE,height-TILE_SIZE/2]
     tilemap1 = loadStrings("stages/tiles1.txt");
     box = loadImage("assets/cube.png");
@@ -83,6 +83,8 @@ function setup() {
     finishline.collider = "static";
     finishline.visible = false;
     new Tiles(tilemap1,0,0,TILE_SIZE,TILE_SIZE)
+
+    
 }
 function resetGame(){
     player.rotation = 0;
