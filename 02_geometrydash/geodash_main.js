@@ -32,7 +32,7 @@ const TILE_SIZE = 50;
 
 // menu
 
-w
+
 // sound assets
 let mapUsed;
 
@@ -102,7 +102,7 @@ function setup() {
     finishline.visible = false;
     new Tiles(tilemap1,0,0,TILE_SIZE,TILE_SIZE)
     mapUsed = tilemap1;
-    startSprite = new Sprite(w/2, height/2, 190, 90);
+    startSprite = new Sprite(width/2, height/2, 190, 90);
     startSprite.img = startGameImg;
     startSprite.collider = "none";
     //particles
@@ -217,6 +217,6 @@ function draw() {
             loadLevel();
         }
     }
-    image(bg,0,0,800,500); // image,x,y,w,height
+    image(bg,0,0,800,500); // image,x,y,width,height
     drawBackground();
 }
