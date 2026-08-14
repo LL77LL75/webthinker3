@@ -174,15 +174,15 @@ function draw() {
             if (player.colliding(orb)){
                 orb.visible=false;
                 orb.collider = "none";
-                jumpChance +=1
+                jumpChance +=1;
             }
         }
 
         // particles
         if((frameCount%3)===0&&player.colliding.ground&&player.vel.x>=0.5){
-            let particle = new Sprite(player.x,player.y+player.h/2,8,8,"none")
+            let particle = new Sprite(player.x,player.y+player.h/2,8,8,"none");
             particles.color="white";
-            particle.stokeweight=0
+            particle.stokeweight=0;
             particle.vel.x=-5
             particle.vel.y=(-2,0)
             particle.life = 0
