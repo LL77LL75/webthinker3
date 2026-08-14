@@ -183,6 +183,7 @@ function draw() {
             let particle = new Sprite(player.x,player.y+player.h/2,8,8,"none")
             particles.color="white";
             particle.stokeweight=0
+            particle.vel.x=-5
         }
     }
     if (!startGame && (mouse.presses() || kb.presses("space"))){
