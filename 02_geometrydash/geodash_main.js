@@ -38,7 +38,7 @@ let passSound;
 let mapUsed;
 
 function preload() {
-    backgroundTrack = createAudio("assets/stero-madness.mp3");
+    backgroundTrack = createAudio("02_geometrydash/assets/stereo-madness.mp3");
 
     startGameImg = loadImage("assets/startgame.png")
     endGameImg = loadImage("assets/clear.png")
