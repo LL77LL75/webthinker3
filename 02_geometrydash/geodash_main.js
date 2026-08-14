@@ -1,6 +1,7 @@
 // const { startTransition } = require("react");
 
 //player player
+let lost
 let particles;
 let startSprite;
 let endSprite;
