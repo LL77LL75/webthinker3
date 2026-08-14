@@ -218,7 +218,7 @@ function draw() {
 
     if (player.collides(finishline)){
         lost = false;
-        failSound.play()
+        failSound.play();
         triggerGameOver();
     }
     if (gameOver){
