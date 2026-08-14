@@ -151,6 +151,7 @@ function drawBackground() {
 function draw() {
     clear()
     if (startGame){
+        if 
         camera.x = player.x;
         player.vel.x = 5;
         if ((kb.presses("space") || mouse.presses("left")) && jumpChance > 0){
