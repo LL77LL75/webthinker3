@@ -116,7 +116,7 @@ function setup() {
 }
 function resetGame(){
     backgroundTrack.stop();
-    failSound.play();
+    
     player.rotation = 0;
     player.x = startCoordinate[0];
     player.y = startCoordinate[1];
