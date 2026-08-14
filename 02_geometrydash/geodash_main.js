@@ -180,7 +180,7 @@ function draw() {
 
         // particles
         if((frameCount%3)===0&&player.colliding.ground&&player.vel.x>=0.5){
-            let particle = new Sprite(player.x)
+            let particle = new Sprite(player.x,player.y+player.h)
             particles.color="white"
         }
     }
