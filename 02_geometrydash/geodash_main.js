@@ -181,8 +181,8 @@ function draw() {
         // particles
         if((frameCount%3)===0&&player.colliding(ground)&&player.vel.x>=0.5){
             let particle = new Sprite(player.x,player.y+player.h/2,8,8,"none");
-            particles.color="white";
-            particle.stokeweight=0;
+            particle.color="white";
+            particle.strokeweight=0;
             particle.vel.x=-5;
             particle.vel.y=random(-2 , 0);
             particle.life = 0;
