@@ -168,6 +168,7 @@ function draw() {
             jumpChance = MAX_JUMP;
         }
         if (player.collides(spikes)){
+            lost = true;
             resetGame();
         }
         for (let tile of ground){
