@@ -40,7 +40,7 @@ let mapUsed;
 
 function preload() {
     backgroundTrack = createAudio("assets/stereo-madness.mp3");
-
+    passSound = 
     startGameImg = loadImage("assets/startgame.png")
     endGameImg = loadImage("assets/clear.png")
     startCoordinate = [TILE_SIZE,height-TILE_SIZE/2]
