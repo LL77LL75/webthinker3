@@ -179,11 +179,11 @@ function draw() {
         }
 
         // particles
-        if((frameCount%3)===0&&player.colliding(ground)&&player.vel.x>=0.5){
+        if((frameCount%10)===0&&player.colliding(ground)&&player.vel.x>=0.5){
             let particle = new Sprite(player.x,player.y+player.h/2,8,8,"none");
             particle.color="white";
             particle.strokeweight=0;
-            particle.vel.x=-5;
+            particle.vel.x=-10;
             particle.vel.y=random(-2 , 0);
             particle.life = 300;
             particles.add(particle);
