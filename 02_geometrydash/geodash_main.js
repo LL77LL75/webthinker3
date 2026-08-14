@@ -14,7 +14,7 @@ let orbs;
 let tilemap1
 let mapused;
 let player; // player sprite
- // player sprite image
+let playerimg; //player sprite image
 let bg; // background image
 let ground;
 let finishline;
