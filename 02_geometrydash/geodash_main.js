@@ -214,6 +214,7 @@ function draw() {
     }
 
     if (player.collides(finishline)){
+        
         triggerGameOver();
     }
     if (gameOver){
