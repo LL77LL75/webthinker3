@@ -38,6 +38,7 @@ let passSound;
 let mapUsed;
 
 function preload() {
+    backgroundTrack = create
     startGameImg = loadImage("assets/startgame.png")
     endGameImg = loadImage("assets/clear.png")
     startCoordinate = [TILE_SIZE,height-TILE_SIZE/2]
