@@ -29,7 +29,8 @@ const TILE_SIZE = 50;
 
 // image sprites
 let backgroundTrack;
-let failsound
+let failSound;
+let 
 
 // menu
 
