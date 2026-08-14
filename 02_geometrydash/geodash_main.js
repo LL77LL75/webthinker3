@@ -113,7 +113,7 @@ function setup() {
     particles=new Group();
 }
 function resetGame(){
-    
+    backgroundTrack.stop();
     player.rotation = 0;
     player.x = startCoordinate[0];
     player.y = startCoordinate[1];
