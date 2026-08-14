@@ -105,7 +105,8 @@ function setup() {
     startSprite = new Sprite(width/2, height/2, 190, 90);
     startSprite.img = startGameImg;
     startSprite.collider = "none";
-    //
+    //particles
+    particles=new Group();
 }
 function resetGame(){
     player.rotation = 0;
