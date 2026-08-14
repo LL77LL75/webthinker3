@@ -32,7 +32,6 @@ const TILE_SIZE = 50;
 
 // menu
 
-
 // sound assets
 let mapUsed;
 
