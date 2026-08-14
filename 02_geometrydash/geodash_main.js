@@ -147,11 +147,11 @@ function drawBackground() {
 function draw() {
     clear()
     if (startGame){
-        camera.x = player.x
+        camera.x = player.x;
         player.vel.x = 5;
         if ((kb.presses("space") || mouse.presses("left")) && jumpChance > 0){
             player.vel.y = -10;
-            // player.rotateTo(player + 359,15);
+            player.rotateTo(player + 359,15);
             jumpChance -=1
         }
         if (player.collides(ground) && jumpChance < MAX_JUMP){
