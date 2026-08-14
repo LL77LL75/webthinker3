@@ -186,7 +186,7 @@ function draw() {
             particle.vel.x=-5
             particle.vel.y=(-2,0)
             particle.life = 0
-            par
+            particles.add(particle)
         }
     }
     if (!startGame && (mouse.presses() || kb.presses("space"))){
