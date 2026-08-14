@@ -180,7 +180,7 @@ function draw() {
 
         // particles
         if((frameCount%3)===0&&box.colliding.ground&&box.vel.x>=0.5){
-            
+            particles.color="white"
         }
     }
     if (!startGame && (mouse.presses() || kb.presses("space"))){
