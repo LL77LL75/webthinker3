@@ -122,6 +122,7 @@ function resetGame(){
     player.y = startCoordinate[1];
 }
 function triggerGameOver(){
+    passSound
     if (!gameOver){
         player.vel.x = 0;
         jumpChance = 0;
