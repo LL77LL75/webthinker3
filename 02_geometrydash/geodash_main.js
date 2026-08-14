@@ -185,7 +185,7 @@ function draw() {
             particle.stokeweight=0
             particle.vel.x=-5
             particle.vel.y=(-2,0)
-            
+            particle.life = 0
         }
     }
     if (!startGame && (mouse.presses() || kb.presses("space"))){
