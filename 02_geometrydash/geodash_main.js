@@ -185,7 +185,7 @@ function draw() {
             particle.strokeweight=0;
             particle.vel.x=-5;
             particle.vel.y=random(-2 , 0);
-            particle.life = 0;
+            particle.life = 300;
             particles.add(particle);
         }
     }
