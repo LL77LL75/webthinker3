@@ -152,7 +152,7 @@ function draw() {
     clear()
     if (startGame){
         if (backgroundTrack.elt.paused){
-            backgroundTrack.
+            backgroundTrack.play()
         }
         camera.x = player.x;
         player.vel.x = 5;
