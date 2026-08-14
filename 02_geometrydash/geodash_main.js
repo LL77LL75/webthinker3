@@ -127,6 +127,7 @@ function resetGame(){
 function triggerGameOver(){
     passSound.play();
     if (!gameOver){
+        
         player.vel.x = 0;
         jumpChance = 0;
         endTimer = frameCount;
@@ -137,6 +138,7 @@ function triggerGameOver(){
         endSprite = new Sprite(player.x, height/2, 126, 24);
         endSprite.collider = "none";
         endSprite.img = endGameImg;
+
     }
 }
 function drawBackground() {
