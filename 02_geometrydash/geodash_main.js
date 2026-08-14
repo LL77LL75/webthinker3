@@ -178,7 +178,10 @@ function draw() {
             }
         }
 
-        // if 
+        // particles
+        if((frameCount%3)===0&&box.colliding.ground&&box.vel.x>=0.5){
+            
+        }
     }
     if (!startGame && (mouse.presses() || kb.presses("space"))){
         startGame = true;
