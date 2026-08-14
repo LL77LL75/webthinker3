@@ -184,7 +184,7 @@ function draw() {
             particles.color="white";
             particle.stokeweight=0;
             particle.vel.x=-5;
-            particle.vel.y=random(-2,0);
+            particle.vel.y=random(-2 , 0);
             particle.life = 0;
             particles.add(particle);
         }
