@@ -110,8 +110,8 @@ function setup() {
 }
 function resetGame(){
     player.rotation = 0;
-    player.x = startCoordinate[0]
-    player.y = startCoordinate[1]
+    player.x = startCoordinate[0];
+    player.y = startCoordinate[1];
 }
 function triggerGameOver(){
     if (!gameOver){
