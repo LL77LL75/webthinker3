@@ -181,7 +181,8 @@ function draw() {
         // particles
         if((frameCount%3)===0&&player.colliding.ground&&player.vel.x>=0.5){
             let particle = new Sprite(player.x,player.y+player.h/2,8,8,"none")
-            particles.color="white"
+            particles.color="white";
+            
         }
     }
     if (!startGame && (mouse.presses() || kb.presses("space"))){
