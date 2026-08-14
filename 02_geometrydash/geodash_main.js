@@ -1,6 +1,7 @@
 // const { startTransition } = require("react");
 
 //player box
+let particles;
 let startSprite;
 let endSprite;
 let startGameImg;
