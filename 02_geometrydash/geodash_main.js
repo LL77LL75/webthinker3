@@ -103,9 +103,9 @@ function setup() {
     mapUsed = tilemap1;
     console.log(width);
     // startSprite = new Sprite(width/2, height/2, 190, 90);
-    startSprite.img = startGameImg;
-    startSprite.collider = "none";
-    //particles
+    // startSprite.img = startGameImg;
+    // startSprite.collider = "none";
+    // //particles
     particles=new Group();
 }
 function resetGame(){
