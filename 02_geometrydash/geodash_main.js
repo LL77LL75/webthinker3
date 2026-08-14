@@ -152,13 +152,13 @@ function draw() {
         if ((kb.presses("space") || mouse.presses("left")) && jumpChance > 0){
             player.vel.y = -10;
             player.rotateTo(player + 359,15);
-            jumpChance -=1
+            jumpChance -=1;
         }
         if (player.collides(ground) && jumpChance < MAX_JUMP){
-            jumpChance = MAX_JUMP
+            jumpChance = MAX_JUMP;
         }
         if (player.collides(spikes)){
-            resetGame()
+            resetGame();
         }
         for (let tile of ground){
             if (player.colliding(tile)){
