@@ -102,10 +102,10 @@ function setup() {
     new Tiles(tilemap1,0,0,TILE_SIZE,TILE_SIZE)
     mapUsed = tilemap1;
     console.log(width);
-    // startSprite = new Sprite(width/2, height/2, 190, 90);
-    // startSprite.img = startGameImg;
-    // startSprite.collider = "none";
-    // //particles
+    startSprite = new Sprite(width/2, height/2, 190, 90);
+    startSprite.img = startGameImg;
+    startSprite.collider = "none";
+    //particles
     particles=new Group();
 }
 function resetGame(){
