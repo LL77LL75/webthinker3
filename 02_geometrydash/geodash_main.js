@@ -1,6 +1,6 @@
 // const { startTransition } = require("react");
 
-//player box
+//player player
 let particles;
 let startSprite;
 let endSprite;
@@ -14,7 +14,7 @@ let orbs;
 let tilemap1
 let mapused;
 let player; // player sprite
-let box; // player sprite image
+let player; // player sprite image
 let bg; // background image
 let ground;
 let finishline;
@@ -41,7 +41,7 @@ function preload() {
     endGameImg = loadImage("assets/clear.png")
     startCoordinate = [TILE_SIZE,height-TILE_SIZE/2]
     tilemap1 = loadStrings("stages/tiles1.txt");
-    box = loadImage("assets/cube.png");
+    player = loadImage("assets/cube.png");
     bg = loadImage("assets/geobg.png");
     spikes = loadImage("assets/spike.png");
     tileMap2 = loadStrings('stages/tiles2.txt')
@@ -69,7 +69,7 @@ function setup() {
     world.gravity.y=32;
     player = new Sprite(50,50,TILE_SIZE,TILE_SIZE);
     player.collider = "dynamic";
-    player.img = box;
+    player.img = player;
     player.friction = 0;
     player.bounciness = 0;
     startCoordinate = [50,height- TILE_SIZE];
@@ -179,7 +179,8 @@ function draw() {
         }
 
         // particles
-        if((frameCount%3)===0&&box.colliding.ground&&box.vel.x>=0.5){
+        if((frameCount%3)===0&&player.colliding.ground&&player.vel.x>=0.5){
+            let particle = new Sprite(player.x)
             particles.color="white"
         }
     }
