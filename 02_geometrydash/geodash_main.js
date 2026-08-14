@@ -28,7 +28,8 @@ const TILE_SIZE = 50;
 // world building groups
 
 // image sprites
-
+let backgroundTrack;
+let failsound
 
 // menu
 
