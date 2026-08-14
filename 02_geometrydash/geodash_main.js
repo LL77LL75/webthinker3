@@ -120,6 +120,9 @@ function resetGame(){
     player.rotation = 0;
     player.x = startCoordinate[0];
     player.y = startCoordinate[1];
+    if (lost){
+        fails
+    }
 }
 function triggerGameOver(){
     passSound.play();
