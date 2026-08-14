@@ -184,7 +184,8 @@ function draw() {
             particles.color="white";
             particle.stokeweight=0
             particle.vel.x=-5
-            particle.vel.y=(-2)
+            particle.vel.y=(-2,0)
+            
         }
     }
     if (!startGame && (mouse.presses() || kb.presses("space"))){
