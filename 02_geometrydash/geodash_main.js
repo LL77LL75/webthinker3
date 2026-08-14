@@ -177,6 +177,8 @@ function draw() {
                 jumpChance +=1
             }
         }
+
+        // if 
     }
     if (!startGame && (mouse.presses() || kb.presses("space"))){
         startGame = true;
