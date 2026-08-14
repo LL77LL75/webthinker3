@@ -126,7 +126,7 @@ function triggerGameOver(){
         if (endSprite){
             endSprite.remove();
         }
-        backgroundTrack.stop()
+        backgroundTrack.stop();
         endSprite = new Sprite(player.x, height/2, 126, 24);
         endSprite.collider = "none";
         endSprite.img = endGameImg;
