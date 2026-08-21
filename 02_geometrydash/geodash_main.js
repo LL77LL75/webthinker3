@@ -12,7 +12,7 @@ let gameOver = false;
 let endTimer = 0;
 let spikes;
 let orbs;
-let tilemap1
+let tileMap1
 let mapused;
 let player; // player sprite
 let playerimg; //player sprite image
