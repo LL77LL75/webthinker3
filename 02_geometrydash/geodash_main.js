@@ -96,7 +96,7 @@ function setup() {
     orbs = new Group();
     orbs.tile = "o";
     orbs.d = 24;
-    orbs.collider = "none"
+    orbs.collider = 
     //finish
     finishline = new Group();
     finishline.tile = "f";
