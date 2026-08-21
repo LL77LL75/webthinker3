@@ -8,7 +8,8 @@ let handpose; // ML5 Model
 
 function preload() {
     let options = {
-        flipped: true
+        flipped : true,
+        
     }
 }
 
