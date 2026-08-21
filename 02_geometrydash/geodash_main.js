@@ -222,8 +222,8 @@ function draw() {
                 startGame = false;
                 gameOver = false;
                 resetGame();
-                level += 1
-                l
+                level += 1;
+                loadLevel();
             }
         }
     }
