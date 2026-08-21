@@ -1,7 +1,7 @@
 //=========================================
 // Variables
 //=========================================
-let handpose; // ML5 Model
+let handPose; // ML5 Model
 //=========================================
 // Code
 //=========================================
@@ -14,7 +14,7 @@ function preload() {
         detectorModelUrl : undefined,
         landmarkModelUrl : undefined
     }
-    handP
+    handPose = m1
 }
 
 function setup() {}
