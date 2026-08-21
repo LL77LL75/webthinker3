@@ -53,7 +53,6 @@ function preload() {
 
 }
 function loadLevel(){
-    console.log("loading")
     ground.removeAll();
     sharp.removeAll();
     orbs.removeAll();
