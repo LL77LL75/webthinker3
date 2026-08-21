@@ -221,7 +221,9 @@ function draw() {
                 }
                 startGame = false;
                 gameOver = false;
-                
+                resetGame();
+                level += 1
+                l
             }
         }
     }
