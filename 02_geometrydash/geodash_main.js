@@ -45,7 +45,7 @@ function preload() {
     startGameImg = loadImage("assets/startgame.png")
     endGameImg = loadImage("assets/clear.png")
     startCoordinate = [TILE_SIZE,height-TILE_SIZE/2]
-    tilemap1 = loadStrings("stages/tiles1.txt");
+    tileMap1 = loadStrings("stages/tiles1.txt");
     playerimg = loadImage("assets/cube.png");
     bg = loadImage("assets/geobg.png");
     spikes = loadImage("assets/spike.png");
