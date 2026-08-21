@@ -66,12 +66,12 @@ function loadLevel(){
     if (level === 1){
         new Tiles(tileMap1,0,0,50,50);
         let mapUsed = tileMap1;
-        console.log("forward 1");
+        console.log("level 1");
     }
     else if (level === 2){
         new Tiles(tileMap2,0,0,50,50);
         let mapUsed = tileMap2
-        con
+        console.log("level 2")
     }
 }
 
