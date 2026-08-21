@@ -110,8 +110,8 @@ function setup() {
     finishline.stroke = "black";
     finishline.collider = "static";
     finishline.visible = true;
-    new Tiles(tilemap1,0,0,TILE_SIZE,TILE_SIZE)
-    mapUsed = tilemap1;
+    new Tiles(tileMap1,0,0,TILE_SIZE,TILE_SIZE)
+    mapUsed = tileMap1;
     console.log(width);
     startSprite = new Sprite(width/2, height/2, 190, 90);
     startSprite.img = startGameImg;
