@@ -226,7 +226,7 @@ function draw() {
                 gameOver = false;
                 resetGame();
                 level += 1;
-                confir
+                console.log("hmmmmmm")
                 loadLevel();
             }
         }
