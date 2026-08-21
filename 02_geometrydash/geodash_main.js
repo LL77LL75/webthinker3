@@ -21,6 +21,7 @@ let ground;
 let finishline;
 const MAX_JUMP = 1
 let jumpChance = MAX_JUMP
+let mapUsed = tilemap1
 
 // game variables
 const TILE_SIZE = 50;
