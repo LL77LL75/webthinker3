@@ -167,7 +167,7 @@ function drawBackground() {
 }
 function draw() {
     clear()
-    if (startGame){
+    if (startGame&&!gameOver){
         if (backgroundTrack.elt.paused){
             backgroundTrack.play()
         }
