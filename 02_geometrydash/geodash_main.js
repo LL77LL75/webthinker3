@@ -217,6 +217,7 @@ function draw() {
             particle.life = 300;
             particles.add(particle);
         }
+        console.log("hm1")
         if (gameOver){
             if (frameCount-endTimer > 120){
                 if (endSprite){
