@@ -214,6 +214,11 @@ function draw() {
             particle.life = 300;
             particles.add(particle);
         }
+        if (gameOver){
+            if (frameCount-endTimer > 120){
+                if (endSprite)
+            }
+        }
     }
     if (!startGame && (mouse.presses() || kb.presses("space"))){
         startGame = true;
