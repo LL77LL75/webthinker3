@@ -126,14 +126,14 @@ function resetGame(){
     player.x = startCoordinate[0];
     player.y = startCoordinate[1];
     if (lost){
-        failSound.play();
+        // failSound.play();
         backgroundTrack.stop();
     }
 }
 function triggerGameOver(){
-    passSound.play();
+    // passSound.play();
     if (!gameOver){
-        passSound.play();
+        // passSound.play();
         player.vel.x = 0;
         jumpChance = 0;
         endTimer = frameCount;
@@ -169,7 +169,7 @@ function draw() {
     clear()
     if (startGame){
         // if (backgroundTrack.elt.paused){
-            backgroundTrack.play()
+            // backgroundTrack.play()
         // }
         camera.x = player.x;
         player.vel.x = 5;
