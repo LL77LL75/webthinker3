@@ -14,7 +14,7 @@ function preload() {
         detectorModelUrl : undefined,
         landmarkModelUrl : undefined
     }
-    handPose = m1
+    handPose = ml5.handPose
 }
 
 function setup() {}
