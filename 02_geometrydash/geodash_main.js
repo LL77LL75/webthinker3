@@ -61,16 +61,17 @@ function loadLevel(){
     finishline.removeAll();
     if (lastlevel < level){
         level = 1
-        console.log("back1")
+        console.log("back 1")
     }
     if (level === 1){
         new Tiles(tileMap1,0,0,50,50);
         let mapUsed = tileMap1;
-        console.log("forward 1")
+        console.log("forward 1");
     }
     else if (level === 2){
         new Tiles(tileMap2,0,0,50,50);
         let mapUsed = tileMap2
+        con
     }
 }
 
