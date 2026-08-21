@@ -218,7 +218,7 @@ function draw() {
             particles.add(particle);
         }
         console.log("hm1")
-        if (gameOver){
+        if (!gameOver){
             if (frameCount-endTimer > 120){
                 if (endSprite){
                     endSprite.remove();
