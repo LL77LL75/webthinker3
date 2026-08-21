@@ -9,7 +9,8 @@ let handpose; // ML5 Model
 function preload() {
     let options = {
         flipped : true,
-        runtime : ""
+        runtime : "tfjs",
+        mo
     }
 }
 
