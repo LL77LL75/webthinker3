@@ -61,7 +61,7 @@ function loadLevel(){
         level = 1
     }
     if (level === 1){
-        new Tiles(tilemap1,0,0,50,50);
+        new Tiles(tileMap1,0,0,50,50);
     }
     else if (level === 2){
         new Tiles(tileMap2,0,0,50,50);
