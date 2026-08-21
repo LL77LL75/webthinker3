@@ -21,7 +21,7 @@ let ground;
 let finishline;
 const MAX_JUMP = 1
 let jumpChance = MAX_JUMP
-let mapUsed = tilemap1
+
 
 // game variables
 const TILE_SIZE = 50;
@@ -51,6 +51,7 @@ function preload() {
     bg = loadImage("assets/geobg.png");
     spikes = loadImage("assets/spike.png");
     tileMap2 = loadStrings('stages/tiles2.txt')
+    let mapUsed = tilemap1
 
 }
 function loadLevel(){
