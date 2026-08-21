@@ -10,7 +10,7 @@ function preload() {
     let options = {
         flipped : true,
         runtime : "tfjs",
-        mo
+        modelType
     }
 }
 
