@@ -67,6 +67,7 @@ function loadLevel(){
     }
     else if (level === 2){
         new Tiles(tileMap2,0,0,50,50);
+        let mapUsed = tilemap2
     }
 }
 
