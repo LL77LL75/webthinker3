@@ -167,8 +167,8 @@ function drawBackground() {
 }
 function draw() {
     clear()
-    if (startGame&&!gameOver){
-        if (backgroundTrack.elt.paused){
+    if (startGame){
+        // if (backgroundTrack.elt.paused){
             backgroundTrack.play()
         }
         camera.x = player.x;
