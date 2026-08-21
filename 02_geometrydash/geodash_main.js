@@ -216,7 +216,10 @@ function draw() {
         }
         if (gameOver){
             if (frameCount-endTimer > 120){
-                if (endSprite)
+                if (endSprite){
+                    endSprite.remove();
+                }
+                s
             }
         }
     }
