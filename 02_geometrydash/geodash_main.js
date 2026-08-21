@@ -226,6 +226,7 @@ function draw() {
                 gameOver = false;
                 resetGame();
                 level += 1;
+                confir
                 loadLevel();
             }
         }
