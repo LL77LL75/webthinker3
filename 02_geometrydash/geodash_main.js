@@ -25,6 +25,7 @@ let jumpChance = MAX_JUMP
 
 // game variables
 const TILE_SIZE = 50;
+let level;
 
 
 // world building groups
