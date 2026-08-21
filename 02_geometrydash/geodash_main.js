@@ -193,7 +193,7 @@ function draw() {
         }
         for (let orb of orbs){
             if (player.colliding(orb)){
-                orb.visible=false;
+                orb.visible=true;
                 orb.collider = "none";
                 jumpChance +=1;
             }
