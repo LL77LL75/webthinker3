@@ -104,7 +104,7 @@ function setup() {
     finishline.colour = "#f59042";
     finishline.stroke = "black";
     finishline.collider = "static";
-    finishline.visible = false;
+    finishline.visible = true;
     new Tiles(tilemap1,0,0,TILE_SIZE,TILE_SIZE)
     mapUsed = tilemap1;
     console.log(width);
