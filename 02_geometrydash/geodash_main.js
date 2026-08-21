@@ -170,7 +170,7 @@ function draw() {
     if (startGame){
         // if (backgroundTrack.elt.paused){
             backgroundTrack.play()
-        }
+        // }
         camera.x = player.x;
         player.vel.x = 5;
         if ((kb.presses("space") || mouse.presses("left")) && jumpChance > 0){
