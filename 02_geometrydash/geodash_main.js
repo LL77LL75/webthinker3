@@ -51,7 +51,7 @@ function preload() {
     bg = loadImage("assets/geobg.png");
     spikes = loadImage("assets/spike.png");
     tileMap2 = loadStrings('stages/tiles2.txt')
-    let mapUsed = tilemap1
+    let mapUsed = tileMap1
 
 }
 function loadLevel(){
@@ -64,11 +64,11 @@ function loadLevel(){
     }
     if (level === 1){
         new Tiles(tileMap1,0,0,50,50);
-        let mapUsed = tilemap1
+        let mapUsed = tileMap1
     }
     else if (level === 2){
         new Tiles(tileMap2,0,0,50,50);
-        let mapUsed = tilemap2
+        let mapUsed = tileMap2
     }
 }
 
