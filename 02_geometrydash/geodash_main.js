@@ -122,6 +122,7 @@ function resetGame(){
     player.y = startCoordinate[1];
     if (lost){
         failSound.play();
+        backgroundTrack.stop();
     }
 }
 function triggerGameOver(){
