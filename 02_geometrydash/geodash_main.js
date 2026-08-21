@@ -41,7 +41,7 @@ let mapUsed;
 
 function preload() {
     backgroundTrack = createAudio("assets/stereo-madness.mp3");
-    passSound = createAudio("/workspaces/webthinker3/02_geometrydash/assets/game-start.mp3");
+    passSound = createAudio("02_geometrydash/assets/game-start.mp3");
     failSound = createAudio("02_geometrydash/assets/geometry-dash-death-sound.mp3")
     startGameImg = loadImage("assets/startgame.png")
     endGameImg = loadImage("assets/clear.png")
