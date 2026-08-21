@@ -195,7 +195,7 @@ function draw() {
             if (player.colliding(orb)){
                 orb.visible=true;
                 orb.collider = "none";
-                jumpChance +=1;
+                jumpChance =1;
             }
         }
 
