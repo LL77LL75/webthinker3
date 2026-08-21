@@ -7,7 +7,9 @@ let handpose; // ML5 Model
 //=========================================
 
 function preload() {
-    let options = {}
+    let options = {
+        flipped: true
+    }
 }
 
 function setup() {}
