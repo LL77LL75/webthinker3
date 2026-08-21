@@ -14,6 +14,7 @@ function preload() {
         detectorModelUrl : undefined,
         landmarkModelUrl : undefined
     }
+    handP
 }
 
 function setup() {}
