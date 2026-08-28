@@ -5,7 +5,7 @@ let handPose; // ML5 Model
 let videoW = 640;
 let videoH = 480;
 let hands = [];
-let fingertip;
+let fingerTip;
 //=========================================
 // Code
 //=========================================
@@ -34,7 +34,9 @@ function setup() {
         optional: [{ minFrameRate: 60 }],
         },
         audio: false,
-        flipped: true
+        flipped: true,
+        fingerTip = new Sprite()
+
     };
 
     video = createCapture(constraints);
