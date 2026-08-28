@@ -60,6 +60,7 @@ function draw() {
             circle(keypoint.x,keypoint.y,10)
             //make sprite follow hand
             fingerTip.x = keypoint.x
+            fingerTip.y = keypoint.y
             // for (let j = 0; j < hand.keypoints.length; j++){
             //     let keypoint = hand.keypoints[j];
             //     circle(keypoint.x,keypoint.y,10); //xpos, ypos, radius
