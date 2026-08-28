@@ -50,6 +50,7 @@ function setup() {
 function draw() {
     // Draw webcam video
     image(video, 0, 0, videoW, videoH);
+    //checks if there are hands
     if (hands.length > 0) {
         console.log(hands);
 
