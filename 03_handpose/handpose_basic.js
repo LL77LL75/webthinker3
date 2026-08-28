@@ -46,7 +46,8 @@ function setup() {
 
     balloon = new Sprite();
     balloon.collider = "dynamic";
-    balloon.collider = "rgb("
+    balloon.collider = "rgb(255,0,0)"
+    
 
     video = createCapture(constraints);
     video.size(videoW, videoH);
