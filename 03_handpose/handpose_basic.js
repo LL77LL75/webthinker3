@@ -42,7 +42,7 @@ function setup() {
     fingerTip.collider = "kinematic";
     fingerTip.colour = "rgba(255,255,0,0.1)";
 
-    le
+    balloon = new Sprite
     video = createCapture(constraints);
     video.size(videoW, videoH);
     video.hide();
