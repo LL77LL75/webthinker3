@@ -50,6 +50,7 @@ function setup() {
     balloon.collider = "rgb(255,0,0)"
     balloon.bounceciness = 1;
     balloon.mass = 2;
+    ball.drag = 1;
     balloon.x = videoW/2;
     balloon.y = videoH/2;
 
