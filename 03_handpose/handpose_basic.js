@@ -37,7 +37,7 @@ function setup() {
         audio: false,
         flipped: true
     };
-    worl
+    world.gravity = 3
     fingerTip = new Sprite();
     fingerTip.diameter = 60;
     fingerTip.collider = "kinematic";
