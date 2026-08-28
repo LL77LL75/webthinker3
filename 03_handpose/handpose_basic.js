@@ -38,13 +38,16 @@ function setup() {
         flipped: true
     };
     world.gravity = 3;
-    
+
     fingerTip = new Sprite();
     fingerTip.diameter = 60;
     fingerTip.collider = "kinematic";
     fingerTip.colour = "rgba(255,255,0,0.1)";
 
     balloon = new Sprite();
+    balloon.collider = "dynamic";
+
+    
     video = createCapture(constraints);
     video.size(videoW, videoH);
     video.hide();
