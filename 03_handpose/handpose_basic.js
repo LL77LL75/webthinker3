@@ -50,7 +50,7 @@ function draw() {
         console.log(hands);
 
         // loop through all detected hands
-        for (let i = 0; i < hands.length; i++){
+        for (let j = 0; j < hands.length; j++){
             let hand = hands[i];
             for (let i = 0; i < hand.keypoints.length; i++){
                 let keypoint = hand.keypoints[i];
