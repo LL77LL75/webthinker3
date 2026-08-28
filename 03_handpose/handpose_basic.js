@@ -4,6 +4,7 @@
 let handPose; // ML5 Model
 let videoW = 640;
 let videoH = 480;
+let hands = [];
 //=========================================
 // Code
 //=========================================
@@ -42,13 +43,13 @@ function setup() {
     handPose.detectStart(video, gotHands);
 }
 
-    function draw() {
-        // Draw webcam video
-        image(video, 0, 0, videoW, videoH);
-        if (hands.length > 0) {
-            console.log(hands);
-        }
+function draw() {
+    // Draw webcam video
+    image(video, 0, 0, videoW, videoH);
+    if (hands.length > 0) {
+        console.log(hands);
     }
+}
 
 //=========================================
 // Function Created
