@@ -53,7 +53,7 @@ function draw() {
         for (let i = 0; i < hands.length; i++){
             let hand = hands[i]
             let keypoint = hands
-            circle(200,200,10) //xpos, ypos, radius
+            circle(keypoint.x,keypoint,10) //xpos, ypos, radius
         }
     }
 }
