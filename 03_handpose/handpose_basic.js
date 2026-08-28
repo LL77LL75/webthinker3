@@ -6,7 +6,7 @@ let videoW = 640;
 let videoH = 480;
 let hands = [];
 let fingerTip;
-let baloon;
+let balloon;
 //=========================================
 // Code
 //=========================================
@@ -41,6 +41,8 @@ function setup() {
     fingerTip.diameter = 60;
     fingerTip.collider = "kinematic";
     fingerTip.colour = "rgba(255,255,0,0.1)";
+
+    le
     video = createCapture(constraints);
     video.size(videoW, videoH);
     video.hide();
