@@ -37,12 +37,13 @@ function setup() {
         audio: false,
         flipped: true
     };
-    fingerTip = new Sprite()
+    worl
+    fingerTip = new Sprite();
     fingerTip.diameter = 60;
     fingerTip.collider = "kinematic";
     fingerTip.colour = "rgba(255,255,0,0.1)";
 
-    balloon = new Sprite
+    balloon = new Sprite();
     video = createCapture(constraints);
     video.size(videoW, videoH);
     video.hide();
