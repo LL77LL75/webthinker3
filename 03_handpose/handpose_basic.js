@@ -70,7 +70,7 @@ function draw() {
         }
     }
     else{
-        
+        fingerTip.visible = false;
     }
 }
 
