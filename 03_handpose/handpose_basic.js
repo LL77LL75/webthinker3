@@ -37,7 +37,7 @@ function setup() {
         flipped: true
     };
     fingerTip = new Sprite()
-    fingerTip.colour()
+    fingerTip.colour = "rgba(2)"
     video = createCapture(constraints);
     video.size(videoW, videoH);
     video.hide();
