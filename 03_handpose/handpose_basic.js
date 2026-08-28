@@ -37,7 +37,8 @@ function setup() {
         flipped: true
     };
     fingerTip = new Sprite()
-    fingerTip.diameter = 
+    fingerTip.diameter = 60;
+    
     fingerTip.colour = "rgba(255,255,0)"
     video = createCapture(constraints);
     video.size(videoW, videoH);
