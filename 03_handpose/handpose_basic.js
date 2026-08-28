@@ -49,7 +49,7 @@ function draw() {
     if (hands.length > 0) {
         console.log(hands);
     }
-    circle(200,200,1)
+    circle(200,200,10) //xpos, ypos, r
 }
 
 //=========================================
