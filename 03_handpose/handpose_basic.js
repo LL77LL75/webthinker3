@@ -49,7 +49,7 @@ function draw() {
     if (hands.length > 0) {
         console.log(hands);
     }
-    CSSNumericValue
+    circle(2)
 }
 
 //=========================================
