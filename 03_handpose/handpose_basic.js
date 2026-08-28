@@ -52,9 +52,9 @@ function draw() {
         // loop through all detected hands
         for (let i = 0; i < hands.length; i++){
             let hand = hands[i]
-        let keypoint = hands
-        circle(200,200,10) //xpos, ypos, radius
-            }
+            let keypoint = hands
+            circle(200,200,10) //xpos, ypos, radius
+        }
     }
 }
 
