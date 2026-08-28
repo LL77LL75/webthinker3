@@ -37,7 +37,7 @@ function setup() {
         flipped: true
     };
     fingerTip = new Sprite()
-    fingerTip.
+    fingerTip.colour()
     video = createCapture(constraints);
     video.size(videoW, videoH);
     video.hide();
