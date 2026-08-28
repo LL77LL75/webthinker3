@@ -43,10 +43,10 @@ handPose.detectStart(video, gotHands);
 }
 
 function draw() {
-// Draw webcam video
-image(video, 0, 0, videoW, videoH);
+    // Draw webcam video
+    image(video, 0, 0, videoW, videoH);
     if (hands.length > 0) {
-    console.log(hands);
+        console.log(hands);
     }
 }
 
