@@ -20,35 +20,35 @@ function preload() {
 }
 
 function setup() {
-createCanvas(videoW, videoH);
+    createCanvas(videoW, videoH);
 
-// Setup webcam video
-let constraints = {
-video : {
-mandatory: {
-minWidth: videoW,
-minHeight: videoH
-},
-optional: [{ minFrameRate: 60 }],
-},
-audio: false,
-flipped: true
-};
+    // Setup webcam video
+    let constraints = {
+        video : {
+            mandatory: {
+                minWidth: videoW,
+                minHeight: videoH
+            },
+        optional: [{ minFrameRate: 60 }],
+        },
+        audio: false,
+        flipped: true
+    };
 
-video = createCapture(constraints);
-video.size(videoW, videoH);
-video.hide();
-// Send video to the model to start detecting hands
-handPose.detectStart(video, gotHands);
+    video = createCapture(constraints);
+    video.size(videoW, videoH);
+    video.hide();
+    // Send video to the model to start detecting hands
+    handPose.detectStart(video, gotHands);
 }
 
-function draw() {
-    // Draw webcam video
-    image(video, 0, 0, videoW, videoH);
-    if (hands.length > 0) {
-        console.log(hands);
+    function draw() {
+        // Draw webcam video
+        image(video, 0, 0, videoW, videoH);
+        if (hands.length > 0) {
+            console.log(hands);
+        }
     }
-}
 
 //=========================================
 // Function Created
