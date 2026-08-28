@@ -45,9 +45,10 @@ function setup() {
     fingerTip.colour = "rgba(255,255,0,0.1)";
 
     balloon = new Sprite();
-    balloon.diameter = 10
+    balloon.diameter = 50
     balloon.collider = "dynamic";
     balloon.collider = "rgb(255,0,0)"
+    balloon.bounce
     balloon.x = videoW/2;
     balloon.y = videoH/2;
 
