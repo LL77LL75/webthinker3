@@ -50,7 +50,7 @@ function draw() {
         console.log(hands);
 
         // loop through all detected hands
-        for (let i = 0; i < hands.length())
+        for (let i = 0; i < hands.length; i++)
         let keypoint = hands
         circle(200,200,10) //xpos, ypos, radius
     }
