@@ -48,6 +48,8 @@ function draw() {
     image(video, 0, 0, videoW, videoH);
     if (hands.length > 0) {
         console.log(hands);
+
+        
         circle(200,200,10) //xpos, ypos, radius
     }
 }
