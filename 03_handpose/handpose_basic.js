@@ -53,9 +53,9 @@ function draw() {
         for (let i = 0; i < hands.length; i++){
             let hand = hands[i];
             for (let i = 0; i < hand.keypoints.length; i++){
-                let keypoint = hand.keypoints[4];
+                let keypoint = hand.keypoints[i];
                 circle(keypoint.x,keypoint.y,10); //xpos, ypos, radius
-            }
+            } 
         }
     }
 }
