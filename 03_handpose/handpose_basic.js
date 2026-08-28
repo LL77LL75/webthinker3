@@ -49,7 +49,7 @@ function draw() {
     if (hands.length > 0) {
         console.log(hands);
 
-
+        let keypoint
         circle(200,200,10) //xpos, ypos, radius
     }
 }
