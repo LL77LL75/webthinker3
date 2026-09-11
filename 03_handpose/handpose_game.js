@@ -151,8 +151,8 @@ function gotHands(results) {
     // Model detects hand and saves the output here
     hands = results;
 }
-function keyPressed(key){
-    if (key == ){
+function keyPressed(presskey){
+    if (key == String(presskey)){
         gameStart = true;
     }
 }
