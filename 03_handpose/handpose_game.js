@@ -109,7 +109,7 @@ function draw() {
         text("A GAME",videoW,videoH);
         //instructions
         textSize(32);
-        fill("rgb()")
+        fill("rgb(0,200,0)")
     }
     if (gameStart == true && gameOver != false){
         // Draw webcam video
