@@ -102,8 +102,8 @@ function setup() {
 }
 
 function draw() {
-            // Draw webcam video
-        image(video, 0, 0, videoW, videoH);
+    // Draw webcam video
+    image(video, 0, 0, videoW, videoH);
     if (gameStart == false){
         textSize(40);
         fill("rgb(0,255,0)");
