@@ -49,8 +49,8 @@ function setup() {
     balloon.diameter = 50
     balloon.collider = "dynamic";
     balloon.collider = "rgb(255,0,0)"
-    balloon.bounceciness = 1;
-    balloon.mass = 2;
+    balloon.bounciness = 1;
+    balloon.mass = 1;
     balloon.drag = 0.1;
     balloon.x = videoW/2;
     balloon.y = videoH/2;
