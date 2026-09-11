@@ -104,12 +104,12 @@ function setup() {
 function draw() {
     if (gameStart == false){
         textSize(40);
-        textColour = "rgb(0,255,0)";
+        fill = "rgb(0,255,0)";
         textAlign(CENTER,CENTER);
         text("A GAME",videoW,videoH);
         //instructions
         textSize(32);
-        fill
+        
     }
     if (gameStart == true && gameOver != false){
         // Draw webcam video
