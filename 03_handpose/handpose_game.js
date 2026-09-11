@@ -80,7 +80,7 @@ function setup() {
     rightWall.height = videoH;
     
     botWall = new Sprite();
-    botWall.x = width
+    botWall.x = video
 }
 
 function draw() {
