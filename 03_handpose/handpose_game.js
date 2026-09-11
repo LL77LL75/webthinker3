@@ -104,9 +104,10 @@ function setup() {
 function draw() {
     if (gameStart == false){
         textSize(40);
-        textColour = "rgb(0,255,0)"
+        textColour = "rgb(0,255,0)";
         text("A GAME",videoW,videoH);
     }
+    if (gameStart)
     // Draw webcam video
     image(video, 0, 0, videoW, videoH);
     //checks if there are hands
