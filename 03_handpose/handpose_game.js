@@ -79,7 +79,7 @@ function setup() {
     rightWall.width = 1;
     rightWall.height = 1;
     
-
+    botWall = new s
 }
 
 function draw() {
