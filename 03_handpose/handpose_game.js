@@ -108,36 +108,36 @@ function draw() {
         textAlign(CENTER,CENTER);
         text("A GAME",videoW,videoH);
     }
-    if (gameStart == true && )
-    // Draw webcam video
-    image(video, 0, 0, videoW, videoH);
-    //checks if there are hands
-    if (hands.length > 0) {
-        // console.log(hands);
+    if (gameStart == true && gameOver != false){
+        // Draw webcam video
+        image(video, 0, 0, videoW, videoH);
+        //checks if there are hands
+        if (hands.length > 0) {
+            // console.log(hands);
 
-        // loop through all detected hands
-        for (let i = 0; i < hands.length; i++){
-            let hand = hands[i];
-            let currenthand = hands[0]
-            let keypoint = currenthand.keypoints[8]
-            circle(keypoint.x,keypoint.y,10)
-            fingerTip.x = keypoint.x;
-            fingerTip.y = keypoint.y;
-            //make sprite follow hand
-            fingerTip.x = keypoint.x
-            fingerTip.y = keypoint.y
-            fingerTip.visible = true
-            // for (let j = 0; j < hand.keypoints.length; j++){
-            //     let keypoint = hand.keypoints[j];
-            //     circle(keypoint.x,keypoint.y,10); //xpos, ypos, radius
-            // } 
+            // loop through all detected hands
+            for (let i = 0; i < hands.length; i++){
+                let hand = hands[i];
+                let currenthand = hands[0]
+                let keypoint = currenthand.keypoints[8]
+                circle(keypoint.x,keypoint.y,10)
+                fingerTip.x = keypoint.x;
+                fingerTip.y = keypoint.y;
+                //make sprite follow hand
+                fingerTip.x = keypoint.x
+                fingerTip.y = keypoint.y
+                fingerTip.visible = true
+                // for (let j = 0; j < hand.keypoints.length; j++){
+                //     let keypoint = hand.keypoints[j];
+                //     circle(keypoint.x,keypoint.y,10); //xpos, ypos, radius
+                // } 
+            }
+        }
+        else{
+            fingerTip.visible = false;
         }
     }
-    else{
-        fingerTip.visible = false;
-    }
 }
-
 //=========================================
 // Function Created
 //=========================================
