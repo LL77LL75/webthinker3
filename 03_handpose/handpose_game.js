@@ -8,6 +8,8 @@ let hands = [];
 let fingerTip;
 let balloon;
 let leftWall,rightWall,topWall,botWall;
+let score = 0;
+let gameStart= true
 //=========================================
 // Code
 //=========================================
