@@ -38,7 +38,7 @@ function setup() {
         audio: false,
         flipped: true
     };
-    world.gravity = 3;
+    world.gravity.y = 3;
 
     fingerTip = new Sprite();
     fingerTip.diameter = 60;
