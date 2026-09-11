@@ -106,7 +106,7 @@ function draw() {
         textSize(40);
         fill("rgb(0,255,0)");
         textAlign(CENTER,CENTER);
-        text("A GAME",videoW,videoH);
+        text("A GAME",width,height);
         //instructions
         textSize(32);
         fill("rgb(0,200,0)")
