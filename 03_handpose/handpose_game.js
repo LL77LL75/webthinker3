@@ -110,7 +110,7 @@ function draw() {
         //instructions
         textSize(32);
         fill("rgb(0,200,0)")
-        text("use index finger to bounce ball", width/2, height/2 -10)
+        text("use index finger to bounce ball", width/2, height*0.6)
     }
     if (gameStart == true && gameOver != false){
         // Draw webcam video
