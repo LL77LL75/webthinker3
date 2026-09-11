@@ -7,7 +7,7 @@ let videoH = 480;
 let hands = [];
 let fingerTip;
 let balloon;
-let leftWall,rightWall,topWall,botWall
+let leftWall,rightWall,topWall,botWall;
 //=========================================
 // Code
 //=========================================
