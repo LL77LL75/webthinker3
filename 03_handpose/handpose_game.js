@@ -62,21 +62,21 @@ function setup() {
     handPose.detectStart(video, gotHands);
     
     leftWall = new Sprite();
-    Wall.collider = "static";
+    leftWall.collider = "static";
     leftWall.x = 1;
     leftWall.y = height/2;
     leftWall.width = 1;
     leftWall.height = 1;
 
     rightWall = new Sprite();
-    Wall.collider = "static";
+    rightWall.collider = "static";
     rightWall.x = videoW;
     rightWall.y = height/2;
     rightWall.width = 1;
     rightWall.height = height;
     
     rightWall = new Sprite();
-    Wall.collider = "static";
+    rightWall.collider = "static";
     rightWall.x = videoW;
     rightWall.y = height;
     rightWall.width = 1;
