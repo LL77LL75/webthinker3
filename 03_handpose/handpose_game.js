@@ -60,6 +60,13 @@ function setup() {
     video.hide();
     // Send video to the model to start detecting hands
     handPose.detectStart(video, gotHands);
+    
+    leftWall = new Sprite();
+    leftWall.x = 1;
+    leftWall.y = 1;
+    leftWall.width = 1;
+    leftWall.height = 1;
+
     leftWall = new Sprite();
     leftWall.x = 1;
     leftWall.y = 1;
