@@ -102,7 +102,9 @@ function setup() {
 }
 
 function draw() {
-    if 
+    if (gameStart == false){
+        
+    }
     // Draw webcam video
     image(video, 0, 0, videoW, videoH);
     //checks if there are hands
