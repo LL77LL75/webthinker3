@@ -81,7 +81,8 @@ function setup() {
     
     botWall = new Sprite();
     botWall.x = width;
-    botWall.y=
+    botWall.y = height;
+    botWall.width
 }
 
 function draw() {
