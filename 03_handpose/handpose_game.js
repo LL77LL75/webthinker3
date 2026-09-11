@@ -62,7 +62,8 @@ function setup() {
     handPose.detectStart(video, gotHands);
     leftWall = new Sprite();
     leftWall.x = 1;
-    leftWall.y
+    leftWall.y = 1;
+    
 }
 
 function draw() {
