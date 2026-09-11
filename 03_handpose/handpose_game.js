@@ -103,7 +103,7 @@ function setup() {
 
 function draw() {
     if (gameStart == false){
-        
+        text(text,x,y)
     }
     // Draw webcam video
     image(video, 0, 0, videoW, videoH);
