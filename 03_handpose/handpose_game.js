@@ -63,7 +63,7 @@ function setup() {
     
     leftWall = new Sprite();
     leftWall.x = 1;
-    leftWall.y = ;
+    leftWall.y = height/2;
     leftWall.width = 1;
     leftWall.height = 1;
 
@@ -75,7 +75,7 @@ function setup() {
     
     rightWall = new Sprite();
     rightWall.x = videoW;
-    rightWall.y = 1;
+    rightWall.y = height;
     rightWall.width = 1;
     rightWall.height = height;
     
