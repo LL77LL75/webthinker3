@@ -87,7 +87,7 @@ function setup() {
     
     topWall = new Sprite();
     topWall.x = width/2;
-    topWall.y = height;
+    topWall.y = 0;
     topWall.width = width;
     topWall.height = 1;
     
