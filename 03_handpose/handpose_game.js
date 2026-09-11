@@ -104,7 +104,7 @@ function setup() {
 function draw() {
     if (gameStart == false){
         textSize(40);
-        textColour = "rgb(0,0,0)"
+        textColour = "rgb(0,255,0)"
         text("A GAME",videoW,videoH);
     }
     // Draw webcam video
