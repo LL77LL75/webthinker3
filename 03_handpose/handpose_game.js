@@ -102,6 +102,8 @@ function setup() {
 }
 
 function draw() {
+            // Draw webcam video
+        image(video, 0, 0, videoW, videoH);
     if (gameStart == false){
         textSize(40);
         fill("rgb(0,255,0)");
@@ -113,7 +115,6 @@ function draw() {
         text("use index finger to bounce ball", width/2, height*0.7)
     }
     if (gameStart == true && gameOver != false){
-
         //checks if there are hands
         if (hands.length > 0) {
             // console.log(hands);
