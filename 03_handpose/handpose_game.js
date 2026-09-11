@@ -157,5 +157,6 @@ function keyPressed(){
         gameStart = true;
         balloon.collider = "dynamic";
         balloon.visible = true;
+        fingerTip.visible = true;
     }
 }
