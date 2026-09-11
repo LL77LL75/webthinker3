@@ -48,7 +48,8 @@ function setup() {
     balloon = new Sprite();
     balloon.diameter = 50;
     balloon.collider = "dynamic";
-    balloon.collider = "rgb(255,0,0)"
+    balloon.stroke = "rgb(255,0,0)"
+    balloon.
     balloon.bounciness = 1;
     balloon.mass = 1;
     balloon.drag = 0.1;
