@@ -62,35 +62,35 @@ function setup() {
     handPose.detectStart(video, gotHands);
     
     leftWall = new Sprite();
-    Wall 
+    Wall.collider = "kinematic";
     leftWall.x = 1;
     leftWall.y = height/2;
     leftWall.width = 1;
     leftWall.height = 1;
 
     rightWall = new Sprite();
-    Wall 
+    Wall.collider = "kinematic";
     rightWall.x = videoW;
     rightWall.y = height/2;
     rightWall.width = 1;
     rightWall.height = height;
     
     rightWall = new Sprite();
-    Wall 
+    Wall.collider = "kinematic";
     rightWall.x = videoW;
     rightWall.y = height;
     rightWall.width = 1;
     rightWall.height = height;
     
     botWall = new Sprite();
-    Wall 
+    Wall.collider = "kinematic";
     botWall.x = width/2;
     botWall.y = height;
     botWall.width = width;
     botWall.height = 1;
     
     topWall = new Sprite();
-    Wall 
+    Wall.collider = "kinematic";
     topWall.x = width/2;
     topWall.y = 0;
     topWall.width = width;
