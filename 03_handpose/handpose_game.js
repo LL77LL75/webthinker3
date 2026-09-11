@@ -83,14 +83,14 @@ function setup() {
     rightWall.height = height;
     
     botWall = new Sprite();
-    Wall.collider = "static";
+    botWall.collider = "static";
     botWall.x = width/2;
     botWall.y = height;
     botWall.width = width;
     botWall.height = 1;
     
     topWall = new Sprite();
-    Wall.collider = "static";
+    topWall.collider = "static";
     topWall.x = width/2;
     topWall.y = 0;
     topWall.width = width;
