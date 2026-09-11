@@ -103,7 +103,7 @@ function draw() {
     image(video, 0, 0, videoW, videoH);
     //checks if there are hands
     if (hands.length > 0) {
-        console.log(hands);
+        // console.log(hands);
 
         // loop through all detected hands
         for (let i = 0; i < hands.length; i++){
