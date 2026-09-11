@@ -152,8 +152,8 @@ function gotHands(results) {
     // Model detects hand and saves the output here
     hands = results;
 }
-function keyPressed(presskey){
-    if (key == String(presskey)){
+function keyPressed(){
+    if (key == " "){
         gameStart = true;
         balloon.collider = "dynamic";
         balloon.visible = true;
