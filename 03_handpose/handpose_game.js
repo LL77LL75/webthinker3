@@ -67,11 +67,11 @@ function setup() {
     leftWall.width = 1;
     leftWall.height = 1;
 
-    leftWall = new Sprite();
-    leftWall.x = 1;
-    leftWall.y = 1;
-    leftWall.width = 1;
-    leftWall.height = 1;
+    rightWall = new Sprite();
+    rightWall.x = 1;
+    rightWall.y = 1;
+    rightWall.width = 1;
+    rightWall.height = 1;
     
 }
 
