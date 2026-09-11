@@ -111,7 +111,8 @@ function draw() {
             let currenthand = hands[0]
             let keypoint = currenthand.keypoints[8]
             circle(keypoint.x,keypoint.y,10)
-            fingerTip.x = ke
+            fingerTip.x = keypoint.x;
+            fingerTip.y = keypoint.y;
             //make sprite follow hand
             fingerTip.x = keypoint.x
             fingerTip.y = keypoint.y
