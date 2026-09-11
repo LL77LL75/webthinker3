@@ -80,9 +80,9 @@ function setup() {
     rightWall.height = height;
     
     botWall = new Sprite();
-    botWall.x = width;
+    botWall.x = width/2;
     botWall.y = height;
-    botWall.width
+    botWall.width = width
 }
 
 function draw() {
