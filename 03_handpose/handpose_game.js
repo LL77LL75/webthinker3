@@ -63,6 +63,8 @@ function setup() {
     leftWall = new Sprite();
     leftWall.x = 1;
     leftWall.y = 1;
+    leftWall.width = 1;
+    leftWall.height = 1;
     
 }
 
