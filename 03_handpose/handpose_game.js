@@ -155,7 +155,7 @@ function gotHands(results) {
 function keyPressed(presskey){
     if (key == String(presskey)){
         gameStart = true;
-        balloon.collider = "none";
-        balloon.visible = false;
+        balloon.collider = "dynamic";
+        balloon.visible = true;
     }
 }
