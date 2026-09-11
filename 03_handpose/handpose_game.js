@@ -104,7 +104,7 @@ function setup() {
 function draw() {
     if (gameStart == false){
         textSize(40);
-        fill = "rgb(0,255,0)";
+        fill("rgb(0,255,0)");
         textAlign(CENTER,CENTER);
         text("A GAME",videoW,videoH);
         //instructions
