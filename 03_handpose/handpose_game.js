@@ -70,7 +70,7 @@ function setup() {
 
     rightWall = new Sprite();
     rightWall.collider = "static";
-    rightWall.x = videoW;
+    rightWall.x = 0;
     rightWall.y = height/2;
     rightWall.width = 1;
     rightWall.height = height;
