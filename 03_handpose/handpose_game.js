@@ -107,7 +107,9 @@ function draw() {
         textColour = "rgb(0,255,0)";
         textAlign(CENTER,CENTER);
         text("A GAME",videoW,videoH);
-        textSize
+        //instructions
+        textSize(32);
+        fill
     }
     if (gameStart == true && gameOver != false){
         // Draw webcam video
