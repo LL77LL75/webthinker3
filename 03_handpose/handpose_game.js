@@ -154,10 +154,6 @@ function draw() {
         balloon.visible = false;
         balloon.collider = "kinematic"
         gameStart = false;
-        textAlign(CENTER,CENTER);
-        textSize(30);
-        fill("rgb(255,0,0)")
-        text("press space to restart", width/2,height/2);
     }
 }
 //=========================================
