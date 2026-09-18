@@ -151,7 +151,7 @@ function draw() {
         score++
         textSize(10);
         fill("rgba(255,0,0,1)");
-        
+        text.ce
         text(score,videoW,videoH);
     }
     if ((balloon.collides(botWall))){
