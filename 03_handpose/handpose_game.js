@@ -114,6 +114,7 @@ function draw() {
         //instructions
         textSize(32);
         fill("rgb(0,200,0)")
+        if (gameOver == true)
         text("use index finger to bounce ball", width/2, height*0.7)
         text("press space to start", width/2, height*0.8)
     }
