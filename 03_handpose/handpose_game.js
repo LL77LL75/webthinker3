@@ -46,7 +46,7 @@ function setup() {
     };
     world.gravity.y = 3;
 
-    bounceSound=
+    bounceSound=createAudio("assets/")
 
     fingerTip = new Sprite();
     fingerTip.diameter = 60;
