@@ -117,7 +117,7 @@ function draw() {
         text("use index finger to bounce ball", width/2, height*0.7)
         text("press space to start", width/2, height*0.8)
     }
-    if (gameStart == true && gameOver != false){
+    if (gameStart == true && gameOver != true){
         //checks if there are hands
         if (hands.length > 0) {
             console.log(hands);
