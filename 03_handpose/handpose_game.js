@@ -150,7 +150,7 @@ function draw() {
         balloon.collider = "kinematic"
         textAlign(CENTER,CENTER);
         textSize(30);
-        fill()
+        fill("rgb(255,0,0)")
         text("press space to restart", width/2,height/2);
     }
 }
