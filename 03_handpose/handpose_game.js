@@ -146,8 +146,8 @@ function draw() {
         gameOver = true;
         fingerTip.visible =false;
         balloon.visible = false;
-        textSize
-        text()
+        textSize(30)
+        text("press space to restart",)
     }
 }
 //=========================================
