@@ -147,6 +147,7 @@ function draw() {
             fingerTip.visible = false;
         }
     }
+    if (fingerTip.collides(balloon))
     if ((balloon.collides(botWall))){
         gameOver = true;
         fingerTip.visible =false;
