@@ -11,6 +11,7 @@ let leftWall,rightWall,topWall,botWall;
 let score = 0;
 let gameStart = false;
 let gameOver = false;
+let cooldown= 500;
 //=========================================
 // Code
 //=========================================
