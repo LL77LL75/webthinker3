@@ -142,7 +142,9 @@ function draw() {
             fingerTip.visible = false;
         }
     }
-    if ((balloon.collides(botWall)))
+    if ((balloon.collides(botWall))){
+        gameOver = true
+    }
 }
 //=========================================
 // Function Created
