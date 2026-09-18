@@ -168,6 +168,7 @@ function keyPressed(){
     if (key == " "){
         gameStart = true;
         balloon.collider = "dynamic";
+        balloon.visible = true;
         fingerTip.visible = true;
         balloon.visible = true;
         fingerTip.visible = true;
