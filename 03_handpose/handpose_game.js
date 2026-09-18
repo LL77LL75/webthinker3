@@ -148,6 +148,7 @@ function draw() {
         fingerTip.collider = "kinematic"
         balloon.visible = false;
         balloon.collider = "kinematic"
+        gameStart = false;
         textAlign(CENTER,CENTER);
         textSize(30);
         fill("rgb(255,0,0)")
