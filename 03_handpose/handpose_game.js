@@ -142,6 +142,7 @@ function draw() {
             fingerTip.visible = false;
         }
     }
+    if ((balloon.collides(botWall)))
 }
 //=========================================
 // Function Created
