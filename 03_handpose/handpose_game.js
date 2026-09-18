@@ -143,7 +143,8 @@ function draw() {
         }
     }
     if ((balloon.collides(botWall))){
-        gameOver = true
+        gameOver = true;
+        
     }
 }
 //=========================================
