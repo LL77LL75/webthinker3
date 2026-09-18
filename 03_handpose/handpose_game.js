@@ -148,7 +148,6 @@ function draw() {
         balloon.visible = false;
         textSize(30)
         text("press space to restart", width/2,height/2);
-        keyPressed();
     }
 }
 //=========================================
