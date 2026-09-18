@@ -119,7 +119,7 @@ function draw() {
             text("press space to start", width/2, height*0.8)
         }
         if (gameOver == true){
-            
+            text("press space to restart", width/2,height/2);
         }
     }
     if (gameStart == true && gameOver != true){
