@@ -150,7 +150,7 @@ function draw() {
     if (fingerTip.collides(balloon)){
         score++
         textSize(10);
-        fill("rgba(255,0,0,0)")
+        fill("rgba(255,0,0,0.5)")
         text(score,videoW,videoH);
     }
     if ((balloon.collides(botWall))){
