@@ -156,7 +156,7 @@ function draw() {
     }
     if ((balloon.collides(botWall))){
         gameOver = true;
-        fingerTip.visible =false;
+        fingerTip.visible = false;
         fingerTip.collider = "kinematic"
         balloon.visible = false;
         balloon.collider = "kinematic"
