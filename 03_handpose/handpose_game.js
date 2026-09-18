@@ -46,6 +46,8 @@ function setup() {
     };
     world.gravity.y = 3;
 
+    
+
     fingerTip = new Sprite();
     fingerTip.diameter = 60;
     fingerTip.collider = "kinematic";
