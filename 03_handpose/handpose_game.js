@@ -163,6 +163,10 @@ function draw() {
         balloon.collider = "kinematic"
         gameStart = false;
     }
+    if (cooldown>0){
+
+    }
+    
 }
 //=========================================
 // Function Created
