@@ -156,8 +156,8 @@ function draw() {
         text(score,0,0);
     }
         if (cooldown>0){
-
-    }
+            
+        }
     if ((balloon.collides(botWall))){
         gameOver = true;
         fingerTip.visible = false;
