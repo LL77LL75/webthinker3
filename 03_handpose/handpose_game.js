@@ -47,7 +47,7 @@ function setup() {
     world.gravity.y = 3;
 
     bounceSound=createAudio("assets/LowBoing.mp3");
-    gameOverSound=createAudio("")
+    gameOverSound=createAudio("assets/DunDunn.mp3")
 
     fingerTip = new Sprite();
     fingerTip.diameter = 60;
