@@ -12,6 +12,7 @@ let score = 0;
 let gameStart = false;
 let gameOver = false;
 let cooldown= 500;
+let bounceS
 //=========================================
 // Code
 //=========================================
