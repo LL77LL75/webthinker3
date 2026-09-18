@@ -46,7 +46,8 @@ function setup() {
     };
     world.gravity.y = 3;
 
-    bounceSound=createAudio("assets/LowBoing.mp3"    )
+    bounceSound=createAudio("assets/LowBoing.mp3");
+    game
 
     fingerTip = new Sprite();
     fingerTip.diameter = 60;
