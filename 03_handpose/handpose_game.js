@@ -149,7 +149,8 @@ function draw() {
     }
     if (fingerTip.collides(balloon)){
         score++
-        text(score,)
+        textSize
+        text(score,videoW,videoH);
     }
     if ((balloon.collides(botWall))){
         gameOver = true;
