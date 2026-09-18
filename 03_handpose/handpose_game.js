@@ -148,8 +148,8 @@ function draw() {
         fingerTip.collider = "kinematic"
         balloon.visible = false;
         balloon.collider = "kinematic"
-        textAlign(CENTER,CENTER)
-        textSize(30)
+        textAlign(CENTER,CENTER);
+        textSize(30);
         text("press space to restart", width/2,height/2);
     }
 }
