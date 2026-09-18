@@ -149,7 +149,8 @@ function draw() {
     }
     if (fingerTip.collides(balloon)){
         score++
-        textSize
+        textSize(10);
+        fill("rgb(")
         text(score,videoW,videoH);
     }
     if ((balloon.collides(botWall))){
