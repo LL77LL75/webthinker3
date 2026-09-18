@@ -145,6 +145,7 @@ function draw() {
     if ((balloon.collides(botWall))){
         gameOver = true;
         fingerTip.visible =false;
+        fingerTip.collider = "kinematic"
         balloon.visible = false;
         textSize(30)
         text("press space to restart", width/2,height/2);
