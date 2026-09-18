@@ -144,6 +144,8 @@ function draw() {
     }
     if ((balloon.collides(botWall))){
         gameOver = true;
+        fingerTip.visible =false;
+        balloon.visible = false;
         
     }
 }
