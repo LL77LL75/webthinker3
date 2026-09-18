@@ -146,7 +146,8 @@ function draw() {
         gameOver = true;
         fingerTip.visible =false;
         balloon.visible = false;
-        
+        textSize
+        text()
     }
 }
 //=========================================
