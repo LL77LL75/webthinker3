@@ -147,7 +147,7 @@ function draw() {
         fingerTip.visible =false;
         balloon.visible = false;
         textSize(30)
-        text("press space to restart",)
+        text("press space to restart", canvas)
     }
 }
 //=========================================
