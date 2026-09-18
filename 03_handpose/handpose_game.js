@@ -170,7 +170,8 @@ function keyPressed(){
         balloon.collider = "dynamic";
         balloon.visible = true;
         fingerTip.visible = true;
-        fingerTip.collider = "kinematic"
-        balloon.x = 
+        fingerTip.collider = "kinematic";
+        balloon.x = videoW/2;
+        balloon.y
     }
 }
