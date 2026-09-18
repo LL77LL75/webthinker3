@@ -156,7 +156,7 @@ function draw() {
         text(score,0,0);
     }
     if (cooldown>0){
-        cooldown-=Time.deltatime
+        cooldown-=deltaTime
     }
     if ((balloon.collides(botWall))){
         gameOver = true;
