@@ -174,6 +174,7 @@ function gotHands(results) {
 function keyPressed(){
     if (key == " "){
         gameStart = true;
+        gameOver = false;
         balloon.collider = "dynamic";
         balloon.visible = true;
         fingerTip.visible = true;
