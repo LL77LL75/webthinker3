@@ -58,7 +58,7 @@ function setup() {
     bodyPose.detectStart(video,gotPeople);
     // Set up text.
     textAlign(CENTER, CENTER);
-    skeletonColour = 
+    skeletonColour = "rgb(0,0,0)"
 };
 
 
