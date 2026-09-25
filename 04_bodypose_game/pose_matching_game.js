@@ -134,7 +134,7 @@ function gotPeople(results){
 }
 function drawDetectionStatus(){
     fill(0);
-    testSize(24);
+    textSize(24);
     text("people Detected: " + detectedPeople.length,width/2,height*0.1)
     console.log(detectedPeople)
 }
