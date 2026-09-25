@@ -33,7 +33,7 @@ let detectedPeople=[]; //used to store people
 // ====================================================
 
 function preload(){
-    bodyPose=ml5.bodyPose("moveNet")
+    bodyPose=ml5.bodyPose("moveNet",{flipped:true});
 }
 
 // ====================================================
