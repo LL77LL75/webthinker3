@@ -45,15 +45,13 @@ function setup() {
             width:cameraWidth,
             height:cameraHeight,
             aspectRatio:cameraWidth/cameraHeight
-        }
+        },
+    audio:false,
+    flipped:true
     }
     // Set up text.
     textAlign(CENTER, CENTER);
-    audio:false;
-    flipped:true;
 };
-video = createCapture(constraints);
-video.hide;
 
 
 // ====================================================
