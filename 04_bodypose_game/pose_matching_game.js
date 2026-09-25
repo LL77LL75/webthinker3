@@ -49,8 +49,8 @@ function setup() {
     }
     // Set up text.
     textAlign(CENTER, CENTER);
-    audio=false;
-    
+    audio:false;
+    flipped:true;
 };
 
 
