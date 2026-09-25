@@ -62,7 +62,8 @@ function draw() {
     drawUIPanel();
     // Draw the middle line that separates Player 1 and Player 2 areas.
     drawMiddleLine();
-    //draw 
+    //draw cam video
+    Image(video)
 
 }
 
