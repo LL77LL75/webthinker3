@@ -41,9 +41,10 @@ function preload(){
 // setup() runs once at the start.
 function setup() {
     let constraints={
-        width:cameraWidth,
-        height:cameraHeight,
-        aspectRatio:cameraWidth/cameraHeight
+        video:{
+            width:cameraWidth,
+            height:cameraHeight,
+            aspectRatio:cameraWidth/cameraHeight
     }
     // Set up text.
     textAlign(CENTER, CENTER);
