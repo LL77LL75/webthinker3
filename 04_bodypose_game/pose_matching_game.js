@@ -56,7 +56,7 @@ function setup() {
     // Set up text.
     textAlign(CENTER, CENTER);
     //give vid to model
-    bodyPose.dete
+    bodyPose.detectStart(video,)
 };
 
 
