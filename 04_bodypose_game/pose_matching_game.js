@@ -37,7 +37,11 @@ function preload(){
 
 // setup() runs once at the start.
 function setup() {
-    let constraints
+    let constraints={
+        width:cameraWidth,
+        height:cameraHeight,
+        
+    }
     // Set up text.
     textAlign(CENTER, CENTER);
 }
