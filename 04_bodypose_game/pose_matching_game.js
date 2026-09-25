@@ -137,6 +137,7 @@ function drawDetectionStatus(){
     text("people Detected: " + detectedPeople.length,width/2,height*0.1)
     console.log(detectedPeople)
 }
+function drawBodyPoint(point)
 // Draws one person's skeleton.
 function drawSkeleton(person, skeletonColor) {
     // Set skeleton line colour.
