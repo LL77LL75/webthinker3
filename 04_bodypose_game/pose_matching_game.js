@@ -137,7 +137,7 @@ function drawDetectionStatus(){
     text("people Detected: " + detectedPeople.length,width/2,height*0.1)
     console.log(detectedPeople)
 }
-drawSkeleton
+
 function drawBodyLine(point1,point2){
     line(); // uses 2 point (xpos1,ypos1,xpos2,ypos2)
 }
