@@ -63,7 +63,7 @@ function draw() {
     // Draw the middle line that separates Player 1 and Player 2 areas.
     drawMiddleLine();
     //draw cam video
-    Image(video)
+    Image(video,cameraX,0,cameraWidth,cameraHeight)
 
 }
 
