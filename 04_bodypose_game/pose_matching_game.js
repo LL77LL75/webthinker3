@@ -34,7 +34,7 @@ let skeletonColour;
 // ====================================================
 
 function preload(){
-    bodyPose=ml5.bodyPose("moveNet",{flipped:true});
+    bodyPose=ml5.bodyPose("MoveNet",{flipped:true});
 }
 
 // ====================================================
