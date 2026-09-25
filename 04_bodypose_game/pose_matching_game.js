@@ -128,3 +128,8 @@ function gotPeople(results){
     //stores results into an array
     detectedPeople=results;
 }
+function drawDetectionStatus(){
+    fill(0);
+    testSize(24);
+    text("people Detected: " + )
+}
