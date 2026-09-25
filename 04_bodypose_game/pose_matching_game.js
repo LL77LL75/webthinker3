@@ -76,7 +76,7 @@ function draw() {
     drawMiddleLine();
     //draw cam video
     image(video,cameraX,0,cameraWidth,cameraHeight);
-    
+    drawAllSkeletons();
 
 }
 
