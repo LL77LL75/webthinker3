@@ -125,5 +125,6 @@ function drawMiddleLine() {
     line(width / 2, 0, width / 2, cameraHeight);
 }
 function gotPeople(results){
-    
+    //stores results into an array
+    detectedPeople=results;
 }
