@@ -28,7 +28,7 @@ let video;
 let bodyPose;//ml model
 let detectedPeople=[]; //used to store people
 //game vars
-let vars
+let skeletonColour;
 // ====================================================
 // Preload
 // ====================================================
@@ -58,6 +58,7 @@ function setup() {
     bodyPose.detectStart(video,gotPeople);
     // Set up text.
     textAlign(CENTER, CENTER);
+    
 };
 
 
