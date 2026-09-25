@@ -25,6 +25,7 @@ let rightPanelX = sidePanelWidth + cameraWidth;
 
 //setup vars
 let video;
+let bodyPose;
 // ====================================================
 // Preload
 // ====================================================
