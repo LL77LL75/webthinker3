@@ -138,7 +138,7 @@ function drawDetectionStatus(){
     console.log(detectedPeople)
 }
 function drawBodyPoint(point){
-    circle
+    circle(point.x,point.y,10)
 }
 // Draws one person's skeleton.
 function drawSkeleton(person, skeletonColor) {
