@@ -138,7 +138,11 @@ function drawDetectionStatus(){
     console.log(detectedPeople)
 }
 function drawAllSkeletons(){
-    
+    //loop through the detected people
+    for (let i = 0; i<detectedPeople.length, i++;){
+        let person=detectedPeople[i];
+        drawSkeleton(person,skeletonColour);
+    }
 }
 function drawBodyLine(point1,point2){
     line(); // uses 2 point (xpos1,ypos1,xpos2,ypos2)
