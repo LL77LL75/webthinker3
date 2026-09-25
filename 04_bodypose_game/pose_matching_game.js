@@ -24,7 +24,7 @@ let leftPanelX = 0;
 let rightPanelX = sidePanelWidth + cameraWidth;
 
 //setup vars
-
+let video;
 // ====================================================
 // Preload
 // ====================================================
