@@ -53,11 +53,9 @@ function setup() {
     };
     video = createCapture(constraints);
     video.hide;
-    // Set up text.
-    textAlign(CENTER, CENTER);
     //give vid to model
     bodyPose.detectStart(video,gotPeople);
-    //set up 
+    //set up text
 };
 
 
