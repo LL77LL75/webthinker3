@@ -45,10 +45,12 @@ function setup() {
             width:cameraWidth,
             height:cameraHeight,
             aspectRatio:cameraWidth/cameraHeight
+        }
     }
     // Set up text.
     textAlign(CENTER, CENTER);
-    audio=false
+    audio=false;
+    
 };
 
 
