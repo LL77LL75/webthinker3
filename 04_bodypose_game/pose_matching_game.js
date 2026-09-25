@@ -48,7 +48,9 @@ function setup() {
         },
     audio:false,
     flipped:true
-    }
+    };
+    video = createCapture(constraints);
+    video.hide;
     // Set up text.
     textAlign(CENTER, CENTER);
 };
