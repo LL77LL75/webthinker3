@@ -216,5 +216,5 @@ function findPlayers(){
     //x pos players
     let player1CenterX = width/4 +cameraX;
     let player2CenterX = width/4*3 +cameraX;
-    let middle
+    let middle = width/2 +cameraX
 }
