@@ -230,12 +230,16 @@ function findPlayers(){
     //x pos players
     let player1CenterX = width/4 +cameraX;
     let player2CenterX = width/4*3 +cameraX;
-    let middle = width/2 +cameraX;
+    let middleX = width/2 +cameraX;
     for (let i = 0; i<detectedPeople.length;i++){
         let person = detectedPeople[i];
         let nose = person.nose;
         if (pointIsReady(nose)){
-            let noseX=nose.x+cameraX
+            let noseX=nose.x+cameraX;
+            //check if its on the left
+            if(noseX<middleX){
+                
+            }
         }
     }
 }
