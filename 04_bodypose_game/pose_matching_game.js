@@ -234,6 +234,8 @@ function findPlayers(){
     for (let i = 0; i<detectedPeople.length;i++){
         let person = detectedPeople[i];
         let nose = person.nose;
-        if (pointIsReady(nose)))
+        if (pointIsReady(nose)){
+            noseX=nose.x+c
+        }
     }
 }
