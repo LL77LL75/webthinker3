@@ -153,7 +153,7 @@ function drawSkeleton(person,skeletonColor){
 
 }
 function drawBodyPoint(point){
-    circle(point.x,point.y,10)
+    circle(point.x+cameraX,point.y,10)
 }
 // Draws one person's skeleton.
 function drawSkeleton(person, skeletonColor) {
