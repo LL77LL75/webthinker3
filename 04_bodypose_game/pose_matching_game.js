@@ -211,4 +211,5 @@ function findPlayers(){
     //reset players
     player1Person=null;
     player2Person=null;
+    
 }
