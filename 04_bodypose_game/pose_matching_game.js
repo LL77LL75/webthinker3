@@ -149,6 +149,7 @@ function drawAllSkeletons(){
         drawSkeleton(person,skeletonColour);
     }
 }
+
 function drawBodyLine(point1,point2){
     line(point1.x+cameraX,point1.y,point2.x+cameraX,point2.y); // uses 2 point (xpos1,ypos1,xpos2,ypos2)
 }
