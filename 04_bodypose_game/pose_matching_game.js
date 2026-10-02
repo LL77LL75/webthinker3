@@ -250,4 +250,9 @@ function findPlayers(){
     }
 }
 }
-function drawPlayerSkeleton()
+function drawPlayerSkeletons(){
+    //check if they exist
+    if (player1 != null){
+        drawSkeleton
+    }
+}
