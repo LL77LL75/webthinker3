@@ -209,5 +209,6 @@ function drawSkeleton(person, skeletonColor) {
 }
 function findPlayers(){
     //reset players
-    player1=null
+    player1Person=null;
+    player2Person=null;
 }
