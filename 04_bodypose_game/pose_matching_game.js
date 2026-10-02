@@ -30,8 +30,8 @@ let detectedPeople=[]; //used to store people
 //game vars
 let skeletonColour;
 //PEOPLE
-let player1;
-let player2;
+let player1=null;
+let player2=null;
 // ====================================================
 // Preload
 // ====================================================
