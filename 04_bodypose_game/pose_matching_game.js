@@ -218,6 +218,7 @@ function findPlayers(){
     let player2CenterX = width/4*3 +cameraX;
     let middle = width/2 +cameraX;
     for (let i = 0; i<detectedPeople.length;i++){
-        let person = detectedPeople[i]
+        let person = detectedPeople[i];
+        let nose = person.nose;
     }
 }
