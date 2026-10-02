@@ -235,7 +235,7 @@ function findPlayers(){
         let person = detectedPeople[i];
         let nose = person.nose;
         if (pointIsReady(nose)){
-            noseX=nose.x+c
+            noseX=nose.x+cameraX
         }
     }
 }
