@@ -239,7 +239,9 @@ function findPlayers(){
             //check if its on the left
             if(noseX<middleX){
                 let distanFromPlayer1Center = abs(noseX-player1CenterX);
-                if (distanFromPlayer1Center<closestPlayer1Distance)
+                if (distanFromPlayer1Center<closestPlayer1Distance){
+                    player1=person;
+                }
             }
             
         }
