@@ -250,3 +250,4 @@ function findPlayers(){
     }
 }
 }
+function drawPlayerSkeleton()
