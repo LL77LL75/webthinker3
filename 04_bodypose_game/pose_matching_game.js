@@ -166,9 +166,6 @@ function drawBodyLine(point1,point2){
         line(point1.x+cameraX,point1.y,point2.x+cameraX,point2.y); // uses 2 point (xpos1,ypos1,xpos2,ypos2)
     }
 }
-function drawSkeleton(person,skeletonColor){
-
-}
 function drawBodyPoint(point){
     circle(point.x+cameraX,point.y,10)
 }
@@ -243,7 +240,13 @@ function findPlayers(){
                     player1=person;
                 }
             }
+            if(noseX>middleX){
+                let distanFromPlayer2Center = abs(noseX-player2CenterX);
+                if (distanFromPlayer2Center<closestPlayer2Distance){
+                    player2=person;
+                }
             
         }
     }
+}
 }
