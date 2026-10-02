@@ -211,5 +211,5 @@ function findPlayers(){
     //reset players
     player1Person=null;
     player2Person=null;
-    
+    let closestPlayer1Distance = Number.max
 }
