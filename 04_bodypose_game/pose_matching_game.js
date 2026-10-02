@@ -43,6 +43,7 @@ function preload(){
 
 // setup() runs once at the start.
 function setup() {
+    new Canvas
     let constraints={
         video:{
             width:cameraWidth,
