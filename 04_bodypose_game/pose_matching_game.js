@@ -208,5 +208,6 @@ function drawSkeleton(person, skeletonColor) {
     drawBodyPoint(person.right_hip);
 }
 function findPlayers(){
-    
+    //reset players
+    player1P
 }
