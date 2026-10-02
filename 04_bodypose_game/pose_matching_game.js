@@ -29,6 +29,8 @@ let bodyPose;//ml model
 let detectedPeople=[]; //used to store people
 //game vars
 let skeletonColour;
+//PEOPLE
+let player1
 // ====================================================
 // Preload
 // ====================================================
