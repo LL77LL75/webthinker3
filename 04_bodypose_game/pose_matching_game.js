@@ -162,7 +162,7 @@ function pointIsReady(point){
     }
 }
 function drawBodyLine(point1,point2){
-    if (drawBodyLine)
+    if (pointIsReady(point1))
     line(point1.x+cameraX,point1.y,point2.x+cameraX,point2.y); // uses 2 point (xpos1,ypos1,xpos2,ypos2)
 }
 function drawSkeleton(person,skeletonColor){
