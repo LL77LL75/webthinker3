@@ -238,7 +238,7 @@ function findPlayers(){
             let noseX=nose.x+cameraX;
             //check if its on the left
             if(noseX<middleX){
-                let distanFromPlayer1Center = abs()
+                let distanFromPlayer1Center = abs(noseX-player1CenterX)
             }
         }
     }
