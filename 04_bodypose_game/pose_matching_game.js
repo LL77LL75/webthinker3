@@ -54,7 +54,7 @@ function setup() {
     flipped:true
     };
     video = createCapture(constraints);
-    video.hide;
+    video.hide();
     //give vid to model
     bodyPose.detectStart(video,gotPeople);
     // Set up text.
