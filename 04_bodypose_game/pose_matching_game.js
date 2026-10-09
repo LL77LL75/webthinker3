@@ -19,6 +19,7 @@ let cameraX = sidePanelWidth;
 
 // x-position of the left panel.
 let leftPanelX = 0;
+let leftPanel
 
 // x-position of the right panel.
 let rightPanelX = sidePanelWidth + cameraWidth;
