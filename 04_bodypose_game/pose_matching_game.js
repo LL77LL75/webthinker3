@@ -340,7 +340,7 @@ function drawPlayerStatus(){
     }
     if (player2Person !==null){
         fill(player2Color);
-        text("detected: ", leftPanelCenterX,height*0.5)
+        text("detected: ", rightPanelCenterX,height*0.5)
     }
     else{
         fill(player2Color);
