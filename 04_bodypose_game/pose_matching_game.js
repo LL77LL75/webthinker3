@@ -49,7 +49,7 @@ function preload(){
     leftHandUpImg;
     rightHandUpImg;
     handsOnHeadImg;
-    tPoseImg;
+    tPoseImg=loadImage("");
 }
 
 // ====================================================
