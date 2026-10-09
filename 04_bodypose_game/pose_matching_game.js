@@ -309,3 +309,7 @@ function setupPoseArray(){
         }
     ];
 }
+//draw game
+function drawGameUI(){
+    te
+}
