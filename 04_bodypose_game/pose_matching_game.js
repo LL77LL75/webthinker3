@@ -311,7 +311,8 @@ function setupPoseArray(){
             id: "leftHandUp"
         }
     ];
-}
+};
+function pointIsReadyReady()
 //draw game
 function drawGameUI(){
     //text stuff
