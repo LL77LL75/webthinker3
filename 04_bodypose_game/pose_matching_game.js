@@ -273,6 +273,7 @@ function drawPlayerSkeletons(){
     }
     if (player2 != null){
         drawSkeleton(player2Person,player2Color);
+        console.log(player2Color);
     }
 }
 //setup of adding poses
