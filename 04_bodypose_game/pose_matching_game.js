@@ -274,3 +274,7 @@ function drawPlayerSkeletons(){
         drawSkeleton(player2Person,player2Color);
     }
 }
+//setup of adding poses
+function setupPoseArray(){
+    poseA
+}
