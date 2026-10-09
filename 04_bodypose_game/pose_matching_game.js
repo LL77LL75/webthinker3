@@ -47,7 +47,7 @@ function preload(){
     bodyPose=ml5.bodyPose("MoveNet",{flipped:true});
     bothHandsUpImg=loadImage("assets/poseBattle_bothHandsUp.png");
     leftHandUpImg=loadImage("assets/poseBattle_leftHandUp.img");
-    rightHandUpImg=loadImage("assets/");
+    rightHandUpImg=loadImage("assets/poseBattle_.img");
     handsOnHeadImg=loadImage("assets/");
     tPoseImg=loadImage("assets/");
 }
