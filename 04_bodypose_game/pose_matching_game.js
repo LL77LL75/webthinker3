@@ -330,7 +330,7 @@ function drawGameUI(){
 function drawPlayerStatus(){
     textSize(28);
     noStroke();//remove text outline
-    if (player1Color !==null){
+    if (player1Person !==null){
         fill(player1Color);
         text("detected: ", leftPanelCenterX,height*0.5)
     }
@@ -338,7 +338,7 @@ function drawPlayerStatus(){
         fill(player1Color);
         text("not detected",leftPanelCenterX,height*0.5)
     }
-    if (player2 !==null){
+    if (player2Person !==null){
         fill(player1Color);
         text("detected: ", leftPanelCenterX,height*0.5)
     }
