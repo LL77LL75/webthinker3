@@ -48,7 +48,7 @@ function preload(){
     bothHandsUpImg;
     leftHandUpImg;
     rightHandUpImg;
-    handsOnHeadImg;
+    handsOnHeadImg=loadImage("");
     tPoseImg=loadImage("");
 }
 
