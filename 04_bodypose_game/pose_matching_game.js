@@ -320,4 +320,5 @@ function drawGameUI(){
     text(currentPose.name, width/2, height * 0.2);
     imageMode(CENTER);
     image(currentPose.image,width/2,height*0.6,230,230)
+    imageMode(CORNER)
 }
