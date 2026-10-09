@@ -339,11 +339,11 @@ function drawPlayerStatus(){
         text("not detected",leftPanelCenterX,height*0.5)
     }
     if (player2Person !==null){
-        fill(player1Color);
+        fill(player2Color);
         text("detected: ", leftPanelCenterX,height*0.5)
     }
     else{
-        fill(player1Color);
-        text("not detected",leftPanelCenterX,height*0.5)
+        fill(player2Color);
+        text("not detected",rightPanelCenterX,height*0.5)
     }
 }
