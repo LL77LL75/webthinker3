@@ -273,11 +273,11 @@ function findPlayers(){
 }
 function drawPlayerSkeletons(){
     //check if they exist
-    if (player1 != null){
+    if (player1Person != null){
         drawSkeleton(player1Person,player1Color);
         console.log(player1Color);
     }
-    if (player2 != null){
+    if (player2Person != null){
         drawSkeleton(player2Person,player2Color);
         console.log(player2Color);
     }
