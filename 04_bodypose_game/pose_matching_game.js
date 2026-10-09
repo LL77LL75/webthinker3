@@ -275,11 +275,6 @@ function drawPlayerSkeletons(){
     }
 }
 //setup of adding poses
-let bothHandsUpImg;
-let leftHandUpImg;
-let rightHandUpImg;
-let handsOnHeadImg;
-let tPoseImg;
 function setupPoseArray(){
     poseArray = [
         {
