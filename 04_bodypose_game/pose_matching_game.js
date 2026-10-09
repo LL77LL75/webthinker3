@@ -277,6 +277,7 @@ function drawPlayerSkeletons(){
 //setup of adding poses
 function setupPoseArray(){
     poseArray = [
-        
+        {},
+        {        }
     ];
 }
