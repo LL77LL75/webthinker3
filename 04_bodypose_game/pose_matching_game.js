@@ -256,7 +256,7 @@ function findPlayers(){
                 }
             }
             if(noseX>middleX){
-                let distanFromPlayer2Center = abs(noseX-player2CenterX);
+                let distanFromPlayer2Center = abs(player2CenterX);
                 if (distanFromPlayer2Center<closestPlayer2Distance){
                     player2Person=person;
                 }
