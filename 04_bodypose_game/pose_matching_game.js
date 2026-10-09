@@ -257,6 +257,6 @@ function drawPlayerSkeletons(){
         drawSkeleton(player1Person,player1Colour);
     }
     if (player2 != null){
-        drawSkeleton(player2Person,skeletonColour)
+        drawSkeleton(player2Person,player2Colour);
     }
 }
