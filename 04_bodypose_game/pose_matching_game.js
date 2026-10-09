@@ -269,6 +269,7 @@ function drawPlayerSkeletons(){
     //check if they exist
     if (player1 != null){
         drawSkeleton(player1Person,player1Color);
+        console.log(player1Color);
     }
     if (player2 != null){
         drawSkeleton(player2Person,player2Color);
