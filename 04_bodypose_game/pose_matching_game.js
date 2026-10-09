@@ -275,9 +275,37 @@ function drawPlayerSkeletons(){
     }
 }
 //setup of adding poses
+let bothHandsUpImg;
+let leftHandUpImg;
+let rightHandUpImg;
+let handsOnHeadImg;
+let tPoseImg;
 function setupPoseArray(){
     poseArray = [
-        {},
-        {        }
+        {
+            name:"Hands On Head",
+            image:handsOnHeadImg,
+            id:"handsOnHead"
+        },
+        {
+            name:"T Pose",
+            image:tPoseImg,
+            id: "tPose"
+        },
+        {
+            name:"Both Hands Up",
+            image:bothHandsUpImg,
+            id: "bothHandsUp"
+        },
+        {
+            name:"Right Hand Up",
+            image:rightHandUpImg,
+            id: "rightHandUp"
+        },
+        {
+            name:"Left Hand Up",
+            image:leftHandUpImg,
+            id: "leftHandUp"
+        }
     ];
 }
