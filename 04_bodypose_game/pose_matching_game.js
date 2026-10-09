@@ -171,9 +171,9 @@ function drawBodyPoint(point){
     circle(point.x+cameraX,point.y,10)
 }
 // Draws one person's skeleton.
-function drawSkeleton(person, skeletonColor) {
+function drawSkeleton(person, skeletoColour) {
     // Set skeleton line Color.
-    stroke(skeletonColor);
+    stroke(skeletoColour);
 
     // Set skeleton line thickness.
     strokeWeight(3);
@@ -206,7 +206,7 @@ function drawSkeleton(person, skeletonColor) {
     noStroke();
 
     // Set circle Color.
-    fill(skeletonColor);
+    fill(skeletoColour);
 
     // Draw important body points.
     drawBodyPoint(person.nose);
