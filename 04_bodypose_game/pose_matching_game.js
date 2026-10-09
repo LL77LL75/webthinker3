@@ -328,5 +328,7 @@ function drawGameUI(){
 function drawPlayerStatus(){
     textSize(28);
     noStroke();//remove text outline
-    
+    if (player1Color !==null){
+        text
+    }
 }
