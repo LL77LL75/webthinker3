@@ -45,11 +45,11 @@ let tPoseImg;
 
 function preload(){
     bodyPose=ml5.bodyPose("MoveNet",{flipped:true});
-    let bothHandsUpImg;
-let leftHandUpImg;
-let rightHandUpImg;
-    let handsOnHeadImg;
-    let tPoseImg;
+    bothHandsUpImg;
+    leftHandUpImg;
+    rightHandUpImg;
+    handsOnHeadImg;
+    tPoseImg;
 }
 
 // ====================================================
