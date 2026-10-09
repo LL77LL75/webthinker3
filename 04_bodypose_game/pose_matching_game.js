@@ -317,5 +317,5 @@ function drawGameUI(){
     fill(200,200,200);
     textSize(28);
     text(currentPose.name, width/2, height * 0.2);
-    image(currentPose,width/2,height*0.6,230,230)
+    image(currentPose.image,width/2,height*0.6,230,230)
 }
