@@ -315,7 +315,7 @@ function setupPoseArray(){
 //draw game
 function drawGameUI(){
     if (currentPose === null || currentPose ===undefined){
-        
+
     }
     //text stuff
     fill(200,200,200);
@@ -324,4 +324,7 @@ function drawGameUI(){
     imageMode(CENTER);
     image(currentPose.image,width/2,height*0.6,230,230)
     imageMode(CORNER)
+}
+function drawPlayerStatus(){
+    
 }
