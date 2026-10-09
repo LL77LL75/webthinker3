@@ -104,6 +104,7 @@ function draw() {
     findPlayers();
     drawPlayerSkeletons();
     drawGameUI();
+    drawPlayerSkeletons
 }
 
 // ====================================================
