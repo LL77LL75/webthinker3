@@ -29,7 +29,7 @@ let bodyPose;//ml model
 let detectedPeople=[]; //used to store people
 //game vars
 let skeletonColourPlayer1;
-let skeletonColourPlayer1;
+let player1Colour;
 //PEOPLE
 let player1Person=null;
 let player2Person=null;
