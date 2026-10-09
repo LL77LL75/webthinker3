@@ -39,7 +39,7 @@ let player2Person=null;
 //images
 let bothHandsUpImg;
 let leftHandUpImg;
-let
+let rightHandUpImg;
 let
 let
 
