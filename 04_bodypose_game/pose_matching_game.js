@@ -314,7 +314,9 @@ function setupPoseArray(){
 };
 //draw game
 function drawGameUI(){
-    if (currentPose === null || currentPose ===undefined)
+    if (currentPose === null || currentPose ===undefined){
+        
+    }
     //text stuff
     fill(200,200,200);
     textSize(28);
