@@ -148,7 +148,6 @@ function drawAllSkeletons(){
     //loop through the detected people
     for (let i = 0; i<detectedPeople.length; i++){
         let person=detectedPeople[i];
-        drawSkeleton(person,skeletonColor);
     }
 }
 //check confidence
