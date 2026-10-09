@@ -314,6 +314,7 @@ function setupPoseArray(){
 };
 //draw game
 function drawGameUI(){
+    if 
     //text stuff
     fill(200,200,200);
     textSize(28);
