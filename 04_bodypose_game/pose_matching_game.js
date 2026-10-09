@@ -331,6 +331,7 @@ function drawPlayerStatus(){
     textSize(28);
     noStroke();//remove text outline
     if (player1Color !==null){
-        text("detected: ")
+        text("detected: ", leftPanelCenterX,height*0.5)
     }
+    else 
 }
