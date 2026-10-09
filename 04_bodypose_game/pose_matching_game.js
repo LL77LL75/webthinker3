@@ -64,6 +64,7 @@ function setup() {
     // Set up text.
     textAlign(CENTER, CENTER);
     player1Colour = "rgb(0,0,0)";
+    player2Colour = "rgb(255,0,0)";
 };
 
 
