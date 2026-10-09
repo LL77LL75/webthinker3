@@ -244,13 +244,13 @@ function findPlayers(){
     let player1CenterX = cameraWidth/4 +cameraX;
     let player2CenterX = cameraWidth/4*3 +cameraX;
     let middleX = cameraWidth/2 +cameraX;
-    
+
     for (let i = 0; i<detectedPeople.length;i++){
         let person = detectedPeople[i];
         let nose = person.nose;
-        console.log(nose)
         if (pointIsReady(nose)){
             let noseX=nose.x+cameraX;
+            
             //check if its on the left
             if(noseX<middleX){
                 let distanFromPlayer1Center = abs(noseX-player1CenterX);
