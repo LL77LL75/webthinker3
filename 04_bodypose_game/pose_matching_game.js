@@ -38,7 +38,7 @@ let player2Person=null;
 // ====================================================
 //images
 let bothHandsUpImg;
-let
+let leftHandUpImg;
 let
 let
 let
