@@ -28,8 +28,8 @@ let video;
 let bodyPose;//ml model
 let detectedPeople=[]; //used to store people
 //game vars
-let player1Colour;
-let player2Colour;
+let player1Color;
+let player2Color;
 //PEOPLE
 let player1Person=null;
 let player2Person=null;
@@ -63,8 +63,8 @@ function setup() {
     bodyPose.detectStart(video,gotPeople);
     // Set up text.
     textAlign(CENTER, CENTER);
-    player1Colour = "rgb(0,0,0)";
-    player2Colour = "rgb(255,0,0)";
+    player1Color = "rgb(0,0,0)";
+    player2Color = "rgb(255,0,0)";
 };
 
 
@@ -96,7 +96,7 @@ function drawUIPanel() {
     // Remove outlines.
     noStroke();
 
-    // Set panel colour.
+    // Set panel Color.
     fill(20);
 
     // Draw left panel.
@@ -105,7 +105,7 @@ function drawUIPanel() {
     // Draw right panel.
     rect(rightPanelX, 0, sidePanelWidth, cameraHeight);
 
-    // Set divider line colour.
+    // Set divider line Color.
     stroke(255, 180);
 
     // Set divider line thickness.
@@ -125,7 +125,7 @@ function drawUIPanel() {
 
 // Draws the vertical line that separates Player 1 and Player 2.
 function drawMiddleLine() {
-    // Set line colour to white with transparency.
+    // Set line Color to white with transparency.
     stroke(255, 180);
 
     // Set line thickness.
@@ -148,7 +148,7 @@ function drawAllSkeletons(){
     //loop through the detected people
     for (let i = 0; i<detectedPeople.length; i++){
         let person=detectedPeople[i];
-        drawSkeleton(person,skeletonColour);
+        drawSkeleton(person,skeletonColor);
     }
 }
 //check confidence
@@ -173,7 +173,7 @@ function drawBodyPoint(point){
 }
 // Draws one person's skeleton.
 function drawSkeleton(person, skeletonColor) {
-    // Set skeleton line colour.
+    // Set skeleton line Color.
     stroke(skeletonColor);
 
     // Set skeleton line thickness.
@@ -206,7 +206,7 @@ function drawSkeleton(person, skeletonColor) {
     // Remove outlines for the body point circles.
     noStroke();
 
-    // Set circle colour.
+    // Set circle Color.
     fill(skeletonColor);
 
     // Draw important body points.
@@ -255,9 +255,9 @@ function findPlayers(){
 function drawPlayerSkeletons(){
     //check if they exist
     if (player1 != null){
-        drawSkeleton(player1Person,player1Colour);
+        drawSkeleton(player1Person,player1Color);
     }
     if (player2 != null){
-        drawSkeleton(player2Person,player2Colour);
+        drawSkeleton(player2Person,player2Color);
     }
 }
