@@ -98,7 +98,7 @@ function draw() {
     image(video,cameraX,0,cameraWidth,cameraHeight);
     drawDetectionStatus();
     drawAllSkeletons();
-
+    drawGameUI();
 }
 
 // ====================================================
