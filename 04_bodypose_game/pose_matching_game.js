@@ -23,7 +23,7 @@ let leftPanelCenterX=sidePanelWidth/2;
 
 // x-position of the right panel.
 let rightPanelX = sidePanelWidth + cameraWidth;
-let rightPanelCenterX = rightPanelX
+let rightPanelCenterX = rightPanelX + sidePanelWidth/2;
 //setup vars
 let video;
 let bodyPose;//ml model
