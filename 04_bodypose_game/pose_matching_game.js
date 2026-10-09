@@ -36,6 +36,8 @@ let player2Person=null;
 // ====================================================
 // Preload
 // ====================================================
+//images
+let
 
 function preload(){
     bodyPose=ml5.bodyPose("MoveNet",{flipped:true});
