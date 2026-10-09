@@ -48,8 +48,8 @@ function preload(){
     bothHandsUpImg=loadImage("assets/poseBattle_bothHandsUp.png");
     leftHandUpImg=loadImage("assets/poseBattle_leftHandUp.png");
     rightHandUpImg=loadImage("assets/poseBattle_.png");
-    handsOnHeadImg=loadImage("assets/");
-    tPoseImg=loadImage("assets/");
+    handsOnHeadImg=loadImage("assets/poseBattle_.png");
+    tPoseImg=loadImage("assets/poseBattle_.png");
 }
 
 // ====================================================
