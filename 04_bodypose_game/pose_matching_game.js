@@ -336,6 +336,6 @@ function drawPlayerStatus(){
     }
     else{
         fill(player1Color);
-        text("not detected",le)
+        text("not detected",leftPanelCenterX,height*0.5)
     }
 }
