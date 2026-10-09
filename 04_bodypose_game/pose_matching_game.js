@@ -40,8 +40,8 @@ let player2Person=null;
 let bothHandsUpImg;
 let leftHandUpImg;
 let rightHandUpImg;
-let
-let
+let handsOnHeadImg;
+let tPoseImg;
 
 function preload(){
     bodyPose=ml5.bodyPose("MoveNet",{flipped:true});
