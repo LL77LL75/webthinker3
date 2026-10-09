@@ -46,7 +46,7 @@ let tPoseImg;
 function preload(){
     bodyPose=ml5.bodyPose("MoveNet",{flipped:true});
     bothHandsUpImg=loadImage("assets/poseBattle_bothHandsUp.png");
-    leftHandUpImg=loadImage("assets/");
+    leftHandUpImg=loadImage("assets/leftHandUp.img");
     rightHandUpImg=loadImage("assets/");
     handsOnHeadImg=loadImage("assets/");
     tPoseImg=loadImage("assets/");
