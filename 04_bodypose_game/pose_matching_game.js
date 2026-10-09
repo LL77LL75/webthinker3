@@ -46,10 +46,10 @@ let tPoseImg;
 function preload(){
     bodyPose=ml5.bodyPose("MoveNet",{flipped:true});
     bothHandsUpImg=loadImage("assets/poseBattle_bothHandsUp.png");
-    leftHandUpImg=loadImage("");
-    rightHandUpImg=loadImage("");
-    handsOnHeadImg=loadImage("");
-    tPoseImg=loadImage("");
+    leftHandUpImg=loadImage("assets/");
+    rightHandUpImg=loadImage("assets/");
+    handsOnHeadImg=loadImage("assets/");
+    tPoseImg=loadImage("assets/");
 }
 
 // ====================================================
