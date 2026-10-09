@@ -37,7 +37,7 @@ let player2Person=null;
 // Preload
 // ====================================================
 //images
-let
+let bothHandsUpImg;
 let
 let
 let
