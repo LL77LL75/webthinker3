@@ -312,6 +312,7 @@ function setupPoseArray(){
 //draw game
 function drawGameUI(){
     //text stuff
-    fill()
-    textSize(28)
+    fill(200,200,200);
+    textSize(28);
+    text(currentPose,)
 }
