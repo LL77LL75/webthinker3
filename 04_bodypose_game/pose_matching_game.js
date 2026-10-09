@@ -43,6 +43,7 @@ let rightHandUpImg;
 let handsOnHeadImg;
 let tPoseImg;
 
+let poseArray=[]
 
 function preload(){
     bodyPose=ml5.bodyPose("MoveNet",{flipped:true});
