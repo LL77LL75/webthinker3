@@ -326,5 +326,6 @@ function drawGameUI(){
     imageMode(CORNER)
 }
 function drawPlayerStatus(){
-    
+    textSize(28);
+    noStroke()
 }
