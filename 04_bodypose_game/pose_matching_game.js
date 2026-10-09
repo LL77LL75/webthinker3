@@ -239,7 +239,7 @@ function findPlayers(){
     player2Person=null;
     let closestPlayer1Distance = Number.MAX_VALUE;
     let closestPlayer2Distance = Number.MAX_VALUE;
-    
+
     //x pos players
     let player1CenterX = cameraWidth/4 +cameraX;
     let player2CenterX = cameraWidth/4*3 +cameraX;
@@ -247,6 +247,7 @@ function findPlayers(){
     for (let i = 0; i<detectedPeople.length;i++){
         let person = detectedPeople[i];
         let nose = person.nose;
+        console.log(nose)
         if (pointIsReady(nose)){
             let noseX=nose.x+cameraX;
             //check if its on the left
