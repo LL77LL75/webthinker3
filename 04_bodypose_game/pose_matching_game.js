@@ -628,12 +628,12 @@ function keyPressed(){
         currentPose = poseArray[0]
     }
     if (key==="2"){
-        currentPose = poseArray[0]
+        currentPose = poseArray[2]
     }
-    if (key==="1"){
-        currentPose = poseArray[0]
+    if (key==="3"){
+        currentPose = poseArray[2]
     }
-    if (key==="1"){
+    if (key==="2"){
         currentPose = poseArray[0]
     }
     if (key==="1"){
