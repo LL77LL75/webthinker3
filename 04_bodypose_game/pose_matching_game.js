@@ -332,19 +332,19 @@ function drawPlayerStatus(){
     noStroke();//remove text outline
     if (player1Person !==null){
         fill(player1Color);
-        text("match: ", leftPanelCenterX,height*0.5)
+        text("detected: ", leftPanelCenterX,height*0.5)
     }
     else{
         fill(player1Color);
-        text("not match",leftPanelCenterX,height*0.5)
+        text("not detected",leftPanelCenterX,height*0.5)
     }
     if (player2Person !==null){
         fill(player2Color);
-        text("match: ", rightPanelCenterX,height*0.5)
+        text("detected: ", rightPanelCenterX,height*0.5)
     }
     else{
         fill(player2Color);
-        text("not match",rightPanelCenterX,height*0.5)
+        text("not detected",rightPanelCenterX,height*0.5)
     }
 }
 function checkBothHandsUp(person) {
