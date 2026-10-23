@@ -675,3 +675,7 @@ function checkPlayerScores(){
         return
     }
 }
+function startRound(){
+    playerScored = false;
+    currentPose = poseArray
+}
