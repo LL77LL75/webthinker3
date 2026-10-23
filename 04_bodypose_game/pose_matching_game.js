@@ -345,6 +345,11 @@ function drawPlayerStatus(){
     if (player2Person !==null){
         fill(player2Color);
         text("detected: ", rightPanelCenterX,height*0.5)
+        if (checkCurrentPose(player2Person)===true){
+            text("Match!", leftPanelCenterX, height*0.7);
+        } else {
+            text("not matching...", leftPanelCenterX , height*0.7);
+        }
     }
     else{
         fill(player2Color);
