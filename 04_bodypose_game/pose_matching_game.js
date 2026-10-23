@@ -107,7 +107,8 @@ function draw() {
     drawPlayerSkeletons();
     drawGameUI();
     drawPlayerStatus();
-    drawPlayerScore("player 1",leftPanelCenterX)
+    drawPlayerScore("player 1",leftPanelCenterX,player1Score,player1Color);
+
 }
 
 // ====================================================
