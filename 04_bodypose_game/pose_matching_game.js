@@ -662,10 +662,10 @@ function checkPlayerScores(){
         player1Score += points;
         return
     }
-    if (playerScored === false && player1Person!==null){
-        if (checkCurrentPose(player1Person)==true)
-        //player1 scored
-        player1Score += points;
+    if (playerScored === false && player2Person!==null){
+        if (checkCurrentPose(player2Person)==true)
+        //player2 scored
+        player2Score += points;
         return
     }
 }
