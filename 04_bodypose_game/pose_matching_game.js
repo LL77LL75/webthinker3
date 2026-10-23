@@ -114,7 +114,8 @@ function draw() {
     drawPlayerScore("player 1",leftPanelCenterX,player1Score,player1Color);
     drawPlayerScore("player 2",rightPanelCenterX,player2Score,player2Color);
     checkPlayerScores();
-    text("round" + (roundNumber+1)+ "/" + totalRounds, w)
+    text
+    text("round" + (roundNumber+1)+ "/" + totalRounds, width/2,height*0.1)
 }
 
 // ====================================================
