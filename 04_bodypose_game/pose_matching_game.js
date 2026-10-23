@@ -643,3 +643,6 @@ function keyPressed(){
         currentPose = poseArray[5]
     }
 }
+function drawPlayerScore(playerName,PanelCenterX,score){
+    
+}
