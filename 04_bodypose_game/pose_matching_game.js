@@ -678,4 +678,6 @@ function checkPlayerScores(){
 function startRound(){
     playerScored = false;
     currentPose = poseArray[roundNumber];
+    if (playerScored ===true)
+        endRound
 }
