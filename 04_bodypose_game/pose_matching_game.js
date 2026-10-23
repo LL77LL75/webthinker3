@@ -639,4 +639,7 @@ function keyPressed(){
     if (key==="5"){
         currentPose = poseArray[4]
     }
+    if (key==="6"){
+        currentPose = poseArray[5]
+    }
 }
