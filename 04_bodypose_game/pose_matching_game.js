@@ -332,8 +332,8 @@ function drawPlayerStatus(){
     noStroke();//remove text outline
     if (player1Person !==null){
         fill(player1Color);
-        text("detected: ", leftPanelCenterX,height*0.5)
-        text("Match: ",leftPanelCenterX,height*0.7)
+        text("detected: ", leftPanelCenterX,height*0.5);
+        if()text("Match: ",leftPanelCenterX,height*0.7)
     }
     else{
         fill(player1Color);
