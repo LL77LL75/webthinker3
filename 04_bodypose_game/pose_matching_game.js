@@ -49,7 +49,7 @@ let currentPose = null;
 
 let score;
 let player1Score;
-let player1
+let player2Score;
 function preload(){
     bodyPose=ml5.bodyPose("MoveNet",{flipped:true});
     bothHandsUpImg=loadImage("assets/poseBattle_bothHandsUp.png");
@@ -107,6 +107,7 @@ function draw() {
     drawPlayerSkeletons();
     drawGameUI();
     drawPlayerStatus();
+    draw
 }
 
 // ====================================================
