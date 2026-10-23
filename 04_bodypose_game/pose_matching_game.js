@@ -47,6 +47,8 @@ let tPoseImg;
 let poseArray=[];
 let currentPose = null;
 
+let score;
+let player
 function preload(){
     bodyPose=ml5.bodyPose("MoveNet",{flipped:true});
     bothHandsUpImg=loadImage("assets/poseBattle_bothHandsUp.png");
