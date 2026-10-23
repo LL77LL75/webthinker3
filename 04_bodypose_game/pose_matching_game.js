@@ -644,5 +644,5 @@ function keyPressed(){
     }
 }
 function drawPlayerScore(playerName,PanelCenterX,score){
-    
+    fill(playerColour)
 }
