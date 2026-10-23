@@ -333,7 +333,7 @@ function drawPlayerStatus(){
     if (player1Person !==null){
         fill(player1Color);
         text("detected: ", leftPanelCenterX,height*0.5);
-        if()text("Match: ",leftPanelCenterX,height*0.7)
+        if (checkCurrentPose(player1Person))text("Match: ",leftPanelCenterX,height*0.7)
     }
     else{
         fill(player1Color);
