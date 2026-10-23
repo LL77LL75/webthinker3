@@ -50,6 +50,7 @@ let currentPose = null;
 let score=100;
 let player1Score=0;
 let player2Score=0;
+let playerScored;
 function preload(){
     bodyPose=ml5.bodyPose("MoveNet",{flipped:true});
     bothHandsUpImg=loadImage("assets/poseBattle_bothHandsUp.png");
@@ -653,4 +654,9 @@ function drawPlayerScore(playerName,PanelCenterX,score,playerColour){
     textSize(30);
     text(playerName,PanelCenterX,height*0.2);
     text("score: " + score,PanelCenterX,height*0.3);
+}
+function checkPlayerScores(){
+    if (playerScored === false && player1Person!==null){
+        
+    } 
 }
