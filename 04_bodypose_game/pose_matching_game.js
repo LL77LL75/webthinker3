@@ -682,3 +682,8 @@ function startRound(){
         endRound()
     }
 }
+function endround(){
+    if (roundNumber>totalRounds){
+        return
+    }
+}
