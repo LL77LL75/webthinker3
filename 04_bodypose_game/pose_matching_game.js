@@ -623,3 +623,8 @@ function checkCurrentPose(person){
         }
     }
 }
+function keyPressed(){
+    if (key==="1"){
+        currentPose
+    }
+}
