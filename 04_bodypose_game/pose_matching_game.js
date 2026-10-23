@@ -600,3 +600,5 @@ function checkHandsOnHead(person) {
         return false;
     }
 }
+
+function checkCurrentPose(person)
