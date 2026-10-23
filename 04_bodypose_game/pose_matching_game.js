@@ -605,6 +605,8 @@ function checkCurrentPose(person){
     if (currentPose !== null){
         if (currentPose.id==="bothHandsUp"){
             return checkBothHandsUp(person);
+        } else if (currentPose.id === "leftHandUp"){
+            
         }
     }
 }
