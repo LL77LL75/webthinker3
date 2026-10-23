@@ -637,6 +637,6 @@ function keyPressed(){
         currentPose = poseArray[3]
     }
     if (key==="5"){
-        currentPose = poseArray[0]
+        currentPose = poseArray[4]
     }
 }
