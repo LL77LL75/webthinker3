@@ -110,6 +110,7 @@ function draw() {
     drawPlayerStatus();
     drawPlayerScore("player 1",leftPanelCenterX,player1Score,player1Color);
     drawPlayerScore("player 2",rightPanelCenterX,player2Score,player2Color);
+    checkPlayerScores();
 }
 
 // ====================================================
