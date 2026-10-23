@@ -657,7 +657,7 @@ function drawPlayerScore(playerName,PanelCenterX,score,playerColour){
 }
 function checkPlayerScores(){
     if (playerScored === false && player1Person!==null){
-        if (checkCurrentPose(pl))
+        if (checkCurrentPose(player1Person)==-true)
         //player1 scored
         player1Score += points;
         return
