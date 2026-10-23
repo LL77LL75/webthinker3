@@ -608,7 +608,7 @@ function checkCurrentPose(person){
         } else if (currentPose.id === "leftHandUp"){
             return checkLeftHandUp(person);
         } else if (currentPose.id === "rightHandUp"){
-            
+            return()
         }
     }
 }
