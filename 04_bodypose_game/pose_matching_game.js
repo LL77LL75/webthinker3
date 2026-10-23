@@ -51,6 +51,8 @@ let score=100;
 let player1Score=0;
 let player2Score=0;
 let playerScored;
+let rounds
+
 function preload(){
     bodyPose=ml5.bodyPose("MoveNet",{flipped:true});
     bothHandsUpImg=loadImage("assets/poseBattle_bothHandsUp.png");
