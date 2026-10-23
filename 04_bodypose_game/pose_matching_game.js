@@ -601,4 +601,6 @@ function checkHandsOnHead(person) {
     }
 }
 
-function checkCurrentPose(person)
+function checkCurrentPose(person){
+    
+}
