@@ -51,7 +51,8 @@ let score=100;
 let player1Score=0;
 let player2Score=0;
 let playerScored;
-let rounds
+let totalRounds=5;
+
 
 function preload(){
     bodyPose=ml5.bodyPose("MoveNet",{flipped:true});
