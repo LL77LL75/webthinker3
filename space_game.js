@@ -277,9 +277,11 @@ function fireEnemyShot(startX, startY, targetX, targetY, speed) {
   const directionX = targetX - startX;
   const directionY = targetY - startY;
   const distance = Math.hypot(directionX, directionY) || 1;
+  const projectile = new Sprite(startX, startY, 14, 10, "none");
+  projectile.color = "#fb7185";
+  projectile.stroke = "#ffe4e6";
   enemyShots.push({
-    x: startX,
-    y: startY,
+    projectileSprite: projectile,
     velocityX: (directionX / distance) * speed,
     velocityY: (directionY / distance) * speed
   });
@@ -288,31 +290,38 @@ function fireEnemyShot(startX, startY, targetX, targetY, speed) {
 function updateShots() {
   for (let index = playerShots.length - 1; index >= 0; index -= 1) {
     const shot = playerShots[index];
-    shot.x += shot.velocityX;
+    const projectile = shot.projectileSprite;
+    projectile.x += shot.velocityX;
     let hit = false;
     for (const enemy of enemies) {
-      if (Math.abs(shot.x - enemy.x) < enemy.w / 2 && Math.abs(shot.y - enemy.y) < enemy.h / 2) {
+      if (Math.abs(projectile.x - enemy.x) < enemy.w / 2 && Math.abs(projectile.y - enemy.y) < enemy.h / 2) {
         enemy.gameHealth -= shot.damage;
         enemy.gameHitAt = frameCount;
         hit = true;
         break;
       }
     }
-    if (!hit && boss && Math.abs(shot.x - boss.x) < boss.w / 2 && Math.abs(shot.y - boss.y) < boss.h / 2) {
+    if (!hit && boss && Math.abs(projectile.x - boss.x) < boss.w / 2 && Math.abs(projectile.y - boss.y) < boss.h / 2) {
       boss.gameHealth -= shot.damage;
       hit = true;
     }
-    if (hit || shot.x > stageOrigin + STAGE_WIDTH) playerShots.splice(index, 1);
+    if (hit || projectile.x < stageOrigin - 40 || projectile.x > stageOrigin + STAGE_WIDTH) {
+      projectile.remove();
+      playerShots.splice(index, 1);
+    }
   }
 
   for (let index = enemyShots.length - 1; index >= 0; index -= 1) {
     const shot = enemyShots[index];
-    shot.x += shot.velocityX;
-    shot.y += shot.velocityY;
-    if (Math.abs(shot.x - player.x) < 22 && Math.abs(shot.y - player.y) < 27) {
+    const projectile = shot.projectileSprite;
+    projectile.x += shot.velocityX;
+    projectile.y += shot.velocityY;
+    if (Math.abs(projectile.x - player.x) < 22 && Math.abs(projectile.y - player.y) < 27) {
       damagePlayer();
+      projectile.remove();
       enemyShots.splice(index, 1);
-    } else if (shot.x < stageOrigin - 40 || shot.x > stageOrigin + STAGE_WIDTH + 40 || shot.y < 0 || shot.y > GAME_HEIGHT) {
+    } else if (projectile.x < stageOrigin - 40 || projectile.x > stageOrigin + STAGE_WIDTH + 40 || projectile.y < 0 || projectile.y > GAME_HEIGHT) {
+      projectile.remove();
       enemyShots.splice(index, 1);
     }
   }
@@ -348,6 +357,8 @@ function advanceLevel() {
 function resetStage() {
   for (const enemy of enemies) enemy.remove();
   enemies = [];
+  for (const shot of playerShots) shot.projectileSprite.remove();
+  for (const shot of enemyShots) shot.projectileSprite.remove();
   playerShots = [];
   enemyShots = [];
   if (boss) boss.remove();
@@ -357,6 +368,9 @@ function resetStage() {
   player.y = FLOOR_Y - player.h / 2 - 2;
   player.vel.x = 0;
   player.vel.y = 0;
+  jumpBuffer = 0;
+  coyoteFrames = 0;
+  playerFacing = 1;
   ground.x = stageOrigin + STAGE_WIDTH / 2;
 }
 
