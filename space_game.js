@@ -85,7 +85,9 @@ function draw() {
 function updateGame() {
   const movingLeft = kb.pressing("a");
   const movingRight = kb.pressing("d");
-  player.vel.x = (Number(movingRight) - Number(movingLeft)) * PLAYER_SPEED;
+  const movementDirection = Number(movingRight) - Number(movingLeft);
+  player.vel.x = 0;
+  player.x += movementDirection * PLAYER_SPEED;
   if (movingLeft) playerFacing = -1;
   if (movingRight) playerFacing = 1;
   player.x = Math.max(player.x, stageOrigin + player.w / 2);
@@ -120,9 +122,13 @@ function updateGame() {
 
   const bossX = stageOrigin + 1510;
   if (!boss && localX >= 1330) spawnBoss(bossX);
-  if (boss && boss.gameHealth > 0) {
-    player.x = Math.min(player.x, boss.x - 72);
-    updateBoss();
+  if (boss) {
+    if (boss.gameHealth > 0) {
+      player.x = Math.min(player.x, boss.x - 72);
+      updateBoss();
+    } else {
+      completeBoss();
+    }
   }
 
   updateEnemies();
@@ -266,6 +272,10 @@ function spawnBoss(x) {
   boss.stroke = "#fff7ed";
   boss.gameHealth = LEVELS[currentLevel].health;
   boss.gameMaxHealth = LEVELS[currentLevel].health;
+  boss.gameBaseColor = LEVELS[currentLevel].color;
+  boss.gameHitAt = -1000;
+  boss.gameRecoilX = 0;
+  boss.gameAttackCount = 0;
   lastBossShot = frameCount;
 }
 
@@ -298,18 +308,31 @@ function updateEnemies() {
 
 function updateBoss() {
   boss.y = FLOOR_Y - 48 + Math.sin(frameCount * 0.045) * 10;
-  if (frameCount - lastBossShot > 75) {
-    fireEnemyShot(boss.x - 45, boss.y + 8, player.x, player.y, 4.1);
+  boss.color = frameCount - boss.gameHitAt < 9 ? "#ffffff" : boss.gameBaseColor;
+  if (boss.gameRecoilX > 0.2) {
+    boss.x += boss.gameRecoilX;
+    boss.gameRecoilX *= 0.65;
+  } else {
+    boss.gameRecoilX = 0;
+  }
+  if (frameCount - lastBossShot > 65) {
+    fireEnemyShot(boss.x - 50, boss.y + 8, player.x, player.y, 4.8);
+    boss.gameAttackCount += 1;
+    if (boss.gameAttackCount % 3 === 0) {
+      fireEnemyShot(boss.x - 50, boss.y + 8, player.x, player.y - 90, 3.8);
+      fireEnemyShot(boss.x - 50, boss.y + 8, player.x, player.y + 90, 3.8);
+    }
     lastBossShot = frameCount;
   }
   if (Math.abs(player.x - boss.x) < 72 && Math.abs(player.y - boss.y) < 75) damagePlayer();
-  if (boss.gameHealth <= 0) {
-    boss.remove();
-    boss = null;
-    bossesDefeated += 1;
-    playerHealth = Math.min(PLAYER_MAX_HEALTH, playerHealth + 1);
-    setGameState("level-clear");
-  }
+}
+
+function completeBoss() {
+  boss.remove();
+  boss = null;
+  bossesDefeated += 1;
+  playerHealth = Math.min(PLAYER_MAX_HEALTH, playerHealth + 1);
+  setGameState("level-clear");
 }
 
 function fireEnemyShot(startX, startY, targetX, targetY, speed) {
@@ -342,6 +365,8 @@ function updateShots() {
     }
     if (!hit && boss && Math.abs(projectile.x - boss.x) < boss.w / 2 && Math.abs(projectile.y - boss.y) < boss.h / 2) {
       boss.gameHealth -= shot.damage;
+      boss.gameHitAt = frameCount;
+      boss.gameRecoilX = 9;
       hit = true;
     }
     if (hit || projectile.x < stageOrigin - 40 || projectile.x > stageOrigin + STAGE_WIDTH) {
