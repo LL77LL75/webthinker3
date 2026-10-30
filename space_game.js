@@ -13,6 +13,9 @@ const LEVELS = [
 
 let player;
 let ground;
+let playerFacing = 1;
+let jumpBuffer = 0;
+let coyoteFrames = 0;
 let enemies = [];
 let playerShots = [];
 let enemyShots = [];
@@ -42,7 +45,7 @@ function setup() {
   player.friction = 0;
   player.bounciness = 0;
 
-  ground = new Sprite(STAGE_WIDTH / 2, FLOOR_Y + 38, STAGE_WIDTH, 100);
+  ground = new Sprite(STAGE_WIDTH / 2, FLOOR_Y + 50, STAGE_WIDTH, 100);
   ground.color = "#254d59";
   ground.stroke = "#6ee7c8";
   ground.collider = "static";
@@ -71,7 +74,6 @@ function draw() {
   if (gameState === "playing") updateGame();
   if (gameState === "level-clear" && frameCount - stateChangedAt > 110) advanceLevel();
 
-  drawProjectiles();
   drawHud();
 
   if (gameState === "level-clear") {
@@ -87,12 +89,19 @@ function updateGame() {
   const movingLeft = kb.pressing("a");
   const movingRight = kb.pressing("d");
   player.vel.x = (Number(movingRight) - Number(movingLeft)) * PLAYER_SPEED;
+  if (movingLeft) playerFacing = -1;
+  if (movingRight) playerFacing = 1;
   player.x = Math.max(player.x, stageOrigin + player.w / 2);
 
-  const floorTop = FLOOR_Y;
-  const onFloor = player.y >= floorTop - player.h / 2 - 3 && Math.abs(player.vel.y) < 2;
-  if ((kb.presses("w") || kb.presses("space")) && onFloor) {
+  if (kb.presses("w") || kb.presses("space")) jumpBuffer = 8;
+  else jumpBuffer = Math.max(0, jumpBuffer - 1);
+  const playerBottom = player.y + player.h / 2;
+  const grounded = playerBottom >= FLOOR_Y - 4 && playerBottom <= FLOOR_Y + 9 && player.vel.y >= -1;
+  coyoteFrames = grounded ? 8 : Math.max(0, coyoteFrames - 1);
+  if (jumpBuffer > 0 && coyoteFrames > 0) {
     player.vel.y = -PLAYER_JUMP;
+    jumpBuffer = 0;
+    coyoteFrames = 0;
   }
 
   if ((kb.pressing("j") || kb.pressing("x")) && frameCount - lastPlayerShot > 15) {
@@ -165,18 +174,6 @@ function drawHud() {
   }
 }
 
-function drawProjectiles() {
-  noStroke();
-  for (const shot of playerShots) {
-    fill("#a7f3d0");
-    circle(shot.x, shot.y, 10);
-  }
-  for (const shot of enemyShots) {
-    fill("#fb7185");
-    circle(shot.x, shot.y, 12);
-  }
-}
-
 function drawMessage(title, detail) {
   const panelX = camera.x - 300;
   const panelY = GAME_HEIGHT / 2 - 100;
@@ -193,7 +190,16 @@ function drawMessage(title, detail) {
 }
 
 function firePlayerShot() {
-  playerShots.push({ x: player.x + 25, y: player.y - 3, velocityX: 9, damage: 1 });
+  const projectile = new Sprite(
+    player.x + playerFacing * (player.w / 2 + 8),
+    player.y,
+    14,
+    10,
+    "none"
+  );
+  projectile.color = "#a7f3d0";
+  projectile.stroke = "#eafff8";
+  playerShots.push({ projectileSprite: projectile, velocityX: 9 * playerFacing, damage: 1 });
   lastPlayerShot = frameCount;
 }
 
