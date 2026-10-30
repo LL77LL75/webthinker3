@@ -1,9 +1,11 @@
 const GAME_WIDTH = 960;
 const GAME_HEIGHT = 540;
 const FLOOR_Y = 490;
-const STAGE_WIDTH = 1800;
+const STAGE_WIDTH = 2200;
 const PLAYER_SPEED = 2.7;
-const PLAYER_JUMP = 16;
+const PLAYER_JUMP = 13;
+const PLAYER_SHOT_COOLDOWN = 8;
+const PLAYER_SHOT_DAMAGE = 0.5;
 const PLAYER_MAX_HEALTH = 5;
 const LEVELS = [
   { name: "Moonlit Run", boss: "The Comet Crab", color: "#fb7185", health: 8 },
@@ -110,20 +112,20 @@ function updateGame() {
     coyoteFrames = 0;
   }
 
-  if ((kb.pressing("j") || kb.pressing("x")) && frameCount - lastPlayerShot > 15) {
+  if ((kb.pressing("j") || kb.pressing("x")) && frameCount - lastPlayerShot >= PLAYER_SHOT_COOLDOWN) {
     firePlayerShot();
   }
 
   const localX = player.x - stageOrigin;
-  const waveMarkers = [360, 760, 1110];
+  const waveMarkers = [380, 850, 1320, 1650];
   while (waveIndex < waveMarkers.length && localX > waveMarkers[waveIndex]) {
     spawnEnemy(stageOrigin + waveMarkers[waveIndex] + 70, waveIndex);
     spawnEnemy(stageOrigin + waveMarkers[waveIndex] + 140, waveIndex + 1);
     waveIndex += 1;
   }
 
-  const bossX = stageOrigin + 1510;
-  if (!boss && localX >= 1330) spawnBoss(bossX);
+  const bossX = stageOrigin + 1970;
+  if (!boss && localX >= 1840) spawnBoss(bossX);
   if (boss) {
     if (boss.gameHealth > 0) {
       player.x = Math.min(player.x, boss.x - 72);
@@ -140,7 +142,7 @@ function updateGame() {
 }
 
 function createStagePlatforms() {
-  const floorSegments = [[0, 460], [560, 1020], [1120, STAGE_WIDTH]];
+  const floorSegments = [[0, 500], [620, 1240], [1360, STAGE_WIDTH]];
   for (const [left, right] of floorSegments) {
     const floorSegment = new Sprite(stageOrigin + (left + right) / 2, FLOOR_Y + 50, right - left, 100);
     floorSegment.color = "#254d59";
@@ -150,11 +152,13 @@ function createStagePlatforms() {
   }
 
   const raisedPlatforms = [
-    { x: 300, y: 405, width: 150 },
-    { x: 520, y: 355, width: 130 },
-    { x: 790, y: 390, width: 170 },
-    { x: 1060, y: 350, width: 140 },
-    { x: 1330, y: 405, width: 160 }
+    { x: 300, y: 420, width: 150 },
+    { x: 560, y: 390, width: 140 },
+    { x: 850, y: 420, width: 180 },
+    { x: 1140, y: 390, width: 140 },
+    { x: 1450, y: 420, width: 160 },
+    { x: 1720, y: 390, width: 160 },
+    { x: 1960, y: 420, width: 180 }
   ];
   for (const layout of raisedPlatforms) {
     const platform = new Sprite(stageOrigin + layout.x, layout.y, layout.width, 18);
@@ -246,7 +250,7 @@ function firePlayerShot() {
   );
   projectile.color = "#a7f3d0";
   projectile.stroke = "#eafff8";
-  playerShots.push({ projectileSprite: projectile, velocityX: 9 * playerFacing, damage: 1 });
+  playerShots.push({ projectileSprite: projectile, velocityX: 9 * playerFacing, damage: PLAYER_SHOT_DAMAGE });
   lastPlayerShot = frameCount;
 }
 
