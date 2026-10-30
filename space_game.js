@@ -19,6 +19,7 @@ let coyoteFrames = 0;
 let enemies = [];
 let playerShots = [];
 let enemyShots = [];
+let bossEffects = [];
 let stars = [];
 let gameState = "title";
 let currentLevel = 0;
@@ -69,7 +70,8 @@ function draw() {
   }
 
   if (gameState === "playing") updateGame();
-  if (gameState === "level-clear" && frameCount - stateChangedAt > 110) advanceLevel();
+  if (gameState === "level-clear" && frameCount - stateChangedAt > 150) advanceLevel();
+  updateBossEffects();
 
   drawHud();
 
@@ -276,6 +278,9 @@ function spawnBoss(x) {
   boss.gameHitAt = -1000;
   boss.gameRecoilX = 0;
   boss.gameAttackCount = 0;
+  boss.gamePatrolMin = x - 42;
+  boss.gamePatrolMax = x + 42;
+  boss.gamePatrolDirection = 1;
   lastBossShot = frameCount;
 }
 
@@ -307,7 +312,12 @@ function updateEnemies() {
 }
 
 function updateBoss() {
-  boss.y = FLOOR_Y - 48 + Math.sin(frameCount * 0.045) * 10;
+  boss.x += boss.gamePatrolDirection * 1.35;
+  if (boss.x <= boss.gamePatrolMin || boss.x >= boss.gamePatrolMax) {
+    boss.x = constrain(boss.x, boss.gamePatrolMin, boss.gamePatrolMax);
+    boss.gamePatrolDirection *= -1;
+  }
+  boss.y = FLOOR_Y - 48 + Math.sin(frameCount * 0.06) * 20;
   boss.color = frameCount - boss.gameHitAt < 9 ? "#ffffff" : boss.gameBaseColor;
   if (boss.gameRecoilX > 0.2) {
     boss.x += boss.gameRecoilX;
@@ -315,6 +325,7 @@ function updateBoss() {
   } else {
     boss.gameRecoilX = 0;
   }
+  boss.x = constrain(boss.x, boss.gamePatrolMin, boss.gamePatrolMax);
   if (frameCount - lastBossShot > 65) {
     fireEnemyShot(boss.x - 50, boss.y + 8, player.x, player.y, 4.8);
     boss.gameAttackCount += 1;
@@ -328,11 +339,33 @@ function updateBoss() {
 }
 
 function completeBoss() {
+  spawnBossExplosion(boss.x, boss.y, boss.gameBaseColor);
   boss.remove();
   boss = null;
   bossesDefeated += 1;
   playerHealth = Math.min(PLAYER_MAX_HEALTH, playerHealth + 1);
   setGameState("level-clear");
+}
+
+function spawnBossExplosion(x, y, baseColor) {
+  const burstColors = [baseColor, "#fff7ed", "#facc15", "#55e6c1"];
+  for (let index = 0; index < 24; index += 1) {
+    const angle = (TWO_PI * index) / 24 + random(-0.12, 0.12);
+    const speed = random(2, 6);
+    const effect = new Sprite(x, y, random(7, 14), random(7, 14), "none");
+    effect.color = random(burstColors);
+    effect.stroke = "#ffffff";
+    effect.vel.x = Math.cos(angle) * speed;
+    effect.vel.y = Math.sin(angle) * speed;
+    effect.life = 38;
+    bossEffects.push(effect);
+  }
+}
+
+function updateBossEffects() {
+  for (let index = bossEffects.length - 1; index >= 0; index -= 1) {
+    if (bossEffects[index].life <= 0) bossEffects.splice(index, 1);
+  }
 }
 
 function fireEnemyShot(startX, startY, targetX, targetY, speed) {
