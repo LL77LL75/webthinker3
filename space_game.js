@@ -87,6 +87,7 @@ function updateGame() {
   const movingLeft = kb.pressing("a");
   const movingRight = kb.pressing("d");
   player.vel.x = (Number(movingRight) - Number(movingLeft)) * PLAYER_SPEED;
+  player.x = Math.max(player.x, stageOrigin + player.w / 2);
 
   const floorTop = FLOOR_Y;
   const onFloor = player.y >= floorTop - player.h / 2 - 3 && Math.abs(player.vel.y) < 2;
@@ -203,6 +204,8 @@ function spawnEnemy(x, variant) {
   enemy.stroke = "#ffe4d6";
   enemy.gameHealth = 2;
   enemy.gameSpeed = 1.15 + (variant % 2) * 0.25;
+  enemy.gameBaseColor = variant % 2 === 0 ? "#fb7185" : "#f97316";
+  enemy.gameHitAt = -1000;
   enemies.push(enemy);
 }
 
@@ -221,6 +224,7 @@ function updateEnemies() {
     const enemy = enemies[index];
     const direction = player.x < enemy.x ? -1 : 1;
     enemy.x += direction * enemy.gameSpeed;
+    enemy.color = frameCount - enemy.gameHitAt < 7 ? "#ffffff" : enemy.gameBaseColor;
     if (Math.abs(player.x - enemy.x) < 38 && Math.abs(player.y - enemy.y) < 45) damagePlayer();
     if (enemy.gameHealth <= 0 || enemy.x < stageOrigin - 80) {
       enemy.remove();
@@ -253,6 +257,7 @@ function updateShots() {
     for (const enemy of enemies) {
       if (Math.abs(shot.x - enemy.x) < enemy.w / 2 && Math.abs(shot.y - enemy.y) < enemy.h / 2) {
         enemy.gameHealth -= shot.damage;
+        enemy.gameHitAt = frameCount;
         hit = true;
         break;
       }
