@@ -1,8 +1,9 @@
 const GAME_WIDTH = 960;
 const GAME_HEIGHT = 540;
 const FLOOR_Y = 490;
-const STAGE_WIDTH = 2200;
-const PLAYER_SPEED = 2.7;
+const BASE_STAGE_WIDTH = 2200;
+const STAGE_WIDTH_INCREASE = 800;
+const PLAYER_SPEED = 2;
 const PLAYER_JUMP = 13;
 const PLAYER_SHOT_COOLDOWN = 8;
 const PLAYER_SHOT_DAMAGE = 0.5;
@@ -28,12 +29,15 @@ let currentLevel = 0;
 let playerHealth = PLAYER_MAX_HEALTH;
 let bossesDefeated = 0;
 let stageOrigin = 0;
-let waveIndex = 0;
 let boss = null;
 let lastPlayerShot = 0;
 let lastDamageAt = -1000;
 let lastBossShot = 0;
 let stateChangedAt = 0;
+
+function getStageWidth(levelIndex = currentLevel) {
+  return BASE_STAGE_WIDTH + levelIndex * STAGE_WIDTH_INCREASE;
+}
 
 function setup() {
   new Canvas(GAME_WIDTH, GAME_HEIGHT);
@@ -116,16 +120,10 @@ function updateGame() {
     firePlayerShot();
   }
 
+  const stageWidth = getStageWidth();
   const localX = player.x - stageOrigin;
-  const waveMarkers = [380, 850, 1320, 1650];
-  while (waveIndex < waveMarkers.length && localX > waveMarkers[waveIndex]) {
-    spawnEnemy(stageOrigin + waveMarkers[waveIndex] + 70, waveIndex);
-    spawnEnemy(stageOrigin + waveMarkers[waveIndex] + 140, waveIndex + 1);
-    waveIndex += 1;
-  }
-
-  const bossX = stageOrigin + 1970;
-  if (!boss && localX >= 1840) spawnBoss(bossX);
+  const bossX = stageOrigin + stageWidth - 230;
+  if (!boss && localX >= stageWidth - 360) spawnBoss(bossX);
   if (boss) {
     if (boss.gameHealth > 0) {
       player.x = Math.min(player.x, boss.x - 72);
@@ -142,7 +140,8 @@ function updateGame() {
 }
 
 function createStagePlatforms() {
-  const floorSegments = [[0, 500], [620, 1240], [1360, STAGE_WIDTH]];
+  const stageWidth = getStageWidth();
+  const floorSegments = [[0, 500], [620, 1240], [1360, stageWidth]];
   for (const [left, right] of floorSegments) {
     const floorSegment = new Sprite(stageOrigin + (left + right) / 2, FLOOR_Y + 50, right - left, 100);
     floorSegment.color = "#254d59";
@@ -152,13 +151,13 @@ function createStagePlatforms() {
   }
 
   const raisedPlatforms = [
-    { x: 300, y: 420, width: 150 },
-    { x: 560, y: 390, width: 140 },
-    { x: 850, y: 420, width: 180 },
-    { x: 1140, y: 390, width: 140 },
-    { x: 1450, y: 420, width: 160 },
-    { x: 1720, y: 390, width: 160 },
-    { x: 1960, y: 420, width: 180 }
+    { x: stageWidth * 0.14, y: 420, width: 150 },
+    { x: stageWidth * 0.26, y: 390, width: 140 },
+    { x: stageWidth * 0.38, y: 420, width: 180 },
+    { x: stageWidth * 0.5, y: 390, width: 140 },
+    { x: stageWidth * 0.62, y: 420, width: 160 },
+    { x: stageWidth * 0.75, y: 390, width: 160 },
+    { x: stageWidth * 0.87, y: 420, width: 180 }
   ];
   for (const layout of raisedPlatforms) {
     const platform = new Sprite(stageOrigin + layout.x, layout.y, layout.width, 18);
@@ -167,6 +166,14 @@ function createStagePlatforms() {
     platform.collider = "static";
     platforms.push(platform);
   }
+}
+
+function spawnStageEnemies() {
+  const stageWidth = getStageWidth();
+  const enemyPositions = [0.2, 0.29, 0.38, 0.47, 0.56, 0.64, 0.71, 0.77];
+  enemyPositions.forEach((position, index) => {
+    spawnEnemy(stageOrigin + stageWidth * position, index);
+  });
 }
 
 function respawnPlayer() {
@@ -285,6 +292,7 @@ function spawnBoss(x) {
   boss.gamePatrolMin = x - 42;
   boss.gamePatrolMax = x + 42;
   boss.gamePatrolDirection = 1;
+  boss.gameAttackPattern = currentLevel;
   lastBossShot = frameCount;
 }
 
@@ -330,16 +338,36 @@ function updateBoss() {
     boss.gameRecoilX = 0;
   }
   boss.x = constrain(boss.x, boss.gamePatrolMin, boss.gamePatrolMax);
-  if (frameCount - lastBossShot > 65) {
-    fireEnemyShot(boss.x - 50, boss.y + 8, player.x, player.y, 4.8);
+  const attackCooldown = [70, 95, 120][boss.gameAttackPattern];
+  if (frameCount - lastBossShot > attackCooldown) {
+    fireBossAttack();
     boss.gameAttackCount += 1;
-    if (boss.gameAttackCount % 3 === 0) {
-      fireEnemyShot(boss.x - 50, boss.y + 8, player.x, player.y - 90, 3.8);
-      fireEnemyShot(boss.x - 50, boss.y + 8, player.x, player.y + 90, 3.8);
-    }
     lastBossShot = frameCount;
   }
   if (Math.abs(player.x - boss.x) < 72 && Math.abs(player.y - boss.y) < 75) damagePlayer();
+}
+
+function fireBossAttack() {
+  const startX = boss.x - 50;
+  const startY = boss.y + 8;
+  if (boss.gameAttackPattern === 0) {
+    fireEnemyShot(startX, startY, player.x, player.y, 5.2);
+  } else if (boss.gameAttackPattern === 1) {
+    for (const spread of [-0.5, -0.25, 0, 0.25, 0.5]) {
+      fireEnemyShot(startX, startY, player.x, player.y + spread * 150, 4);
+    }
+  } else {
+    for (let index = 0; index < 8; index += 1) {
+      const angle = (TWO_PI * index) / 8;
+      fireEnemyShot(
+        boss.x,
+        boss.y,
+        boss.x + Math.cos(angle) * 100,
+        boss.y + Math.sin(angle) * 100,
+        3.8
+      );
+    }
+  }
 }
 
 function completeBoss() {
@@ -406,7 +434,7 @@ function updateShots() {
       boss.gameRecoilX = 9;
       hit = true;
     }
-    if (hit || projectile.x < stageOrigin - 40 || projectile.x > stageOrigin + STAGE_WIDTH) {
+    if (hit || projectile.x < stageOrigin - 40 || projectile.x > stageOrigin + getStageWidth()) {
       projectile.remove();
       playerShots.splice(index, 1);
     }
@@ -421,7 +449,7 @@ function updateShots() {
       damagePlayer();
       projectile.remove();
       enemyShots.splice(index, 1);
-    } else if (projectile.x < stageOrigin - 40 || projectile.x > stageOrigin + STAGE_WIDTH + 40 || projectile.y < 0 || projectile.y > GAME_HEIGHT) {
+    } else if (projectile.x < stageOrigin - 40 || projectile.x > stageOrigin + getStageWidth() + 40 || projectile.y < 0 || projectile.y > GAME_HEIGHT) {
       projectile.remove();
       enemyShots.splice(index, 1);
     }
@@ -450,7 +478,7 @@ function advanceLevel() {
     return;
   }
   currentLevel += 1;
-  stageOrigin = currentLevel * STAGE_WIDTH;
+  stageOrigin += getStageWidth(currentLevel - 1);
   resetStage();
   setGameState("playing");
 }
@@ -466,8 +494,8 @@ function resetStage() {
   enemyShots = [];
   if (boss) boss.remove();
   boss = null;
-  waveIndex = 0;
   createStagePlatforms();
+  spawnStageEnemies();
   respawnPlayer();
 }
 
