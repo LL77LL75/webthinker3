@@ -2,8 +2,8 @@ const GAME_WIDTH = 960;
 const GAME_HEIGHT = 540;
 const FLOOR_Y = 490;
 const STAGE_WIDTH = 1800;
-const PLAYER_SPEED = 5;
-const PLAYER_JUMP = 11;
+const PLAYER_SPEED = 3.5;
+const PLAYER_JUMP = 16;
 const PLAYER_MAX_HEALTH = 5;
 const LEVELS = [
   { name: "Moonlit Run", boss: "The Comet Crab", color: "#fb7185", health: 8 },
@@ -31,7 +31,7 @@ let stateChangedAt = 0;
 
 function setup() {
   new Canvas(GAME_WIDTH, GAME_HEIGHT);
-  world.gravity.y = 22;
+  world.gravity.y = 18;
   camera.x = GAME_WIDTH / 2;
   camera.y = GAME_HEIGHT / 2;
 
@@ -95,7 +95,7 @@ function updateGame() {
     player.vel.y = -PLAYER_JUMP;
   }
 
-  if (kb.pressing("j") && frameCount - lastPlayerShot > 12) {
+  if ((kb.pressing("j") || kb.pressing("x")) && frameCount - lastPlayerShot > 15) {
     firePlayerShot();
   }
 
@@ -130,7 +130,7 @@ function drawStars() {
 }
 
 function drawTitleScreen() {
-  drawMessage("STARBOUND SPRINT", "Move: A / D     Jump: W / Space     Fire: J\nPress Enter or Space to launch");
+  drawMessage("STARBOUND SPRINT", "Move: A / D     Jump: W / Space\nHold J or X to fire. Press Enter or Space to launch.");
   if (kb.presses("enter") || kb.presses("space") || mouse.presses("left")) startGame();
 }
 
@@ -193,19 +193,24 @@ function drawMessage(title, detail) {
 }
 
 function firePlayerShot() {
-  playerShots.push({ x: player.x + 25, y: player.y - 3, velocity: 10, damage: 1 });
+  playerShots.push({ x: player.x + 25, y: player.y - 3, velocityX: 9, damage: 1 });
   lastPlayerShot = frameCount;
 }
 
 function spawnEnemy(x, variant) {
-  const enemy = new Sprite(x, FLOOR_Y - 23, 38, 38);
+  const gameType = ["ground", "flyer", "shooter"][variant % 3];
+  const startY = gameType === "flyer" ? FLOOR_Y - 145 : FLOOR_Y - 23;
+  const enemy = new Sprite(x, startY, 38, 38);
   enemy.collider = "none";
-  enemy.color = variant % 2 === 0 ? "#fb7185" : "#f97316";
+  enemy.color = gameType === "flyer" ? "#38bdf8" : gameType === "shooter" ? "#f59e0b" : "#fb7185";
   enemy.stroke = "#ffe4d6";
-  enemy.gameHealth = 2;
-  enemy.gameSpeed = 1.15 + (variant % 2) * 0.25;
-  enemy.gameBaseColor = variant % 2 === 0 ? "#fb7185" : "#f97316";
+  enemy.gameHealth = gameType === "shooter" ? 3 : 2;
+  enemy.gameSpeed = 0.8;
+  enemy.gameType = gameType;
+  enemy.gameSpawnY = startY;
+  enemy.gameBaseColor = gameType === "flyer" ? "#38bdf8" : gameType === "shooter" ? "#f59e0b" : "#fb7185";
   enemy.gameHitAt = -1000;
+  enemy.gameLastShotAt = frameCount;
   enemies.push(enemy);
 }
 
@@ -223,9 +228,22 @@ function updateEnemies() {
   for (let index = enemies.length - 1; index >= 0; index -= 1) {
     const enemy = enemies[index];
     const direction = player.x < enemy.x ? -1 : 1;
-    enemy.x += direction * enemy.gameSpeed;
+    const distanceToPlayer = Math.abs(player.x - enemy.x);
+    if (enemy.gameType === "shooter") {
+      if (distanceToPlayer > 230) enemy.x += direction * enemy.gameSpeed;
+      enemy.y = enemy.gameSpawnY + Math.sin(frameCount * 0.035 + enemy.x) * 8;
+      if (frameCount - enemy.gameLastShotAt > 100 && distanceToPlayer < 620) {
+        fireEnemyShot(enemy.x, enemy.y, player.x, player.y, 3.2);
+        enemy.gameLastShotAt = frameCount;
+      }
+    } else {
+      enemy.x += direction * enemy.gameSpeed;
+      if (enemy.gameType === "flyer") {
+        enemy.y = enemy.gameSpawnY + Math.sin(frameCount * 0.05 + enemy.x * 0.02) * 34;
+      }
+    }
     enemy.color = frameCount - enemy.gameHitAt < 7 ? "#ffffff" : enemy.gameBaseColor;
-    if (Math.abs(player.x - enemy.x) < 38 && Math.abs(player.y - enemy.y) < 45) damagePlayer();
+    if (distanceToPlayer < 38 && Math.abs(player.y - enemy.y) < 45) damagePlayer();
     if (enemy.gameHealth <= 0 || enemy.x < stageOrigin - 80) {
       enemy.remove();
       enemies.splice(index, 1);
@@ -236,7 +254,7 @@ function updateEnemies() {
 function updateBoss() {
   boss.y = FLOOR_Y - 48 + Math.sin(frameCount * 0.045) * 10;
   if (frameCount - lastBossShot > 75) {
-    enemyShots.push({ x: boss.x - 52, y: boss.y + 8, velocity: -5.2, size: 12 });
+    fireEnemyShot(boss.x - 45, boss.y + 8, player.x, player.y, 4.1);
     lastBossShot = frameCount;
   }
   if (Math.abs(player.x - boss.x) < 72 && Math.abs(player.y - boss.y) < 75) damagePlayer();
@@ -249,10 +267,22 @@ function updateBoss() {
   }
 }
 
+function fireEnemyShot(startX, startY, targetX, targetY, speed) {
+  const directionX = targetX - startX;
+  const directionY = targetY - startY;
+  const distance = Math.hypot(directionX, directionY) || 1;
+  enemyShots.push({
+    x: startX,
+    y: startY,
+    velocityX: (directionX / distance) * speed,
+    velocityY: (directionY / distance) * speed
+  });
+}
+
 function updateShots() {
   for (let index = playerShots.length - 1; index >= 0; index -= 1) {
     const shot = playerShots[index];
-    shot.x += shot.velocity;
+    shot.x += shot.velocityX;
     let hit = false;
     for (const enemy of enemies) {
       if (Math.abs(shot.x - enemy.x) < enemy.w / 2 && Math.abs(shot.y - enemy.y) < enemy.h / 2) {
@@ -271,11 +301,12 @@ function updateShots() {
 
   for (let index = enemyShots.length - 1; index >= 0; index -= 1) {
     const shot = enemyShots[index];
-    shot.x += shot.velocity;
+    shot.x += shot.velocityX;
+    shot.y += shot.velocityY;
     if (Math.abs(shot.x - player.x) < 22 && Math.abs(shot.y - player.y) < 27) {
       damagePlayer();
       enemyShots.splice(index, 1);
-    } else if (shot.x < stageOrigin - 40) {
+    } else if (shot.x < stageOrigin - 40 || shot.x > stageOrigin + STAGE_WIDTH + 40 || shot.y < 0 || shot.y > GAME_HEIGHT) {
       enemyShots.splice(index, 1);
     }
   }
