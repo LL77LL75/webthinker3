@@ -2,7 +2,7 @@ const GAME_WIDTH = 960;
 const GAME_HEIGHT = 540;
 const FLOOR_Y = 490;
 const STAGE_WIDTH = 1800;
-const PLAYER_SPEED = 3.5;
+const PLAYER_SPEED = 2.7;
 const PLAYER_JUMP = 16;
 const PLAYER_MAX_HEALTH = 5;
 const LEVELS = [
@@ -12,7 +12,7 @@ const LEVELS = [
 ];
 
 let player;
-let ground;
+let platforms = [];
 let playerFacing = 1;
 let jumpBuffer = 0;
 let coyoteFrames = 0;
@@ -45,10 +45,7 @@ function setup() {
   player.friction = 0;
   player.bounciness = 0;
 
-  ground = new Sprite(STAGE_WIDTH / 2, FLOOR_Y + 50, STAGE_WIDTH, 100);
-  ground.color = "#254d59";
-  ground.stroke = "#6ee7c8";
-  ground.collider = "static";
+  createStagePlatforms();
 
   for (let index = 0; index < 90; index += 1) {
     stars.push({
@@ -96,7 +93,12 @@ function updateGame() {
   if (kb.presses("w") || kb.presses("space")) jumpBuffer = 8;
   else jumpBuffer = Math.max(0, jumpBuffer - 1);
   const playerBottom = player.y + player.h / 2;
-  const grounded = playerBottom >= FLOOR_Y - 4 && playerBottom <= FLOOR_Y + 9 && player.vel.y >= -1;
+  const grounded = player.vel.y >= -1 && platforms.some((platform) => {
+    const platformTop = platform.y - platform.h / 2;
+    const overlapsHorizontally = player.x + player.w / 2 > platform.x - platform.w / 2 &&
+      player.x - player.w / 2 < platform.x + platform.w / 2;
+    return overlapsHorizontally && playerBottom >= platformTop - 4 && playerBottom <= platformTop + 9;
+  });
   coyoteFrames = grounded ? 8 : Math.max(0, coyoteFrames - 1);
   if (jumpBuffer > 0 && coyoteFrames > 0) {
     player.vel.y = -PLAYER_JUMP;
@@ -125,7 +127,44 @@ function updateGame() {
 
   updateEnemies();
   updateShots();
+  if (player.y > GAME_HEIGHT + 80) respawnPlayer();
   if (playerHealth <= 0) setGameState("lost");
+}
+
+function createStagePlatforms() {
+  const floorSegments = [[0, 460], [560, 1020], [1120, STAGE_WIDTH]];
+  for (const [left, right] of floorSegments) {
+    const floorSegment = new Sprite(stageOrigin + (left + right) / 2, FLOOR_Y + 50, right - left, 100);
+    floorSegment.color = "#254d59";
+    floorSegment.stroke = "#6ee7c8";
+    floorSegment.collider = "static";
+    platforms.push(floorSegment);
+  }
+
+  const raisedPlatforms = [
+    { x: 300, y: 405, width: 150 },
+    { x: 520, y: 355, width: 130 },
+    { x: 790, y: 390, width: 170 },
+    { x: 1060, y: 350, width: 140 },
+    { x: 1330, y: 405, width: 160 }
+  ];
+  for (const layout of raisedPlatforms) {
+    const platform = new Sprite(stageOrigin + layout.x, layout.y, layout.width, 18);
+    platform.color = "#397982";
+    platform.stroke = "#8de4d1";
+    platform.collider = "static";
+    platforms.push(platform);
+  }
+}
+
+function respawnPlayer() {
+  player.x = stageOrigin + 90;
+  player.y = FLOOR_Y - player.h / 2 - 2;
+  player.vel.x = 0;
+  player.vel.y = 0;
+  jumpBuffer = 0;
+  coyoteFrames = 0;
+  playerFacing = 1;
 }
 
 function drawStars() {
@@ -144,7 +183,7 @@ function drawTitleScreen() {
 }
 
 function drawHud() {
-  const left = camera.x - GAME_WIDTH / 2 + 22;
+  const left = 22;
   noStroke();
   fill("#07101ddd");
   rect(left, 18, 310, 78, 8);
@@ -159,7 +198,7 @@ function drawHud() {
 
   if (boss && boss.gameHealth > 0) {
     const barWidth = 250;
-    const barX = camera.x + GAME_WIDTH / 2 - barWidth - 25;
+    const barX = GAME_WIDTH - barWidth - 25;
     const barY = 36;
     fill("#07101ddd");
     rect(barX - 10, 18, barWidth + 20, 54, 8);
@@ -175,7 +214,7 @@ function drawHud() {
 }
 
 function drawMessage(title, detail) {
-  const panelX = camera.x - 300;
+  const panelX = GAME_WIDTH / 2 - 300;
   const panelY = GAME_HEIGHT / 2 - 100;
   noStroke();
   fill("#07101df2");
@@ -183,10 +222,10 @@ function drawMessage(title, detail) {
   fill("#55e6c1");
   textAlign(CENTER, CENTER);
   textSize(30);
-  text(title, camera.x, panelY + 54);
+  text(title, GAME_WIDTH / 2, panelY + 54);
   fill("#f5f7ff");
   textSize(16);
-  text(detail, camera.x, panelY + 120, 540, 76);
+  text(detail, GAME_WIDTH / 2, panelY + 120, 540, 76);
 }
 
 function firePlayerShot() {
@@ -357,6 +396,8 @@ function advanceLevel() {
 function resetStage() {
   for (const enemy of enemies) enemy.remove();
   enemies = [];
+  for (const platform of platforms) platform.remove();
+  platforms = [];
   for (const shot of playerShots) shot.projectileSprite.remove();
   for (const shot of enemyShots) shot.projectileSprite.remove();
   playerShots = [];
@@ -364,14 +405,8 @@ function resetStage() {
   if (boss) boss.remove();
   boss = null;
   waveIndex = 0;
-  player.x = stageOrigin + 90;
-  player.y = FLOOR_Y - player.h / 2 - 2;
-  player.vel.x = 0;
-  player.vel.y = 0;
-  jumpBuffer = 0;
-  coyoteFrames = 0;
-  playerFacing = 1;
-  ground.x = stageOrigin + STAGE_WIDTH / 2;
+  createStagePlatforms();
+  respawnPlayer();
 }
 
 function setGameState(nextState) {
