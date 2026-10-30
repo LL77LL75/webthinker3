@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Starbound Sprint</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.3/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5play/3.26.5/planck.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5play/3.26.5/p5play.js"></script>
+    <script src="space_game.js" defer></script>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: "Trebuchet MS", sans-serif;
+        background: #080f20;
+        color: #f5f7ff;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        padding: 18px;
+        display: grid;
+        place-items: center;
+        background: radial-gradient(ellipse at 50% 0%, #233d56 0%, #101a2d 48%, #080f20 100%);
+      }
+
+      main { width: min(100%, 960px); }
+
+      nav { margin-bottom: 12px; }
+
+      nav a {
+        color: #a7f3d0;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 4px;
+      }
+
+      h1 {
+        margin: 0 0 12px;
+        color: #f5f7ff;
+        font-size: 1.4rem;
+        letter-spacing: 0;
+      }
+
+      canvas {
+        display: block;
+        max-width: 100%;
+        height: auto !important;
+        margin: 0 auto;
+        border: 1px solid #57728a;
+        box-shadow: 0 18px 60px #0008;
+      }
+
+      @media (max-width: 600px) {
+        body { padding: 10px; }
+        h1 { font-size: 1.15rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <nav><a href="index.html">Back to homepage</a></nav>
+      <h1>Starbound Sprint</h1>
+    </main>
+  </body>
+</html>
