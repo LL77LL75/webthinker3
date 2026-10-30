@@ -3,8 +3,13 @@ const GAME_HEIGHT = 540;
 const FLOOR_Y = 490;
 const BASE_STAGE_WIDTH = 2200;
 const STAGE_WIDTH_INCREASE = 800;
-const PLAYER_SPEED = 1;
-const PLAYER_JUMP = 13;
+const PIXELS_PER_METER = 60;
+const WORLD_GRAVITY = 18;
+const FLOATING_PLATFORM_WIDTH = 160;
+const PLATFORM_SPACING = 190;
+const TARGET_JUMP_HEIGHT = 38;
+const PLAYER_SPEED = FLOATING_PLATFORM_WIDTH / PIXELS_PER_METER;
+const PLAYER_JUMP = Math.sqrt(2 * WORLD_GRAVITY * (TARGET_JUMP_HEIGHT / PIXELS_PER_METER));
 const PLAYER_SHOT_COOLDOWN = 8;
 const PLAYER_SHOT_DAMAGE = 0.5;
 const PLAYER_MAX_HEALTH = 5;
@@ -41,7 +46,7 @@ function getStageWidth(levelIndex = currentLevel) {
 
 function setup() {
   new Canvas(GAME_WIDTH, GAME_HEIGHT);
-  world.gravity.y = 18;
+  world.gravity.y = WORLD_GRAVITY;
   camera.x = GAME_WIDTH / 2;
   camera.y = GAME_HEIGHT / 2;
 
@@ -149,21 +154,15 @@ function createStagePlatforms() {
     platforms.push(floorSegment);
   }
 
-  const raisedPlatforms = [
-    { x: stageWidth * 0.14, y: 420, width: 150 },
-    { x: stageWidth * 0.26, y: 390, width: 140 },
-    { x: stageWidth * 0.38, y: 420, width: 180 },
-    { x: stageWidth * 0.5, y: 390, width: 140 },
-    { x: stageWidth * 0.62, y: 420, width: 160 },
-    { x: stageWidth * 0.75, y: 390, width: 160 },
-    { x: stageWidth * 0.87, y: 420, width: 180 }
-  ];
-  for (const layout of raisedPlatforms) {
-    const platform = new Sprite(stageOrigin + layout.x, layout.y, layout.width, 18);
+  let platformIndex = 0;
+  for (let x = PLATFORM_SPACING; x < stageWidth - 100; x += PLATFORM_SPACING) {
+    const platformY = platformIndex % 2 === 0 ? 465 : 435;
+    const platform = new Sprite(stageOrigin + x, platformY, FLOATING_PLATFORM_WIDTH, 18);
     platform.color = "#397982";
     platform.stroke = "#8de4d1";
     platform.collider = "static";
     platforms.push(platform);
+    platformIndex += 1;
   }
 }
 
